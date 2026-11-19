@@ -1,0 +1,188 @@
+/* base.css — design tokens, reset and shared primitives.
+   Owned by the plan. site.css and projects.css build on these; do not redefine tokens there. */
+
+:root {
+  /* palette (from the Claukshay mark) */
+  --coral: #F0643C;
+  --coral-ink: #B23A16;      /* coral that is readable as small text on light surfaces */
+  --ink: #1F2430;
+  --cream: #FFF4E8;
+  --mint: #E6F6F3;
+  --sun: #FFC02E;
+
+  /* semantic, light */
+  --bg: #FFF4E8;
+  --surface: #FFFCF7;
+  --surface-2: #FBE9D7;
+  --text: #1F2430;
+  --text-2: #565B69;
+  --line: #E9D8C4;
+  --line-strong: #1F2430;
+  --accent: #F0643C;
+  --accent-text: #B23A16;
+  --on-accent: #FFFFFF;
+  --focus: #1F2430;
+
+  /* theme tags: dot colour + soft background */
+  --tag-agents: #F0643C;      --tag-agents-bg: #FDE3D9;
+  --tag-automation: #D99A00;  --tag-automation-bg: #FFF0C2;
+  --tag-data: #0F8F83;        --tag-data-bg: #D8F1ED;
+  --tag-quality: #6B5BD2;     --tag-quality-bg: #E6E2FA;
+
+  /* status colours for small visualisations */
+  --ok: #1E9E6A;
+  --warn: #D99A00;
+  --bad: #D5432B;
+
+  /* type */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-0: 0.8125rem;   /* 13 labels */
+  --fs-1: 0.9375rem;   /* 15 small body */
+  --fs-2: 1.0625rem;   /* 17 body */
+  --fs-3: 1.25rem;     /* 20 card titles */
+  --fs-4: 1.625rem;    /* 26 section titles */
+  --fs-5: clamp(2.25rem, 9vw, 3.75rem); /* name */
+
+  /* shape and space */
+  --r-s: 10px;
+  --r-m: 16px;
+  --r-l: 24px;
+  --r-pill: 999px;
+  --gutter: 20px;
+  --max: 1080px;
+  --shadow: 0 1px 0 rgba(31, 36, 48, .06), 0 8px 24px -12px rgba(31, 36, 48, .18);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+/* dark: follows the system unless the visitor picked a theme with the toggle */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171E;
+    --surface: #1F2430;
+    --surface-2: #2A3040;
+    --text: #FFF4E8;
+    --text-2: #B9B5AE;
+    --line: #343B4C;
+    --line-strong: #FFF4E8;
+    --accent: #F47B58;
+    --accent-text: #FF9A7B;
+    --on-accent: #1F2430;
+    --focus: #FFF4E8;
+    --tag-agents: #F47B58;      --tag-agents-bg: #4A2A22;
+    --tag-automation: #FFC02E;  --tag-automation-bg: #45381A;
+    --tag-data: #5FD4C6;        --tag-data-bg: #1D3D3A;
+    --tag-quality: #A79BFF;     --tag-quality-bg: #302C52;
+    --ok: #4CC993; --warn: #FFC02E; --bad: #FF7A62;
+    --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 28px -14px rgba(0, 0, 0, .7);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171E;
+  --surface: #1F2430;
+  --surface-2: #2A3040;
+  --text: #FFF4E8;
+  --text-2: #B9B5AE;
+  --line: #343B4C;
+  --line-strong: #FFF4E8;
+  --accent: #F47B58;
+  --accent-text: #FF9A7B;
+  --on-accent: #1F2430;
+  --focus: #FFF4E8;
+  --tag-agents: #F47B58;      --tag-agents-bg: #4A2A22;
+  --tag-automation: #FFC02E;  --tag-automation-bg: #45381A;
+  --tag-data: #5FD4C6;        --tag-data-bg: #1D3D3A;
+  --tag-quality: #A79BFF;     --tag-quality-bg: #302C52;
+  --ok: #4CC993; --warn: #FFC02E; --bad: #FF7A62;
+  --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 28px -14px rgba(0, 0, 0, .7);
+}
+
+/* reset */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 var(--fs-2)/1.55 var(--font);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3, p, ul, ol, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: var(--accent-text); text-underline-offset: 3px; }
+:focus-visible { outline: 2.5px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+
+/* shared primitives */
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+.label {            /* small mono caption, e.g. "02 / journey" */
+  font: 600 var(--fs-0)/1.3 var(--mono);
+  letter-spacing: .04em;
+  text-transform: lowercase;
+  color: var(--text-2);
+}
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-m);
+  box-shadow: var(--shadow);
+}
+
+.chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 32px; padding: 4px 12px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  font: 600 var(--fs-0)/1.2 var(--font);
+  color: var(--text);
+  white-space: nowrap;
+}
+.chip[data-tag]::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%; flex: none;
+  background: var(--tag-c, var(--text-2));
+}
+.chip[data-tag="agents"]     { --tag-c: var(--tag-agents);     --tag-b: var(--tag-agents-bg); }
+.chip[data-tag="automation"] { --tag-c: var(--tag-automation); --tag-b: var(--tag-automation-bg); }
+.chip[data-tag="data"]       { --tag-c: var(--tag-data);       --tag-b: var(--tag-data-bg); }
+.chip[data-tag="quality"]    { --tag-c: var(--tag-quality);    --tag-b: var(--tag-quality-bg); }
+button.chip { min-height: 44px; padding: 8px 16px; transition: background .15s, border-color .15s; }
+button.chip[aria-pressed="true"] { background: var(--tag-b, var(--surface-2)); border-color: var(--tag-c, var(--line-strong)); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 10px 22px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--line-strong);
+  background: transparent; color: var(--text);
+  font: 700 var(--fs-1)/1.2 var(--font);
+  text-decoration: none;
+  transition: transform .15s var(--ease), background .15s;
+}
+.btn:active { transform: scale(.97); }
+.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* shown only while window.AK.draft is true (site.js adds .is-draft to <html>) */
+.todo { display: none; }
+.is-draft .todo {
+  display: block;
+  border: 1.5px dashed var(--accent);
+  border-radius: var(--r-s);
+  padding: 10px 12px;
+  font: 500 var(--fs-0)/1.4 var(--mono);
+  color: var(--accent-text);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
