@@ -665,8 +665,7 @@ window.AK_LANGS.en = {
     lines: [
       "A personal page. Views are my own.",
       "Project descriptions are generalised and the numbers in the visuals are illustrative."
-    ],
-    built: "Planned and built with Claude, reviewed by a human."
+    ]
   },
 
   /* Small interface strings. Code reads these through AKt(key, fallback, vars). {n}, {total}, {v}, {unit} are placeholders. */

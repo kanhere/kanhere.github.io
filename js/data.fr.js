@@ -528,8 +528,7 @@ window.AK_LANGS.fr = {
     lines: [
       "Une page personnelle. Les opinions sont les miennes.",
       "Les descriptions de projets sont généralisées et les chiffres des visuels sont illustratifs."
-    ],
-    built: "Conçue et réalisée avec Claude, relue par un humain."
+    ]
   },
 
   ui: {

@@ -527,8 +527,7 @@ window.AK_LANGS.de = {
     lines: [
       "Eine persönliche Seite. Die Ansichten sind meine eigenen.",
       "Die Projektbeschreibungen sind verallgemeinert, und die Zahlen in den Visualisierungen sind illustrativ."
-    ],
-    built: "Geplant und gebaut mit Claude, von einem Menschen geprüft."
+    ]
   },
 
   ui: {

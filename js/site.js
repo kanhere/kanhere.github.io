@@ -849,7 +849,7 @@
     if (!host) return;
     var f = AK.footer;
     append(host, paragraphs(f.lines, 'footer__line'));
-    host.appendChild(el('p', { class: 'footer__line footer__built', text: f.built }));
+    if (f.built) host.appendChild(el('p', { class: 'footer__line footer__built', text: f.built }));
   }
 
   /* ---------- draft pill ---------- */
