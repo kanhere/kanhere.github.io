@@ -85,6 +85,11 @@ window.AK_LANGS.en = {
         cmd: "curl /llms.txt",
         out: ["This page is also written for your agent."],
         link: { href: "llms.txt", label: "kanhere.github.io/llms.txt" }
+      },
+      {
+        cmd: "./play.sh",
+        out: ["A short game: can you keep an agent read-only?"],
+        link: { href: "#game", label: "Play: read or change?" }
       }
     ]
   },
@@ -240,7 +245,7 @@ window.AK_LANGS.en = {
     },
     {
       id: "booklets",
-      featured: true,
+      featured: false,
       title: "Pitch booklets from a database",
       tags: ["agents", "automation"],
       status: "Live, shared with the team",
@@ -314,7 +319,7 @@ window.AK_LANGS.en = {
     },
     {
       id: "flags",
-      featured: true,
+      featured: false,
       title: "Feature flags and kill switches",
       tags: ["quality"],
       status: "Exploring",
@@ -331,7 +336,7 @@ window.AK_LANGS.en = {
     },
     {
       id: "ai-usage",
-      featured: true,
+      featured: false,
       title: "AI credit usage monitor",
       tags: ["data", "automation"],
       status: "Live",
@@ -556,6 +561,52 @@ window.AK_LANGS.en = {
     }
   ],
 
+  game: {
+    perGame: 8,
+    secondsPerCall: 7,
+    label: "bonus round",
+    title: "Read or change?",
+    body: "An agent wants to run a tool call. You are the guardrail. Let it run if it only reads. Hand it to a human if it changes anything. Eight calls, a few seconds each.",
+    start: "Start",
+    again: "Play again",
+    allow: "Let it run",
+    allowHint: "it only reads",
+    block: "Hand to a human",
+    blockHint: "it changes something",
+    round: "Call {n} of {total}",
+    scoreLabel: "Score",
+    streakLabel: "Streak",
+    bestLabel: "Best",
+    timeout: "Too slow. The agent went ahead.",
+    right: "Right.",
+    wrong: "Not quite.",
+    next: "Next call",
+    resultTitle: "{n} of {total}",
+    share: "Tell me your score when you say hi. It is an easy opener.",
+    ranks: [
+      { min: 0, title: "The agent is running the place", line: "Come find me. I have stories like that." },
+      { min: 4, title: "Careful operator", line: "Solid. The tricky ones catch everybody." },
+      { min: 7, title: "Read-only purist", line: "You would get on with my help agent." },
+      { min: 8, title: "Human guardrail", line: "A perfect run. Tell me your secret when you say hi." }
+    ],
+    calls: [
+      { call: "GET /records?limit=10", changes: false, why: "A plain read." },
+      { call: "DELETE /records/42", changes: true, why: "Deleting is as changing as it gets." },
+      { call: "POST /search {\"query\": \"water\"}", changes: false, why: "POST, but it only searches. Still a read." },
+      { call: "SELECT name FROM ventures WHERE year = 2026", changes: false, why: "A query. Nothing is written." },
+      { call: "UPDATE leads SET status = 'approved'", changes: true, why: "It rewrites every row. There is no WHERE." },
+      { call: "list_workflows()", changes: false, why: "Listing is reading." },
+      { call: "publish_workflow(id)", changes: true, why: "Publishing makes a draft live." },
+      { call: "git status", changes: false, why: "It only looks." },
+      { call: "git push --force", changes: true, why: "It overwrites history on the remote." },
+      { call: "send_email(to: 400 contacts)", changes: true, why: "No database changes, but 400 inboxes do." },
+      { call: "get_schema(table)", changes: false, why: "Reading the schema changes nothing." },
+      { call: "PATCH /flags/new-feature {\"on\": true}", changes: true, why: "It turns a feature on for real users." },
+      { call: "EXPLAIN DELETE FROM leads", changes: false, why: "EXPLAIN only shows the plan. Nothing is deleted." },
+      { call: "rm -rf ./tmp", changes: true, why: "Even temporary files are a change." }
+    ]
+  },
+
   fieldNotes: {
     title: "Field notes",
     body: "Things production taught me. Most of them the hard way.",
@@ -687,6 +738,10 @@ window.AK_LANGS.en = {
     terminalCommands: "Commands",
     stepN: "Step {n}",
     qrCode: "QR code",
+    gameToolCall: "Agent tool call",
+    gameResultDots: "Result for each call",
+    gameDotRight: "right",
+    gameDotWrong: "wrong",
     noscript: "This page needs JavaScript for its interactive parts."
   }
 };

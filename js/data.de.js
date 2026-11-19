@@ -63,7 +63,8 @@ window.AK_LANGS.de = {
       {},
       {
         out: ["Diese Seite ist auch für deinen Agenten geschrieben."]
-      }
+      },
+      { out: ["Ein kurzes Spiel: Hältst du einen Agenten read-only?"], link: { label: "Spielen: Lesen oder ändern?" } }
     ]
   },
 
@@ -427,6 +428,50 @@ window.AK_LANGS.de = {
     }
   ],
 
+  game: {
+    label: "bonusrunde",
+    title: "Lesen oder ändern?",
+    body: "Ein Agent will einen Tool-Call ausführen. Du bist die Leitplanke. Lass ihn laufen, wenn er nur liest. Gib ihn an einen Menschen, wenn er etwas ändert. Acht Calls, je ein paar Sekunden.",
+    start: "Start",
+    again: "Nochmals spielen",
+    allow: "Laufen lassen",
+    allowHint: "er liest nur",
+    block: "An einen Menschen",
+    blockHint: "er ändert etwas",
+    round: "Call {n} von {total}",
+    scoreLabel: "Punkte",
+    streakLabel: "Serie",
+    bestLabel: "Rekord",
+    timeout: "Zu langsam. Der Agent hat weitergemacht.",
+    right: "Richtig.",
+    wrong: "Nicht ganz.",
+    next: "Nächster Call",
+    resultTitle: "{n} von {total}",
+    share: "Sag mir deinen Punktestand, wenn du Hallo sagst. Das ist ein einfacher Einstieg.",
+    ranks: [
+      { title: "Der Agent schmeisst den Laden", line: "Komm vorbei. Ich habe solche Geschichten." },
+      { title: "Vorsichtiger Operator", line: "Solide. Die kniffligen erwischen alle." },
+      { title: "Read-only-Purist", line: "Du würdest dich mit meinem Hilfe-Agenten verstehen." },
+      { title: "Menschliche Leitplanke", line: "Fehlerfrei. Verrat mir dein Geheimnis, wenn du Hallo sagst." }
+    ],
+    calls: [
+      { why: "Ein einfacher Lesezugriff." },
+      { why: "Löschen ist so ändernd, wie es nur geht." },
+      { why: "POST, aber es wird nur gesucht. Bleibt ein Lesezugriff." },
+      { why: "Eine Abfrage. Nichts wird geschrieben." },
+      { why: "Das überschreibt jede Zeile. Es gibt kein WHERE." },
+      { why: "Auflisten ist Lesen." },
+      { why: "Publizieren schaltet einen Entwurf live." },
+      { why: "Das schaut nur." },
+      { why: "Das überschreibt die History auf dem Remote." },
+      { why: "Keine Datenbank ändert sich, aber 400 Postfächer schon." },
+      { why: "Das Schema zu lesen ändert nichts." },
+      { why: "Das schaltet ein Feature für echte Nutzer ein." },
+      { why: "EXPLAIN zeigt nur den Plan. Nichts wird gelöscht." },
+      { why: "Auch temporäre Dateien sind eine Änderung." }
+    ]
+  },
+
   fieldNotes: {
     title: "Feldnotizen",
     body: "Dinge, die mir die Produktion beigebracht hat. Die meisten auf die harte Tour.",
@@ -554,6 +599,10 @@ window.AK_LANGS.de = {
     terminalCommands: "Befehle",
     stepN: "Schritt {n}",
     qrCode: "QR-Code",
+    gameToolCall: "Tool-Call des Agenten",
+    gameResultDots: "Ergebnis pro Call",
+    gameDotRight: "richtig",
+    gameDotWrong: "falsch",
     noscript: "Diese Seite braucht JavaScript für ihre interaktiven Teile."
   }
 };

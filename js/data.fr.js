@@ -62,7 +62,8 @@ window.AK_LANGS.fr = {
       {},
       {
         out: ["Cette page est aussi écrite pour votre agent."]
-      }
+      },
+      { out: ["Un petit jeu : saurez-vous garder un agent en lecture seule ?"], link: { label: "Jouer : lire ou modifier ?" } }
     ]
   },
 
@@ -428,6 +429,50 @@ window.AK_LANGS.fr = {
     }
   ],
 
+  game: {
+    label: "manche bonus",
+    title: "Lire ou modifier ?",
+    body: "Un agent veut lancer un appel d'outil. Le garde-fou, c'est vous. Laissez-le faire s'il ne fait que lire. Passez-le à un humain s'il modifie quoi que ce soit. Huit appels, quelques secondes chacun.",
+    start: "Démarrer",
+    again: "Rejouer",
+    allow: "Laisser faire",
+    allowHint: "il ne fait que lire",
+    block: "Passer à un humain",
+    blockHint: "il modifie quelque chose",
+    round: "Appel {n} sur {total}",
+    scoreLabel: "Score",
+    streakLabel: "Série",
+    bestLabel: "Record",
+    timeout: "Trop lent. L'agent a continué.",
+    right: "Exact.",
+    wrong: "Pas tout à fait.",
+    next: "Appel suivant",
+    resultTitle: "{n} sur {total}",
+    share: "Donnez-moi votre score en venant dire bonjour. C'est une entrée en matière facile.",
+    ranks: [
+      { title: "L'agent dirige la maison", line: "Venez me voir. J'ai des histoires de ce genre." },
+      { title: "Opérateur prudent", line: "Solide. Les pièges attrapent tout le monde." },
+      { title: "Puriste de la lecture seule", line: "Vous vous entendriez bien avec mon agent d'aide." },
+      { title: "Garde-fou humain", line: "Un sans-faute. Dites-moi votre secret en venant dire bonjour." }
+    ],
+    calls: [
+      { why: "Une simple lecture." },
+      { why: "Supprimer, c'est modifier au maximum." },
+      { why: "POST, mais ce n'est qu'une recherche. Cela reste une lecture." },
+      { why: "Une requête. Rien n'est écrit." },
+      { why: "Cela réécrit chaque ligne. Il n'y a pas de WHERE." },
+      { why: "Lister, c'est lire." },
+      { why: "Publier rend un brouillon actif." },
+      { why: "Cela ne fait que regarder." },
+      { why: "Cela écrase l'historique sur le dépôt distant." },
+      { why: "Aucune base ne change, mais 400 boîtes mail, si." },
+      { why: "Lire le schéma ne change rien." },
+      { why: "Cela active une fonctionnalité pour de vrais utilisateurs." },
+      { why: "EXPLAIN montre seulement le plan. Rien n'est supprimé." },
+      { why: "Même des fichiers temporaires, c'est une modification." }
+    ]
+  },
+
   fieldNotes: {
     title: "Notes de terrain",
     body: "Ce que la production m'a appris. Le plus souvent à la dure.",
@@ -555,6 +600,10 @@ window.AK_LANGS.fr = {
     terminalCommands: "Commandes",
     stepN: "Étape {n}",
     qrCode: "QR code",
+    gameToolCall: "Appel d'outil de l'agent",
+    gameResultDots: "Résultat de chaque appel",
+    gameDotRight: "juste",
+    gameDotWrong: "faux",
     noscript: "Cette page a besoin de JavaScript pour ses parties interactives."
   }
 };
