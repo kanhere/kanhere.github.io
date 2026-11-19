@@ -6,6 +6,11 @@
   if (!root || !AK || !AK.projects) return;
 
   var NS = 'http://www.w3.org/2000/svg';
+  var tr = window.AKt || function (k, f, vars) {
+    var x = f || k;
+    if (vars) Object.keys(vars).forEach(function (n) { x = x.split('{' + n + '}').join(vars[n]); });
+    return x;
+  };
   var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
   function reduced() { return !!(mq && mq.matches); }
 
@@ -48,6 +53,7 @@
   var ICON = {
     replay: 'M20 12a8 8 0 11-2.6-5.9M20 4v5h-5',
     play: 'M7 5l12 7-12 7z',
+    chevron: 'M6 9l6 6 6-6',
     lock: 'M7 11V8a5 5 0 0110 0v3M5 11h14v9H5z',
     hand: 'M8 13V6a1.5 1.5 0 013 0v5M11 11V4.5a1.5 1.5 0 013 0V11M14 11V6a1.5 1.5 0 013 0v7c0 4-2.5 7-6 7-3 0-4.5-1.5-6-4l-2-3a1.5 1.5 0 012.3-1.8L8 14',
     cog: 'M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1',
@@ -93,7 +99,7 @@
     var legend = h('ul', 'pj-legend', null, { 'aria-hidden': 'true' });
     kinds.forEach(function (k) {
       var li = h('li', 'pj-lg'); li.setAttribute('data-kind', k);
-      li.appendChild(h('span', 'pj-lg-dot')); li.appendChild(document.createTextNode(k));
+      li.appendChild(h('span', 'pj-lg-dot')); li.appendChild(document.createTextNode(tr('kind' + k.charAt(0).toUpperCase() + k.slice(1), k)));
       legend.appendChild(li);
     });
     var fn = h('ul', 'pj-fn', null, { 'aria-hidden': 'true' });
@@ -182,7 +188,7 @@
     }
     render(0, false);
     return {
-      el: el, label: 'Play',
+      el: el, label: tr('play', 'Play'), isPlay: true,
       reset: function () { render(0, false); },
       play: function (c) { render(0, true); c.later(function () { render(1, true); }, 2300); },
       end: function () { render(1, false); }
@@ -225,7 +231,7 @@
       }
     }
     return {
-      el: el, label: 'Play',
+      el: el, label: tr('play', 'Play'), isPlay: true,
       reset: function () { frames.forEach(function (f) { f.classList.remove('on'); }); fill.style.width = '0'; strip.scrollLeft = 0; },
       play: function (c) { for (var i = 0; i < n; i++) (function (i) { c.later(function () { setOn(i); }, i * 950); })(i); },
       end: function () { frames.forEach(function (f) { f.classList.remove('on'); }); fill.style.width = '100%'; }
@@ -263,10 +269,10 @@
 
   /* ---------- flags ---------- */
   BUILD.flags = function (v) {
-    var modes = ['Off', 'Pilot', 'Everyone'], mode = 1, kill = false;
+    var modes = [tr('flagOff', 'Off'), tr('flagPilot', 'Pilot'), tr('flagEveryone', 'Everyone')], mode = 1, kill = false;
     var el = h('div', 'pj-fl');
     var ctl = h('div', 'pj-fl-ctl');
-    var seg = h('div', 'pj-seg', null, { role: 'radiogroup', 'aria-label': 'Rollout' });
+    var seg = h('div', 'pj-seg', null, { role: 'radiogroup', 'aria-label': tr('rolloutLabel', 'Rollout') });
     var btns = modes.map(function (m, i) {
       var b = h('button', null, m, { type: 'button', role: 'radio' });
       b.addEventListener('click', function () { mode = i; update(); });
@@ -278,7 +284,7 @@
       seg.appendChild(b); return b;
     });
     var sw = h('button', 'pj-kill', null, { type: 'button', role: 'switch', 'aria-checked': 'false' });
-    sw.appendChild(h('span', 'pj-kill-track')); sw.appendChild(h('span', 'pj-kill-l', 'Kill switch'));
+    sw.appendChild(h('span', 'pj-kill-track')); sw.appendChild(h('span', 'pj-kill-l', tr('killSwitch', 'Kill switch')));
     sw.firstChild.appendChild(h('span', 'pj-kill-thumb'));
     sw.addEventListener('click', function () { kill = !kill; update(); });
     ctl.appendChild(seg); ctl.appendChild(sw);
@@ -290,7 +296,7 @@
       dotsEl.appendChild(d); dots.push(d);
     }
     var leg = h('p', 'pj-fl-leg', null, { 'aria-hidden': 'true' });
-    leg.appendChild(h('span', 'pj-ring-sample')); leg.appendChild(document.createTextNode('Pilot'));
+    leg.appendChild(h('span', 'pj-ring-sample')); leg.appendChild(document.createTextNode(tr('pilotGroup', 'Pilot group')));
     var live = h('p', 'pj-fl-live', null, { 'aria-live': 'polite' });
     var liveN = h('span', 'pj-fl-n'), liveK = h('span', 'pj-fl-k');
     live.appendChild(liveN); live.appendChild(liveK);
@@ -301,8 +307,8 @@
       seg.classList.toggle('over', kill);
       sw.setAttribute('aria-checked', kill ? 'true' : 'false');
       dots.forEach(function (d, i) { d.classList.toggle('see', i < n); });
-      liveN.textContent = n + ' of ' + v.users + ' see the feature';
-      liveK.textContent = kill ? 'Kill switch wins' : '';
+      liveN.textContent = tr('seeFeature', '{n} of {total} see the feature', { n: n, total: v.users });
+      liveK.textContent = kill ? tr('killWins', 'Kill switch wins') : '';
     }
     update();
     return { el: el, manual: true, reset: function () {}, play: function () {}, end: function () {} };
@@ -319,13 +325,13 @@
     function Y(x) { return T + ph * (1 - x / mx); }
     var el = h('div', 'pj-us');
     var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'pj-us-svg', role: 'group', tabindex: '0',
-      'aria-label': v.caption + '. Peak ' + S[peak] + ' ' + v.unit + ' on day ' + (peak + 1) + ', alert line at ' + v.threshold + '. Use arrow keys to read each day.' });
+      'aria-label': tr('usageAria', '{caption}. Peak {peak} {unit} on day {day}, alert line at {threshold}. Use arrow keys to read each day.', { caption: v.caption, peak: S[peak], unit: v.unit, day: peak + 1, threshold: v.threshold }) });
     var line = S.map(function (x, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(x).toFixed(1); }).join('');
     svg.appendChild(s('path', { class: 'pj-us-area', d: line + 'L' + X(n - 1) + ' ' + base + 'L' + X(0) + ' ' + base + 'Z' }));
     svg.appendChild(s('path', { class: 'pj-us-axis', d: 'M' + L + ' ' + base + 'H' + (W - R) }));
     var ty = Y(v.threshold);
     svg.appendChild(s('path', { class: 'pj-us-thr', d: 'M' + L + ' ' + ty + 'H' + (W - R) }));
-    var tl = s('text', { class: 'pj-us-tl', x: L, y: ty - 6 }); tl.textContent = 'alert line'; svg.appendChild(tl);
+    var tl = s('text', { class: 'pj-us-tl', x: L, y: ty - 6 }); tl.textContent = tr('alertLine', 'alert line'); svg.appendChild(tl);
     var path = s('path', { class: 'pj-us-line', d: line });
     svg.appendChild(path);
     var pts = [];
@@ -348,9 +354,9 @@
     S.forEach(function (x, i) {
       svg.appendChild(s('rect', { class: 'pj-us-hit', 'data-i': i, x: X(i) - step / 2, y: 0, width: step, height: H }));
     });
-    var a = s('text', { class: 'pj-us-ax', x: L, y: H - 6 }); a.textContent = 'Day 1'; svg.appendChild(a);
-    var z = s('text', { class: 'pj-us-ax', x: W - R, y: H - 6, 'text-anchor': 'end' }); z.textContent = 'Day ' + n; svg.appendChild(z);
-    var read = h('p', 'pj-us-read', 'Tap or hover a day', { 'aria-live': 'polite' });
+    var a = s('text', { class: 'pj-us-ax', x: L, y: H - 6 }); a.textContent = tr('dayN', 'Day {n}', { n: 1 }); svg.appendChild(a);
+    var z = s('text', { class: 'pj-us-ax', x: W - R, y: H - 6, 'text-anchor': 'end' }); z.textContent = tr('dayN', 'Day {n}', { n: n }); svg.appendChild(z);
+    var read = h('p', 'pj-us-read', tr('tapAPoint', 'Tap a day'), { 'aria-live': 'polite' });
     el.appendChild(svg); el.appendChild(read);
     var cur = -1;
     function select(i) {
@@ -358,7 +364,7 @@
       sl.setAttribute('transform', 'translate(' + X(i) + ' 0)');
       sr.setAttribute('cx', X(i)); sr.setAttribute('cy', Y(S[i]));
       sel.classList.add('on');
-      read.textContent = 'Day ' + (i + 1) + ' · ' + S[i] + ' ' + v.unit;
+      read.textContent = tr('dayReadout', 'Day {n} · {v} {unit}', { n: i + 1, v: S[i], unit: v.unit });
       read.classList.toggle('bad', S[i] > v.threshold);
     }
     function fromEvent(e) {
@@ -377,7 +383,7 @@
     path.style.setProperty('--len', len);
     return {
       el: el,
-      reset: function () { svg.classList.remove('go'); sel.classList.remove('on'); read.textContent = 'Tap or hover a day'; read.classList.remove('bad'); cur = -1; },
+      reset: function () { svg.classList.remove('go'); sel.classList.remove('on'); read.textContent = tr('tapAPoint', 'Tap a day'); read.classList.remove('bad'); cur = -1; },
       play: function (c) { c.later(function () { svg.classList.add('go'); }, 60); c.later(function () { select(peak); }, 1700); },
       end: function () { svg.classList.add('go'); select(peak); }
     };
@@ -441,7 +447,7 @@
       var li = h('li', 'pj-msg ' + (m.from === 'agent' ? 'agent' : 'colleague'));
       if (m.from === 'agent') li.appendChild(avatar());
       var b = h('div', 'pj-bubble');
-      b.appendChild(h('span', 'sr-only', m.from + ': '));
+      b.appendChild(h('span', 'sr-only', (m.from === 'agent' ? tr('chatFromAgent', 'Agent') : tr('chatFromColleague', 'Colleague')) + ': '));
       b.appendChild(document.createTextNode(m.text));
       li.appendChild(b); ul.appendChild(li); return li;
     });
@@ -459,35 +465,82 @@
     };
   };
 
+
   /* ---------- viz mounting ---------- */
-  function mountViz(p) {
-    var v = p.viz, b = v && BUILD[v.type];
-    if (!b) return null;
-    var ctx = mkCtx(), api = b(v, ctx);
+  /* Builds the visual into `parent` (the card). Internal builders first, then window.AKVIZ[type]. */
+  function mountViz(p, parent) {
+    var v = p.viz;
+    if (!v) return null;
+    var internal = BUILD[v.type];
+    var ext = !internal && window.AKVIZ && window.AKVIZ[v.type];
+    if (!internal && !ext) return null;
     var panel = h('div', 'pj-viz');
-    var body = h('div', 'pj-viz-body'); body.appendChild(api.el);
+    var body = h('div', 'pj-viz-body');
     var foot = h('div', 'pj-viz-foot');
-    foot.appendChild(h('p', 'pj-cap', v.caption));
-    function run() {
-      ctx.clear(); api.reset();
-      if (reduced()) api.end(); else api.play(ctx);
+    panel.appendChild(body); panel.appendChild(foot);
+    parent.appendChild(panel);
+    var ctx = mkCtx(), api, run, manual = false, label = tr('runAgain', 'Run again'), isPlay = false;
+    if (internal) {
+      api = internal(v, ctx);
+      body.appendChild(api.el);
+      manual = !!api.manual;
+      if (api.label) { label = api.label; isPlay = !!api.isPlay; }
+      run = function () {
+        ctx.clear(); api.reset();
+        if (reduced()) api.end(); else api.play(ctx);
+      };
+    } else {
+      var xctx = { t: tr };
+      Object.defineProperty(xctx, 'reduced', { get: reduced, enumerable: true });
+      api = ext(body, v, xctx) || {};
+      manual = !!api.interactive;
+      run = function () { if (typeof api.play === 'function') api.play(); };
     }
-    if (!api.manual) {
-      var label = api.label || 'Run again';
+    if (v.caption) foot.appendChild(h('p', 'pj-cap', v.caption));
+    if (!manual) {
       var btn = h('button', 'pj-replay', null, { type: 'button' });
-      btn.appendChild(icon(label === 'Play' ? ICON.play : ICON.replay));
+      btn.appendChild(icon(isPlay ? ICON.play : ICON.replay));
       btn.appendChild(h('span', null, label));
       btn.addEventListener('click', run);
       foot.appendChild(btn);
     }
-    panel.appendChild(body); panel.appendChild(foot);
-    return { panel: panel, start: api.manual ? null : run };
+    return {
+      panel: panel,
+      start: (internal && manual) ? null : run,
+      stop: function () { ctx.clear(); }
+    };
+  }
+
+  function buildHow(p, compact) {
+    var inner = h('div', 'pj-how-in');
+    inner.appendChild(h('p', 'pj-how-p', p.how));
+    var les = h('p', 'pj-lesson');
+    les.appendChild(h('span', 'pj-lesson-l', tr('lesson', 'Lesson')));
+    les.appendChild(h('span', 'pj-lesson-t', p.lesson));
+    inner.appendChild(les);
+    if (p.stack && p.stack.length) {
+      var st = h('div', 'pj-stack');
+      st.appendChild(h('span', 'pj-stack-l', tr('stack', 'Stack')));
+      var u = h('ul', 'pj-stack-ul');
+      p.stack.forEach(function (t) { var li = h('li'); li.appendChild(h('span', 'chip pj-chip-s', t)); u.appendChild(li); });
+      st.appendChild(u); inner.appendChild(st);
+    }
+    if (compact) {
+      var wrap = h('div', 'pj-how pj-how-static');
+      wrap.appendChild(h('p', 'pj-how-h', tr('howItWorks', 'How it works')));
+      wrap.appendChild(inner);
+      return wrap;
+    }
+    var det = h('details', 'pj-how');
+    det.appendChild(h('summary', null, tr('howItWorks', 'How it works')));
+    det.appendChild(inner);
+    return det;
   }
 
   /* ---------- page ---------- */
   var intro = AK.projectsIntro || {};
   var head = h('header', 'pj-head');
-  head.appendChild(h('p', 'label', '03 / recent work'));
+  head.appendChild(h('p', 'label', '04 / ' + tr('labelProjects', 'recent work')));
   head.appendChild(h('h2', 'pj-h2', intro.title, { id: 'projects-title' }));
   if (intro.body) head.appendChild(h('p', 'pj-intro', intro.body));
   root.appendChild(head);
@@ -515,47 +568,59 @@
     }, { threshold: [0.25, 0.5, 0.75] });
   }
 
+  function setOpen(c, open) {
+    if (!c.compact || c.open === open) return;
+    c.open = open;
+    c.btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    c.btnLabel.textContent = open ? tr('close', 'Close') : tr('open', 'Open');
+    c.more.hidden = !open;
+    c.el.classList.toggle('pj-expanded', open);
+    if (open) {
+      if (!c.built) {
+        c.built = true;
+        try { c.mv = mountViz(c.p, c.more); } catch (err) { if (window.console) console.warn('projects: viz failed for ' + c.p.id, err); }
+        if (c.mv) c.more.insertBefore(c.mv.panel, c.more.firstChild);
+        c.more.appendChild(buildHow(c.p, true));
+      }
+      if (c.mv && c.mv.start) requestAnimationFrame(function () { try { c.mv.start(); } catch (err) {} });
+    } else if (c.mv && c.mv.stop) c.mv.stop();
+  }
+
   var cards = AK.projects.map(function (p, idx) {
-    var art = h('article', 'card pj-card', null, { 'aria-labelledby': 'pj-t-' + p.id });
+    var compact = p.featured === false;
+    var art = h('article', 'card pj-card' + (compact ? ' pj-compact' : ''), null, { id: 'p-' + p.id, 'aria-labelledby': 'pj-t-' + p.id });
+    var c = { el: art, tags: p.tags || [], p: p, compact: compact, open: false, built: false };
     try {
       var meta = h('div', 'pj-meta');
       (p.tags || []).forEach(function (t) {
-        var c = h('span', 'chip', tagLabel(t)); c.setAttribute('data-tag', t); meta.appendChild(c);
+        var ch = h('span', 'chip', tagLabel(t)); ch.setAttribute('data-tag', t); meta.appendChild(ch);
       });
       if (p.status) meta.appendChild(h('span', 'pj-status', p.status));
       art.appendChild(meta);
       art.appendChild(h('h3', 'pj-title', p.title, { id: 'pj-t-' + p.id }));
       art.appendChild(h('p', 'pj-one', p.oneLiner));
-      try {
-        var mv = mountViz(p);
-        if (mv) {
-          art.appendChild(mv.panel);
-          if (mv.start) {
-            art.__pjStart = mv.start;
-            if (io) io.observe(mv.panel); else setTimeout(mv.start, 300 + idx * 100);
+      if (compact) {
+        var more = h('div', 'pj-more', null, { id: 'pj-more-' + p.id });
+        more.hidden = true;
+        var btn = h('button', 'pj-open', null, { type: 'button', 'aria-expanded': 'false', 'aria-controls': 'pj-more-' + p.id });
+        var bl = h('span', 'pj-open-l', tr('open', 'Open'));
+        btn.appendChild(bl); btn.appendChild(icon(ICON.chevron, 'pj-open-ic'));
+        btn.addEventListener('click', function () { setOpen(c, !c.open); });
+        art.appendChild(btn); art.appendChild(more);
+        c.btn = btn; c.btnLabel = bl; c.more = more;
+      } else {
+        try {
+          var mv = mountViz(p, art);
+          if (mv && mv.start) {
             mv.panel.__pjStart = mv.start;
+            if (io) io.observe(mv.panel); else setTimeout(mv.start, 300 + idx * 100);
           }
-        }
-      } catch (err) { if (window.console) console.warn('projects: viz failed for ' + p.id, err); }
-      var det = h('details', 'pj-how');
-      det.appendChild(h('summary', null, 'How it works'));
-      var inner = h('div', 'pj-how-in');
-      inner.appendChild(h('p', 'pj-how-p', p.how));
-      var les = h('p', 'pj-lesson');
-      les.appendChild(h('span', 'pj-lesson-l', 'Lesson'));
-      les.appendChild(h('span', 'pj-lesson-t', p.lesson));
-      inner.appendChild(les);
-      if (p.stack && p.stack.length) {
-        var st = h('div', 'pj-stack');
-        st.appendChild(h('span', 'pj-stack-l', 'Stack'));
-        var u = h('ul', 'pj-stack-ul');
-        p.stack.forEach(function (t) { var li = h('li'); li.appendChild(h('span', 'chip pj-chip-s', t)); u.appendChild(li); });
-        st.appendChild(u); inner.appendChild(st);
+        } catch (err) { if (window.console) console.warn('projects: viz failed for ' + p.id, err); }
+        art.appendChild(buildHow(p, false));
       }
-      det.appendChild(inner); art.appendChild(det);
     } catch (err) { if (window.console) console.warn('projects: card failed for ' + p.id, err); }
     grid.appendChild(art);
-    return { el: art, tags: p.tags || [] };
+    return c;
   });
 
   var foot = h('p', 'pj-disclaimer', intro.disclaimer || '');
@@ -580,13 +645,31 @@
         setTimeout(function () { if (e.classList.contains('pj-out')) e.hidden = true; }, 220);
       }
     });
-    count.textContent = shown + ' of ' + cards.length;
+    count.textContent = tr('ofCount', '{n} of {total}', { n: shown, total: cards.length });
   }
-  [{ id: 'all', label: 'All' }].concat(AK.themes || []).forEach(function (t) {
+  [{ id: 'all', label: tr('all', 'All') }].concat(AK.themes || []).forEach(function (t) {
     var b = h('button', 'chip', t.label, { type: 'button', 'aria-pressed': t.id === 'all' ? 'true' : 'false' });
     if (t.id !== 'all') b.setAttribute('data-tag', t.id);
     b.addEventListener('click', function () { applyFilter(t.id); });
     filters.appendChild(b); chips.push({ id: t.id, b: b });
   });
   applyFilter('all');
+
+  /* deep link: #p-<id> scrolls to the card and opens it if compact */
+  function goHash() {
+    var m = /^#p-(.+)$/.exec(location.hash || '');
+    if (!m) return;
+    var id; try { id = decodeURIComponent(m[1]); } catch (e) { return; }
+    var c = null;
+    cards.forEach(function (x) { if (x.p.id === id) c = x; });
+    if (!c) return;
+    if (current !== 'all' && c.tags.indexOf(current) < 0) applyFilter('all');
+    c.el.hidden = false; c.el.classList.remove('pj-out');
+    setOpen(c, true);
+    setTimeout(function () {
+      try { c.el.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' }); } catch (e) { c.el.scrollIntoView(); }
+    }, 120);
+  }
+  goHash();
+  window.addEventListener('hashchange', goHash);
 })();
