@@ -21,26 +21,22 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/viz-more.css">
 </head>
 <body>
-<a class="skip sr-only" href="#approach">Skip to content</a>
+<a class="skip sr-only" id="skip-link" href="#approach"></a>
 
 <header class="topbar">
   <div class="wrap topbar__in">
-    <a class="brand" href="#top" aria-label="Akshay Kanhere, top of page">
+    <a class="brand" id="brand" href="#top">
       <img class="brand__mark" src="assets/mark.svg" alt="" width="28" height="28">
-      <span class="brand__name" id="brand-name">Akshay Kanhere</span>
+      <span class="brand__name" id="brand-name"></span>
     </a>
-    <nav class="topnav" aria-label="Sections">
-      <a href="#approach">Say hi</a>
-      <a href="#journey">Journey</a>
-      <a href="#projects">Projects</a>
-      <a href="#notes">Field notes</a>
-      <a href="#toolbox">Toolbox</a>
-      <a href="#personal">Personal</a>
-      <a href="#connect">Connect</a>
-    </nav>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme"></button>
+    <nav class="topnav" id="topnav"></nav>
+    <div class="topbar__tools">
+      <div class="lang" id="lang-switch" role="group"></div>
+      <button class="theme-toggle" id="theme-toggle" type="button"></button>
+    </div>
   </div>
 </header>
 
@@ -49,27 +45,7 @@
   <section id="top" class="hero reveal" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__text" id="hero-text"></div>
-      <figure class="hero__art" id="hero-art">
-        <svg class="avatar" viewBox="0 0 120 120" role="img" aria-label="A smiling coral cog with an AK badge">
-          <rect width="120" height="120" rx="26" fill="#FFF4E8"/>
-          <g class="rays">
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(0 60 52)"/>
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(45 60 52)"/>
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(90 60 52)"/>
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(135 60 52)"/>
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(180 60 52)"/>
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(225 60 52)"/>
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(270 60 52)"/>
-            <rect x="53" y="6" width="14" height="22" rx="5" fill="#F0643C" transform="rotate(315 60 52)"/>
-          </g>
-          <circle cx="60" cy="52" r="29" fill="#F0643C"/>
-          <path d="M46 48 q5 -6 10 0 M64 48 q5 -6 10 0" stroke="#fff" stroke-width="3.6" fill="none" stroke-linecap="round"/>
-          <path d="M47 58 q13 13 26 0" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <rect x="37" y="90" width="46" height="24" rx="12" fill="#1F2430"/>
-          <text x="60" y="107.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15" fill="#fff">AK</text>
-        </svg>
-        <figcaption class="mark-cap" id="mark-cap"></figcaption>
-      </figure>
+      <figure class="hero__art" id="hero-art"></figure>
     </div>
   </section>
 
@@ -81,7 +57,11 @@
     <div class="wrap" id="journey-root"></div>
   </section>
 
-  <section id="projects" class="sec" aria-label="Projects">
+  <section id="work" class="sec sec--band reveal" aria-labelledby="work-title">
+    <div class="wrap" id="work-root"></div>
+  </section>
+
+  <section id="projects" class="sec">
     <div class="wrap"><div id="projects-root"></div></div>
   </section>
 
@@ -113,8 +93,12 @@
 </noscript>
 
 <script src="js/data.js"></script>
+<script src="js/data.fr.js"></script>
+<script src="js/data.de.js"></script>
+<script src="js/lang.js"></script>
 <script src="js/qr.js"></script>
 <script src="js/site.js"></script>
+<script src="js/viz-more.js"></script>
 <script src="js/projects.js"></script>
 </body>
 </html>
