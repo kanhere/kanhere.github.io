@@ -623,9 +623,13 @@ window.AK_LANGS.en = {
   toolbox: {
     title: "Toolbox",
     groups: [
-      { label: "Agents", items: ["Claude", "Claude Code", "Skills and plugins", "MCP"] },
-      { label: "Automation", items: ["n8n", "Airtable automations", "GitHub Actions", "Python"] },
-      { label: "Data and CRM", items: ["Airtable", "Salesforce", "Marketing Cloud", "Databricks", "SQL"] }
+      { label: "Agents and AI", items: ["Claude", "Claude Code", "Skills and plugins", "MCP", "AI agents", "Prompt engineering"] },
+      { label: "Automation", items: ["n8n", "Airtable automations", "Workflow automation", "Low-code", "GitHub Actions", "REST APIs"] },
+      { label: "Data and CRM", items: ["Airtable", "Salesforce", "Salesforce Lightning", "Marketing Cloud", "Data Cloud", "Databricks", "Data quality", "Data governance"] },
+      { label: "Languages", items: ["Python", "SQL", "JavaScript", "Java"] },
+      { label: "Quality", items: ["Test design", "Test automation", "Selenium", "Scenario testing"] },
+      { label: "Product and operations", items: ["Product management", "Business analysis", "Technical operations", "Process improvement"] },
+      { label: "Where I started", items: ["COBOL", "JCL", "DB2"] }
     ]
   },
 

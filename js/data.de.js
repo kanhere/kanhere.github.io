@@ -488,9 +488,13 @@ window.AK_LANGS.de = {
   toolbox: {
     title: "Toolbox",
     groups: [
-      { label: "Agenten", items: ["Claude", "Claude Code", "Skills und Plugins", "MCP"] },
-      { label: "Automatisierung", items: ["n8n", "Airtable-Automatisierungen", "GitHub Actions", "Python"] },
-      { label: "Daten und CRM", items: ["Airtable", "Salesforce", "Marketing Cloud", "Databricks", "SQL"] }
+      { label: "Agenten und KI", items: ["Claude", "Claude Code", "Skills und Plugins", "MCP", "KI-Agenten", "Prompt Engineering"] },
+      { label: "Automatisierung", items: ["n8n", "Airtable-Automationen", "Workflow-Automatisierung", "Low-Code", "GitHub Actions", "REST-APIs"] },
+      { label: "Daten und CRM", items: ["Airtable", "Salesforce", "Salesforce Lightning", "Marketing Cloud", "Data Cloud", "Databricks", "Datenqualität", "Data Governance"] },
+      { label: "Sprachen", items: ["Python", "SQL", "JavaScript", "Java"] },
+      { label: "Qualität", items: ["Testdesign", "Testautomatisierung", "Selenium", "Szenariotests"] },
+      { label: "Produkt und Betrieb", items: ["Produktmanagement", "Business-Analyse", "Technical Operations", "Prozessverbesserung"] },
+      { label: "Wo ich angefangen habe", items: ["COBOL", "JCL", "DB2"] }
     ]
   },
 
