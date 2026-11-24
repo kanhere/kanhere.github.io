@@ -10,16 +10,16 @@ window.AK_LANGS.fr = {
     team: "UpLink, Forum économique mondial",
     place: "Genève",
     intro: [
-      "Ingénieur informatique pur et dur, originaire de Mumbai. J'ai débuté comme développeur mainframe, puis passé neuf ans en ingénierie qualité sur des programmes Salesforce pour des clients de sociétés de services informatiques et de conseil, jusqu'à diriger des équipes de test.",
-      "Aujourd'hui, je m'occupe des opérations technologiques d'UpLink, la plateforme d'innovation ouverte du Forum économique mondial, où je transforme les corvées de la semaine en automatisations et en agents."
+      "Ingénieur informatique pur et dur, originaire de Mumbai. Je construis des agents IA et des automatisations pour des équipes métier. Au quotidien, je travaille aux côtés de l'équipe d'UpLink, la plateforme d'innovation ouverte du Forum économique mondial, et je résous leurs problèmes opérationnels grâce à la technologie.",
+      "Je connectais des systèmes à la main bien avant MCP, en lisant la documentation des API. Avec les agents IA et MCP, je fais aujourd'hui le même travail à grande échelle. Les données sont l'autre moitié de mon travail, des migrations sur Salesforce et mainframe aux jeux de données construits à partir de fournisseurs de données et du web ouvert. Mon passé en QA garde le tout fiable."
     ],
     askMeAbout: [
-      "Des agents pour les équipes opérationnelles",
+      "Des agents IA pour les équipes métier",
       "Skills et plugins Claude",
       "Connecteurs MCP",
       "Agents en lecture seule",
-      "Workflows n8n",
-      "Synchronisation Airtable et Salesforce"
+      "Workflows n8n et Clay",
+      "Données Salesforce et Airtable"
     ],
     hereToLearn: ["Evals", "Agents en production", "Comment vous relisez le code écrit par un agent"]
   },
@@ -49,8 +49,8 @@ window.AK_LANGS.fr = {
         out: [
           "{",
           "  \"name\": \"akshay\",",
-          "  \"description\": \"Transforme les corvées hebdomadaires en automatisations et en agents\",",
-          "  \"tools\": [\"airtable\", \"n8n\", \"salesforce\", \"claude\", \"python\"],",
+          "  \"description\": \"Construit des agents IA et des automatisations pour des équipes métier\",",
+          "  \"tools\": [\"salesforce\", \"airtable\", \"n8n\", \"clay\", \"claude\", \"python\"],",
           "  \"input_modes\": [\"un vrai problème\", \"un coin tranquille\"],",
           "  \"output_modes\": [\"une automatisation qui tourne\", \"un avis honnête\"],",
           "  \"rate_limits\": { \"small_talk\": \"faible\", \"deep_dives\": \"illimité\" },",
@@ -110,28 +110,29 @@ window.AK_LANGS.fr = {
         tags: []
       },
       {
-        body: "J'ai commencé comme développeur mainframe (DB2, CICS), puis je suis passé à l'assurance qualité Salesforce : comprendre comment les choses cassent avant les utilisateurs.",
+        sub: "iGATE, aujourd'hui Capgemini",
+        body: "Entré comme ingénieur logiciel. J'ai commencé comme développeur mainframe sur des programmes de gestion de flottes (DB2, CICS), puis je suis passé à l'assurance qualité Salesforce : comprendre comment les choses cassent avant les utilisateurs.",
         tags: ["Mainframe", "QA Salesforce"]
       },
       {
         place: "Bengaluru, Mumbai, Pune",
-        body: "Entré comme analyste en technologies d'affaires, parti consultant senior. Six ans de qualité sur des programmes clients : tests Salesforce, tests de scénarios, puis direction d'équipes de test. Trois villes au passage.",
-        tags: ["Salesforce", "Test lead", "Gestion de la qualité"]
+        body: "Entré comme analyste en technologies d'affaires, parti consultant senior. Développement mainframe, QA Salesforce et analyse métier Salesforce sur des programmes de santé et de gestion de partenaires, puis direction d'une équipe QA. Trois villes au passage.",
+        tags: ["QA Salesforce", "Analyse métier", "Responsable QA"]
       },
       {
         when: "Janvier 2024",
         place: "Genève",
         title: "Arrivée au Forum économique mondial",
-        sub: "Opérations technologiques et produit digital, UpLink",
-        body: "De tester les systèmes des autres à en être responsable : les données, les intégrations et les outils du quotidien de l'équipe. Basé à Genève.",
-        tags: ["Airtable", "Salesforce", "Intégrations"]
+        sub: "Gestion de produit, puis opérations technologiques, UpLink",
+        body: "J'ai débuté en gestion de produit pour UpLink, la plateforme d'innovation ouverte du Forum pour les jeunes entreprises, en travaillant avec des prestataires pour livrer le produit. Puis je suis passé aux opérations technologiques. Basé à Genève.",
+        tags: ["Gestion de produit", "Opérations technologiques"]
       },
       {
         year: "Auj.",
         place: "Genève",
-        sub: "UpLink, au sein de l'équipe technologique du Forum",
-        body: "L'essentiel de ma semaine, c'est désormais l'automatisation et les agents : des skills Claude que l'équipe partage, des workflows n8n, et les contrôles qui les gardent honnêtes.",
-        tags: ["Agents", "Automatisation", "Données"]
+        sub: "UpLink et l'équipe technologique élargie du Forum",
+        body: "Je construis les agents IA et les automatisations sur lesquels l'équipe s'appuie, en connectant Salesforce, Marketing Cloud, Airtable, n8n, Clay, Databricks, Jira et Confluence avec Python et Claude. J'administre aussi Salesforce, Airtable, n8n et Clay. Les workflows se documentent eux-mêmes et sont partagés dans l'équipe.",
+        tags: ["Agents IA", "Automatisation", "Données"]
       }
     ],
     certsLabel: "Cinq certifications Salesforce en chemin",
@@ -140,12 +141,12 @@ window.AK_LANGS.fr = {
 
   howIWork: {
     title: "Ma façon de travailler",
-    body: "La même boucle, quel que soit l'outil.",
+    body: "La même boucle, quel que soit l'outil. Je préfère montrer plutôt qu'expliquer.",
     steps: [
       { label: "Repérer", line: "Trouver la corvée que quelqu'un fait à la main chaque semaine.", example: "Exemple : deux jours à copier des enregistrements dans des diapositives avant chaque journée de jury." },
       { label: "Cartographier", line: "Lire le système avant d'y toucher. En lecture seule d'abord.", example: "Exemple : un agent lit les schémas, les automatisations et l'historique d'exécution, et ne change rien." },
-      { label: "Construire", line: "Le plus petit outil qui supprime la corvée : un workflow, un script ou un skill.", example: "Exemple : un skill qui remplit le modèle de diapositives directement depuis la base de données." },
-      { label: "Contrôler", line: "Une seconde passe qui ne peut rien modifier audite la première.", example: "Exemple : un skill d'audit compare chaque diapositive à son enregistrement source et liste les écarts." },
+      { label: "Construire", line: "Le plus petit outil qui supprime la corvée, montré tôt : une preuve de concept, une démo en direct, un tableau de bord ou une page explicative.", example: "Exemple : un skill qui remplit le modèle de diapositives directement depuis la base de données." },
+      { label: "Contrôler", line: "Une seconde passe qui ne peut rien modifier audite la première, et les chiffres qui prouvent que ça marche sont collectés automatiquement.", example: "Exemple : un skill d'audit compare chaque diapositive à son enregistrement source et liste les écarts." },
       { label: "Transmettre", line: "Une doc, un responsable et un interrupteur. Ensuite, ça appartient à l'équipe.", example: "Exemple : une page de mode d'emploi, un responsable nommé, et un flag qui l'éteint sans déploiement." }
     ]
   },
@@ -165,12 +166,12 @@ window.AK_LANGS.fr = {
 
   projects: [
     {
-      title: "Pipeline de recherche de leads",
+      title: "Pipeline de leads go-to-market",
       status: "En production",
-      oneLiner: "Trouve les entreprises qui correspondent à un défi d'innovation avant qu'elles ne candidatent.",
-      how: "Un cahier des charges du défi entre. Une recherche documentaire par IA propose des candidats avec leurs sources, les doublons sont supprimés, des bases d'entreprises et le CRM comblent les manques, et un score d'adéquation classe ce qui reste. Une personne vérifie chaque lead avant toute prise de contact.",
+      oneLiner: "Trouve les entreprises qui correspondent à un défi d'innovation : recherchées par IA, dédoublonnées et notées, avec une personne qui approuve chaque lead avant la prise de contact.",
+      how: "Un cahier des charges du défi entre. Une recherche par IA sur Clay et n8n propose des candidats avec leurs sources, les doublons sont supprimés, des bases d'entreprises et le CRM comblent les manques, et un score d'adéquation classe ce qui reste. Une personne approuve chaque lead avant toute prise de contact.",
       lesson: "Le contrôle humain reste. Le travail de l'agent est de le rendre rapide.",
-      stack: ["Airtable", "n8n", "Claude", "Salesforce"],
+      stack: ["Clay", "n8n", "Airtable", "Claude", "Salesforce"],
       viz: {
         caption: "Une exécution, chiffres illustratifs",
         stages: [
@@ -185,9 +186,9 @@ window.AK_LANGS.fr = {
       }
     },
     {
-      title: "Des booklets de pitch à partir d'une base de données",
+      title: "Des skills Claude réutilisables : booklets de pitch",
       status: "En production, partagé avec l'équipe",
-      oneLiner: "Une présentation pour une journée de jury, générée depuis les données sources puis auditée par rapport à elles.",
+      oneLiner: "Des skills que toute l'équipe utilise. L'un construit un booklet de pitch à partir de la base de données, et un second agent, en lecture seule, l'audite.",
       how: "Un skill Claude lit les enregistrements présélectionnés, remplit le modèle de diapositives et place chaque logo par enregistrement. Un second skill, en lecture seule, audite ensuite la présentation terminée par rapport à la source et signale ce qui ne correspond pas. Le même modèle produit maintenant un booklet des lauréats et un booklet des participants à un événement.",
       lesson: "Générer, puis auditer avec une passe distincte qui ne peut rien modifier.",
       stack: ["Skills Claude", "Airtable", "Python", "PowerPoint"],
@@ -206,9 +207,9 @@ window.AK_LANGS.fr = {
       }
     },
     {
-      title: "Un agent d'aide en lecture seule pour les collègues",
+      title: "Un agent d'aide en lecture seule dans Slack",
       status: "Pilote en démarrage",
-      oneLiner: "Répond aux questions qu'on me pose chaque semaine, avec mon contexte. Il lit et vérifie. Il ne modifie jamais les données.",
+      oneLiner: "Lecture seule par conception : il vérifie les systèmes et donne aux collègues les étapes à suivre. Il ne modifie jamais les données.",
       how: "Packagé comme plugin Claude, avec des playbooks pour les questions récurrentes et des outils en lecture seule. Il consulte l'état actuel, explique ce qu'il a trouvé et rend les étapes à suivre, pour que la personne fasse la modification avec son propre compte.",
       lesson: "Les agents consultent. Les personnes modifient, donc chaque modification garde un responsable.",
       stack: ["Plugin Claude", "Slack", "Airtable"],
@@ -245,26 +246,53 @@ window.AK_LANGS.fr = {
       }
     },
     {
-      title: "Feature flags et kill switches",
-      status: "En exploration",
-      oneLiner: "Livrer derrière un flag : éteint, activé pour un groupe pilote, activé pour tous, et un interrupteur qui prime sur tout le reste.",
-      how: "J'aide l'équipe technologique au sens large à examiner comment les fonctionnalités sont livrées derrière des flags, comment un groupe pilote les reçoit en premier, et comment un kill switch coupe une fonctionnalité sans déploiement.",
-      lesson: "Le kill switch doit l'emporter sur toutes les autres règles.",
-      stack: ["Feature flags", "Livraison progressive"],
+      title: "Des agents planifiés qui signalent ce qui a changé",
+      status: "En production",
+      oneLiner: "Ils suivent ce qui a changé dans nos systèmes et qui l'a changé, mettent à jour la doc et envoient une synthèse hebdomadaire par e-mail.",
+      how: "Chacun est une tâche planifiée avec un petit fichier de profil qui dit ce qui compte. L'agent collecte, filtre et rédige un court e-mail, signé par le rouage. D'autres rapportent ce qu'ont fait les campagnes d'e-mails et quels événements tech valent le déplacement.",
+      lesson: "Envoyez des comptages et des exceptions. Personne ne lit un journal par e-mail.",
+      stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
       viz: {
-        caption: "Essayez : qui voit la fonctionnalité ?"
+        caption: "Une semaine d'exécutions, horaires illustratifs",
+        days: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+        runs: [
+          { label: "Digest admin des workflows" },
+          { label: "Alerte événements tech" },
+          { label: "Synthèse de l'activité e-mail" },
+          { label: "Rapport de suivi du sourcing" }
+        ]
       }
     },
     {
-      title: "Suivi de la consommation de crédits IA",
+      title: "Suivi des coûts de l'IA",
       status: "En production",
-      oneLiner: "Un journal d'audit devient une table d'usage quotidienne, un rapport mensuel et trois alertes.",
-      how: "Un workflow planifié récupère le journal d'audit chaque jour, regroupe les événements en comptages par fonctionnalité et par personne, et les écrit dans une base surmontée d'un tableau de bord. Des alertes se déclenchent quand une journée dépasse largement la normale.",
+      oneLiner: "Un tableau de bord et des alertes, pour que les dépenses d'IA soient visibles avant de surprendre qui que ce soit.",
+      how: "Un workflow planifié récupère le journal d'audit chaque jour, regroupe les événements en comptages par fonctionnalité et par personne, et les écrit dans une base surmontée d'un tableau de bord et d'un rapport mensuel. Des alertes se déclenchent quand une journée dépasse largement la normale.",
       lesson: "Stockez des comptages, pas des journaux bruts. Le rapport n'a besoin que des comptages.",
       stack: ["n8n", "Airtable"],
       viz: {
         caption: "Usage quotidien et ligne d'alerte, unités illustratives",
         unit: "unités"
+      }
+    },
+    {
+      title: "Des évaluations de fournisseurs menées comme des expériences",
+      status: "Terminé",
+      oneLiner: "Des fournisseurs de données et des outils comparés sur le coût mesuré par résultat, avant tout achat.",
+      how: "Chaque test a sa ligne de réussite écrite d'avance : couverture, exactitude par rapport à des enregistrements fiables, coût par résultat utile, et contrôle sur un échantillon que l'outil n'a pas vu pendant la configuration. Un résultat récent : un verdict partagé, utiliser le nouvel outil pour certaines tâches, garder l'existant pour d'autres.",
+      lesson: "Écrivez la ligne de réussite avant de lancer le test.",
+      stack: ["Python", "Airtable", "Evals"],
+      viz: {
+        caption: "Cinq tests face à leur ligne de réussite, scores illustratifs",
+        tests: [
+          { label: "Couverture" },
+          { label: "Exactitude par rapport aux données fiables" },
+          { label: "Coût par résultat utile" },
+          { label: "Contrôle hors échantillon" },
+          { label: "S'intègre au workflow" }
+        ],
+        passLabel: "ligne de réussite",
+        verdict: "Verdict partagé : bon pour certaines tâches, pas pour d'autres."
       }
     },
     {
@@ -284,18 +312,6 @@ window.AK_LANGS.fr = {
           { label: "Tableau", note: "Mascotte et dessins, tracés par du code" },
           { label: "Sous-titres", note: "Incrustés, avec une musique douce" }
         ]
-      }
-    },
-    {
-      title: "Signaux qualité : smoke tests et tableau de bord QA",
-      status: "Prototype et déploiement",
-      oneLiner: "Une pull request lance une suite de smoke tests dans un autre dépôt. Le résultat revient dans le chat.",
-      how: "Un workflow du dépôt produit déclenche le dépôt de tests, attend, compte les résultats dans le rapport et publie une ligne dans un canal de discussion. Par ailleurs, les données du gestionnaire de tickets arrivent dans des tables lakehouse et alimentent un tableau de bord QA.",
-      lesson: "Un run vert n'est pas une preuve. Comptez le rapport.",
-      stack: ["GitHub Actions", "Playwright", "Slack", "Jira", "Databricks"],
-      viz: {
-        caption: "Un run de smoke tests, illustratif",
-        message: "smoke · web · 21 réussis · 2 instables · 1 échoué"
       }
     },
     {
@@ -348,26 +364,6 @@ window.AK_LANGS.fr = {
       }
     },
     {
-      title: "Évaluer un outil de données comme une suite de tests",
-      status: "Terminé",
-      oneLiner: "Avant d'acheter, cinq tests mesurés ont décidé pour quoi un nouvel outil devait ou ne devait pas servir.",
-      how: "Chaque test avait sa ligne de réussite écrite d'avance : couverture, exactitude par rapport à des enregistrements fiables, coût par résultat utile, et contrôle sur un échantillon que l'outil n'avait pas vu pendant la configuration. Le résultat : un verdict partagé, à utiliser pour certaines tâches, à garder l'existant pour d'autres.",
-      lesson: "Écrivez la ligne de réussite avant de lancer le test.",
-      stack: ["Python", "Airtable", "Evals"],
-      viz: {
-        caption: "Cinq tests face à leur ligne de réussite, scores illustratifs",
-        tests: [
-          { label: "Couverture" },
-          { label: "Exactitude par rapport aux données fiables" },
-          { label: "Coût par résultat utile" },
-          { label: "Contrôle hors échantillon" },
-          { label: "S'intègre au workflow" }
-        ],
-        passLabel: "ligne de réussite",
-        verdict: "Verdict partagé : bon pour certaines tâches, pas pour d'autres."
-      }
-    },
-    {
       title: "Un inventaire des workflows avec leurs responsables",
       status: "Terminé",
       oneLiner: "Chaque workflow reçoit un statut, un responsable et une étiquette d'avertissement s'il écrit en production.",
@@ -387,21 +383,26 @@ window.AK_LANGS.fr = {
       }
     },
     {
-      title: "Des agents planifiés qui m'envoient des e-mails",
-      status: "En production",
-      oneLiner: "Chaque semaine : les événements à ne pas manquer, ce qu'ont fait les campagnes d'e-mails, et ce que mes workflows ont fabriqué.",
-      how: "Chacun est une tâche planifiée avec un petit fichier de profil qui dit ce qui compte. L'agent collecte, filtre et rédige un court e-mail, signé par le rouage. L'un d'eux guette les événements comme celui-ci.",
-      lesson: "Envoyez des comptages et des exceptions. Personne ne lit un journal par e-mail.",
-      stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
+      title: "Signaux qualité : smoke tests et tableau de bord QA",
+      status: "Prototype et déploiement",
+      oneLiner: "Une pull request lance une suite de smoke tests dans un autre dépôt. Le résultat revient dans le chat.",
+      how: "Un workflow du dépôt produit déclenche le dépôt de tests, attend, compte les résultats dans le rapport et publie une ligne dans un canal de discussion. Par ailleurs, les données du gestionnaire de tickets arrivent dans des tables lakehouse et alimentent un tableau de bord QA.",
+      lesson: "Un run vert n'est pas une preuve. Comptez le rapport.",
+      stack: ["GitHub Actions", "Playwright", "Slack", "Jira", "Databricks"],
       viz: {
-        caption: "Une semaine d'exécutions, horaires illustratifs",
-        days: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
-        runs: [
-          { label: "Digest admin des workflows" },
-          { label: "Alerte événements tech" },
-          { label: "Synthèse de l'activité e-mail" },
-          { label: "Rapport de suivi du sourcing" }
-        ]
+        caption: "Un run de smoke tests, illustratif",
+        message: "smoke · web · 21 réussis · 2 instables · 1 échoué"
+      }
+    },
+    {
+      title: "Feature flags et kill switches",
+      status: "En exploration",
+      oneLiner: "Livrer derrière un flag : éteint, activé pour un groupe pilote, activé pour tous, et un interrupteur qui prime sur tout le reste.",
+      how: "J'aide l'équipe technologique au sens large à examiner comment les fonctionnalités sont livrées derrière des flags, comment un groupe pilote les reçoit en premier, et comment un kill switch coupe une fonctionnalité sans déploiement.",
+      lesson: "Le kill switch doit l'emporter sur toutes les autres règles.",
+      stack: ["Feature flags", "Livraison progressive"],
+      viz: {
+        caption: "Essayez : qui voit la fonctionnalité ?"
       }
     },
     {
@@ -489,12 +490,12 @@ window.AK_LANGS.fr = {
   toolbox: {
     title: "Boîte à outils",
     groups: [
-      { label: "Agents et IA", items: ["Claude", "Claude Code", "Skills et plugins", "MCP", "Agents IA", "Prompt engineering"] },
-      { label: "Automatisation", items: ["n8n", "Automatisations Airtable", "Automatisation de workflows", "Low-code", "GitHub Actions", "API REST"] },
-      { label: "Données et CRM", items: ["Airtable", "Salesforce", "Salesforce Lightning", "Marketing Cloud", "Data Cloud", "Databricks", "Qualité des données", "Gouvernance des données"] },
+      { label: "Agents et IA", items: ["Agents IA", "Claude", "Claude Code", "Skills et plugins", "MCP", "Prompt engineering"] },
+      { label: "Automatisation", items: ["Automatisation de workflows", "n8n", "Clay", "Automatisations Airtable", "API REST", "GitHub Actions"] },
+      { label: "Données et CRM", items: ["Salesforce", "Marketing Cloud", "Data Cloud", "Airtable", "Databricks", "Gestion des données", "Qualité des données", "Gouvernance des données"] },
       { label: "Langages", items: ["Python", "SQL", "JavaScript", "Java"] },
       { label: "Qualité", items: ["Conception de tests", "Automatisation des tests", "Selenium", "Tests de scénarios"] },
-      { label: "Produit et opérations", items: ["Gestion de produit", "Analyse métier", "Opérations techniques", "Amélioration des processus"] },
+      { label: "Produit et opérations", items: ["Gestion de produit", "Analyse métier", "Opérations techniques", "Jira", "Confluence"] },
       { label: "Là où j'ai commencé", items: ["COBOL", "JCL", "DB2"] }
     ]
   },

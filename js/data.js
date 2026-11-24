@@ -23,16 +23,16 @@ window.AK_LANGS.en = {
     team: "UpLink, World Economic Forum",
     place: "Geneva",
     intro: [
-      "Hardcore computer engineer from Mumbai. I began as a mainframe developer, then spent nine years in quality engineering on Salesforce programmes for clients of IT services and consulting firms, and ended up leading test teams.",
-      "Today I look after technology operations for UpLink, the World Economic Forum's open innovation platform, where I turn weekly chores into automations and agents."
+      "Hardcore computer engineer from Mumbai. I build AI agents and automations for business teams. Day to day I sit with the team at UpLink, the World Economic Forum's open innovation platform, and solve their operational problems with technology.",
+      "I was wiring systems together by hand long before MCP, by reading API docs. With AI agents and MCP I now do the same work at scale. Data is the other half of my work, from migrations on Salesforce and mainframes to datasets built from data providers and the open web. My QA background keeps it all reliable."
     ],
     askMeAbout: [
-      "Agents for operations teams",
+      "AI agents for business teams",
       "Claude skills and plugins",
       "MCP connectors",
       "Read-only agents",
-      "n8n workflows",
-      "Airtable and Salesforce sync"
+      "n8n and Clay workflows",
+      "Salesforce and Airtable data"
     ],
     hereToLearn: ["Evals", "Agents in production", "How you review agent-written code"],
     linkedin: "https://www.linkedin.com/in/akshaykanhere"
@@ -70,8 +70,8 @@ window.AK_LANGS.en = {
         out: [
           "{",
           "  \"name\": \"akshay\",",
-          "  \"description\": \"Turns weekly chores into automations and agents\",",
-          "  \"tools\": [\"airtable\", \"n8n\", \"salesforce\", \"claude\", \"python\"],",
+          "  \"description\": \"Builds AI agents and automations for business teams\",",
+          "  \"tools\": [\"salesforce\", \"airtable\", \"n8n\", \"clay\", \"claude\", \"python\"],",
           "  \"input_modes\": [\"a real problem\", \"a quiet corner\"],",
           "  \"output_modes\": [\"a working automation\", \"an honest opinion\"],",
           "  \"rate_limits\": { \"small_talk\": \"low\", \"deep_dives\": \"unlimited\" },",
@@ -146,9 +146,9 @@ window.AK_LANGS.en = {
         year: "2014–17",
         place: "Mumbai",
         title: "Senior Software Engineer",
-        sub: "Capgemini",
+        sub: "iGATE, now Capgemini",
         org: "Capgemini",
-        body: "Started as a mainframe developer (DB2, CICS), then moved to Salesforce quality assurance: working out how things break before users do.",
+        body: "Joined as a software engineer. Started as a mainframe developer on fleet programmes (DB2, CICS), then moved into Salesforce QA: working out how things break before users do.",
         tags: ["Mainframe", "Salesforce QA"]
       },
       {
@@ -159,8 +159,8 @@ window.AK_LANGS.en = {
         title: "Senior Consultant",
         sub: "Deloitte",
         org: "Deloitte",
-        body: "Joined as a business technology analyst and left as a senior consultant. Six years in quality on client programmes: Salesforce testing, scenario testing, then leading test teams. Three cities along the way.",
-        tags: ["Salesforce", "Test lead", "Quality management"]
+        body: "Joined as a business technology analyst and left as a senior consultant. Mainframe development, Salesforce QA and Salesforce business analysis on healthcare and partner management programmes, then leading a QA team. Three cities along the way.",
+        tags: ["Salesforce QA", "Business analysis", "QA lead"]
       },
       {
         id: "staff",
@@ -168,9 +168,9 @@ window.AK_LANGS.en = {
         year: "2024",
         place: "Geneva",
         title: "Joined the World Economic Forum",
-        sub: "Tech operations and digital product, UpLink",
-        body: "From testing other people's systems to owning them: the data, the integrations and the day-to-day tooling of the team. Based in Geneva.",
-        tags: ["Airtable", "Salesforce", "Integrations"]
+        sub: "Product management, then technology operations, UpLink",
+        body: "Began in product management for UpLink, the Forum's open innovation platform for early-stage ventures, working with vendors to deliver the product. Then moved into technology operations. Based in Geneva.",
+        tags: ["Product management", "Technology operations"]
       },
       {
         id: "now",
@@ -178,9 +178,9 @@ window.AK_LANGS.en = {
         year: "Now",
         place: "Geneva",
         title: "Associate, Technology Operations",
-        sub: "UpLink, in the Forum's technology team",
-        body: "Most of my week is automation and agents now: Claude skills the team shares, n8n workflows, and the checks that keep them honest.",
-        tags: ["Agents", "Automation", "Data"]
+        sub: "UpLink and the Forum's wider technology team",
+        body: "I build the AI agents and automations the team runs on, connecting Salesforce, Marketing Cloud, Airtable, n8n, Clay, Databricks, Jira and Confluence with Python and Claude. I also administer Salesforce, Airtable, n8n and Clay. The workflows document themselves and are shared across the team.",
+        tags: ["AI agents", "Automation", "Data"]
       }
     ],
     certsLabel: "Five Salesforce certifications along the way",
@@ -190,12 +190,12 @@ window.AK_LANGS.en = {
   /* An interactive loop: tap a step to see what it means in practice. */
   howIWork: {
     title: "How I work",
-    body: "The same loop, whatever the tool.",
+    body: "The same loop, whatever the tool. I would rather show than tell.",
     steps: [
       { id: "spot", label: "Spot", line: "Find the chore someone does by hand every week.", example: "Example: two days of copying records into slides before every judging day." },
       { id: "map", label: "Map", line: "Read the system before touching it. Read-only first.", example: "Example: an agent reads the schemas, automations and run history, and changes nothing." },
-      { id: "build", label: "Build", line: "The smallest thing that removes the chore: a workflow, a script or a skill.", example: "Example: a skill that fills the slide template straight from the database." },
-      { id: "check", label: "Check", line: "A second pass that cannot edit audits the first.", example: "Example: an audit skill compares every slide with its source record and lists the mismatches." },
+      { id: "build", label: "Build", line: "The smallest thing that removes the chore, shown early: a proof of concept, a live demo, a dashboard or a walkthrough page.", example: "Example: a skill that fills the slide template straight from the database." },
+      { id: "check", label: "Check", line: "A second pass that cannot edit audits the first, and the numbers that prove it works are collected automatically.", example: "Example: an audit skill compares every slide with its source record and lists the mismatches." },
       { id: "hand", label: "Hand over", line: "Docs, an owner and an off switch. Then it belongs to the team.", example: "Example: a how-to page, a named owner, and a flag that turns it off without a deployment." }
     ]
   },
@@ -222,13 +222,13 @@ window.AK_LANGS.en = {
     {
       id: "lead-research",
       featured: true,
-      title: "Lead research pipeline",
+      title: "Go-to-market lead pipeline",
       tags: ["agents", "automation", "data"],
       status: "Live",
-      oneLiner: "Finds companies that fit an innovation challenge before they apply.",
-      how: "A challenge brief goes in. AI desk research proposes candidates with sources, duplicates are removed, company databases and the CRM fill the gaps, and a fit score ranks what is left. A person checks every lead before any outreach.",
+      oneLiner: "Finds companies that fit an innovation challenge: AI-researched, de-duplicated and scored, with a person approving each lead before outreach.",
+      how: "A challenge brief goes in. AI research on Clay and n8n proposes candidates with sources, duplicates are removed, company databases and the CRM fill the gaps, and a fit score ranks what is left. A person approves every lead before any outreach.",
       lesson: "The human check stays. The agent's job is to make it fast.",
-      stack: ["Airtable", "n8n", "Claude", "Salesforce"],
+      stack: ["Clay", "n8n", "Airtable", "Claude", "Salesforce"],
       viz: {
         type: "pipeline",
         caption: "One run, illustrative numbers",
@@ -246,10 +246,10 @@ window.AK_LANGS.en = {
     {
       id: "booklets",
       featured: false,
-      title: "Pitch booklets from a database",
+      title: "Reusable Claude skills: pitch booklets",
       tags: ["agents", "automation"],
       status: "Live, shared with the team",
-      oneLiner: "A slide deck for a judging day, generated from the source data and then audited against it.",
+      oneLiner: "Skills the whole team runs. One builds a pitch booklet from the database, and a second, read-only agent audits it.",
       how: "A Claude skill reads the shortlisted records, fills the slide template and places every logo by record. A second, read-only skill then audits the finished deck against the source and reports what does not match. The same pattern now builds a winners booklet and an event participant booklet.",
       lesson: "Generate, then audit with a separate pass that cannot edit.",
       stack: ["Claude skills", "Airtable", "Python", "PowerPoint"],
@@ -271,10 +271,10 @@ window.AK_LANGS.en = {
     {
       id: "team-agent",
       featured: true,
-      title: "A read-only help agent for colleagues",
+      title: "A read-only help agent in Slack",
       tags: ["agents", "quality"],
       status: "Early pilot",
-      oneLiner: "Answers the questions I get asked every week, with my context. It reads and checks. It never changes data.",
+      oneLiner: "Read-only by design: it checks the systems and hands colleagues the steps. It never changes data.",
       how: "Packaged as a Claude plugin with playbooks for the recurring questions and read-only tools. It looks up the current state, explains what it found, and hands back the steps so the person makes the change under their own login.",
       lesson: "Agents look things up. People make the change, so every edit keeps an owner.",
       stack: ["Claude plugin", "Slack", "Airtable"],
@@ -318,30 +318,35 @@ window.AK_LANGS.en = {
       }
     },
     {
-      id: "flags",
+      id: "digests",
       featured: false,
-      title: "Feature flags and kill switches",
-      tags: ["quality"],
-      status: "Exploring",
-      oneLiner: "Shipping behind a flag: off, on for a pilot group, on for everyone, and one switch that overrides all of it.",
-      how: "Helping the wider technology team look at how features are released behind flags, how a pilot group gets them first, and how a kill switch turns something off without a deployment.",
-      lesson: "The kill switch has to win over every other rule.",
-      stack: ["Feature flags", "Progressive delivery"],
+      title: "Scheduled agents that report what changed",
+      tags: ["agents", "automation"],
+      status: "Live",
+      oneLiner: "They track what changed in our systems and who changed it, update the docs and email a weekly summary.",
+      how: "Each one is a scheduled task with a small profile file that says what matters. The agent gathers, filters and writes a short email, signed by the cog. Others report what the email campaigns did and which tech events are worth attending.",
+      lesson: "Send counts and exceptions. Nobody reads a log by email.",
+      stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
       viz: {
-        type: "flags",
-        caption: "Try it: who sees the feature?",
-        users: 20,
-        pilot: 4
+        type: "schedule",
+        caption: "A week of runs, illustrative times",
+        days: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        runs: [
+          { day: 0, time: "08:00", label: "Workflow admin digest", tag: "automation" },
+          { day: 2, time: "09:00", label: "Tech events alert", tag: "agents" },
+          { day: 6, time: "16:00", label: "Email activity summary", tag: "data" },
+          { day: 6, time: "16:00", label: "Sourcing tracker report", tag: "agents" }
+        ]
       }
     },
     {
       id: "ai-usage",
       featured: false,
-      title: "AI credit usage monitor",
+      title: "AI cost tracking",
       tags: ["data", "automation"],
       status: "Live",
-      oneLiner: "An audit log becomes a daily usage table, a monthly report and three alerts.",
-      how: "A scheduled workflow pulls the audit log every day, rolls events up into counts per feature and per person, and writes them to a base with a dashboard on top. Alerts fire when a day runs far above normal.",
+      oneLiner: "A dashboard and alerts, so AI spend is visible before it surprises anyone.",
+      how: "A scheduled workflow pulls the audit log every day, rolls events up into counts per feature and per person, and writes them to a base with a dashboard and a monthly report on top. Alerts fire when a day runs far above normal.",
       lesson: "Store counts, not raw logs. The report only ever needs the counts.",
       stack: ["n8n", "Airtable"],
       viz: {
@@ -350,6 +355,30 @@ window.AK_LANGS.en = {
         series: [22, 25, 19, 28, 31, 24, 12, 10, 27, 33, 29, 35, 71, 38, 14, 11, 30, 34, 36, 29, 41],
         threshold: 60,
         unit: "units"
+      }
+    },
+    {
+      id: "vendor-eval",
+      featured: false,
+      title: "Vendor evaluations run as experiments",
+      tags: ["data", "quality"],
+      status: "Done",
+      oneLiner: "Data providers and tools compared on measured cost per result, before anything is bought.",
+      how: "Each test has its pass line written down first: coverage, accuracy against records we already trust, cost per useful result, and a check on a sample the tool has not seen during set-up. One recent outcome was a split verdict: use the new tool for some jobs, keep the existing stack for others.",
+      lesson: "Write the pass line before you run the test.",
+      stack: ["Python", "Airtable", "Evals"],
+      viz: {
+        type: "scorecard",
+        caption: "Five tests against their pass lines, illustrative scores",
+        tests: [
+          { label: "Coverage", score: 82, pass: 70 },
+          { label: "Accuracy against trusted records", score: 78, pass: 75 },
+          { label: "Cost per useful result", score: 52, pass: 60 },
+          { label: "Out-of-sample check", score: 74, pass: 70 },
+          { label: "Fits the workflow", score: 64, pass: 60 }
+        ],
+        passLabel: "pass line",
+        verdict: "Split verdict: good for some jobs, not for others."
       }
     },
     {
@@ -373,25 +402,6 @@ window.AK_LANGS.en = {
           { label: "Board", note: "Mascot and doodles, drawn in code" },
           { label: "Captions", note: "Burned in, plus soft music" }
         ]
-      }
-    },
-    {
-      id: "qa-signals",
-      featured: false,
-      title: "Quality signals: smoke tests and a QA dashboard",
-      tags: ["quality", "data", "automation"],
-      status: "Prototype and rollout",
-      oneLiner: "A pull request starts a smoke suite in another repository. The result comes back to chat.",
-      how: "A workflow in the product repository triggers the test repository, waits, counts results from the report and posts one line to a chat channel. Separately, issue-tracker data lands in lakehouse tables and feeds a QA dashboard.",
-      lesson: "A green run is not proof. Count the report.",
-      stack: ["GitHub Actions", "Playwright", "Slack", "Jira", "Databricks"],
-      viz: {
-        type: "testGrid",
-        caption: "One smoke run, illustrative",
-        total: 24,
-        fail: 1,
-        flaky: 2,
-        message: "smoke · web · 21 passed · 2 flaky · 1 failed"
       }
     },
     {
@@ -463,30 +473,6 @@ window.AK_LANGS.en = {
       }
     },
     {
-      id: "vendor-eval",
-      featured: false,
-      title: "Evaluating a data tool like a test suite",
-      tags: ["data", "quality"],
-      status: "Done",
-      oneLiner: "Before buying, five measured tests decided what a new tool should and should not be used for.",
-      how: "Each test had its pass line written down first: coverage, accuracy against records we already trust, cost per useful result, and a check on a sample the tool had not seen during set-up. The outcome was a split verdict: use it for some jobs, keep the existing stack for others.",
-      lesson: "Write the pass line before you run the test.",
-      stack: ["Python", "Airtable", "Evals"],
-      viz: {
-        type: "scorecard",
-        caption: "Five tests against their pass lines, illustrative scores",
-        tests: [
-          { label: "Coverage", score: 82, pass: 70 },
-          { label: "Accuracy against trusted records", score: 78, pass: 75 },
-          { label: "Cost per useful result", score: 52, pass: 60 },
-          { label: "Out-of-sample check", score: 74, pass: 70 },
-          { label: "Fits the workflow", score: 64, pass: 60 }
-        ],
-        passLabel: "pass line",
-        verdict: "Split verdict: good for some jobs, not for others."
-      }
-    },
-    {
       id: "workflow-inventory",
       featured: false,
       title: "A workflow inventory with owners",
@@ -511,25 +497,39 @@ window.AK_LANGS.en = {
       }
     },
     {
-      id: "digests",
+      id: "qa-signals",
       featured: false,
-      title: "Scheduled agents that email me",
-      tags: ["agents", "automation"],
-      status: "Live",
-      oneLiner: "Every week: events worth going to, what the email campaigns did, and what my workflows got up to.",
-      how: "Each one is a scheduled task with a small profile file that says what matters. The agent gathers, filters and writes a short email, signed by the cog. One of them watches for events like this one.",
-      lesson: "Send counts and exceptions. Nobody reads a log by email.",
-      stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
+      title: "Quality signals: smoke tests and a QA dashboard",
+      tags: ["quality", "data", "automation"],
+      status: "Prototype and rollout",
+      oneLiner: "A pull request starts a smoke suite in another repository. The result comes back to chat.",
+      how: "A workflow in the product repository triggers the test repository, waits, counts results from the report and posts one line to a chat channel. Separately, issue-tracker data lands in lakehouse tables and feeds a QA dashboard.",
+      lesson: "A green run is not proof. Count the report.",
+      stack: ["GitHub Actions", "Playwright", "Slack", "Jira", "Databricks"],
       viz: {
-        type: "schedule",
-        caption: "A week of runs, illustrative times",
-        days: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        runs: [
-          { day: 0, time: "08:00", label: "Workflow admin digest", tag: "automation" },
-          { day: 2, time: "09:00", label: "Tech events alert", tag: "agents" },
-          { day: 6, time: "16:00", label: "Email activity summary", tag: "data" },
-          { day: 6, time: "16:00", label: "Sourcing tracker report", tag: "agents" }
-        ]
+        type: "testGrid",
+        caption: "One smoke run, illustrative",
+        total: 24,
+        fail: 1,
+        flaky: 2,
+        message: "smoke · web · 21 passed · 2 flaky · 1 failed"
+      }
+    },
+    {
+      id: "flags",
+      featured: false,
+      title: "Feature flags and kill switches",
+      tags: ["quality"],
+      status: "Exploring",
+      oneLiner: "Shipping behind a flag: off, on for a pilot group, on for everyone, and one switch that overrides all of it.",
+      how: "Helping the wider technology team look at how features are released behind flags, how a pilot group gets them first, and how a kill switch turns something off without a deployment.",
+      lesson: "The kill switch has to win over every other rule.",
+      stack: ["Feature flags", "Progressive delivery"],
+      viz: {
+        type: "flags",
+        caption: "Try it: who sees the feature?",
+        users: 20,
+        pilot: 4
       }
     },
     {
@@ -623,12 +623,12 @@ window.AK_LANGS.en = {
   toolbox: {
     title: "Toolbox",
     groups: [
-      { label: "Agents and AI", items: ["Claude", "Claude Code", "Skills and plugins", "MCP", "AI agents", "Prompt engineering"] },
-      { label: "Automation", items: ["n8n", "Airtable automations", "Workflow automation", "Low-code", "GitHub Actions", "REST APIs"] },
-      { label: "Data and CRM", items: ["Airtable", "Salesforce", "Salesforce Lightning", "Marketing Cloud", "Data Cloud", "Databricks", "Data quality", "Data governance"] },
+      { label: "Agents and AI", items: ["AI agents", "Claude", "Claude Code", "Skills and plugins", "MCP", "Prompt engineering"] },
+      { label: "Automation", items: ["Workflow automation", "n8n", "Clay", "Airtable automations", "REST APIs", "GitHub Actions"] },
+      { label: "Data and CRM", items: ["Salesforce", "Marketing Cloud", "Data Cloud", "Airtable", "Databricks", "Data management", "Data quality", "Data governance"] },
       { label: "Languages", items: ["Python", "SQL", "JavaScript", "Java"] },
       { label: "Quality", items: ["Test design", "Test automation", "Selenium", "Scenario testing"] },
-      { label: "Product and operations", items: ["Product management", "Business analysis", "Technical operations", "Process improvement"] },
+      { label: "Product and operations", items: ["Product management", "Business analysis", "Technical operations", "Jira", "Confluence"] },
       { label: "Where I started", items: ["COBOL", "JCL", "DB2"] }
     ]
   },

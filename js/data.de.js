@@ -11,16 +11,16 @@ window.AK_LANGS.de = {
     team: "UpLink, Weltwirtschaftsforum",
     place: "Genf",
     intro: [
-      "Computeringenieur durch und durch, aus Mumbai. Ich habe als Mainframe-Entwickler angefangen, dann neun Jahre Qualitätssicherung bei Salesforce-Programmen für Kunden von IT-Dienstleistern und Beratungsfirmen gemacht und am Ende Testteams geleitet.",
-      "Heute kümmere ich mich um die Technology Operations von UpLink, der offenen Innovationsplattform des Weltwirtschaftsforums, und mache aus wöchentlichen Routinen Automatisierungen und Agenten."
+      "Computeringenieur durch und durch, aus Mumbai. Ich baue KI-Agenten und Automatisierungen für Business-Teams. Im Alltag sitze ich beim Team von UpLink, der offenen Innovationsplattform des Weltwirtschaftsforums, und löse ihre operativen Probleme mit Technologie.",
+      "Lange vor MCP habe ich Systeme von Hand verbunden, indem ich API-Doku gelesen habe. Mit KI-Agenten und MCP mache ich dieselbe Arbeit heute in grossem Massstab. Daten sind die andere Hälfte meiner Arbeit, von Migrationen auf Salesforce und Mainframes bis zu Datensätzen aus Datenanbietern und dem offenen Web. Mein QA-Hintergrund hält das Ganze verlässlich."
     ],
     askMeAbout: [
-      "Agenten für Operations-Teams",
+      "KI-Agenten für Business-Teams",
       "Claude-Skills und Plugins",
       "MCP-Connectors",
       "Read-only-Agenten",
-      "n8n-Workflows",
-      "Airtable-und-Salesforce-Sync"
+      "n8n- und Clay-Workflows",
+      "Salesforce- und Airtable-Daten"
     ],
     hereToLearn: ["Evals", "Agenten in Produktion", "Wie du von Agenten geschriebenen Code reviewst"]
   },
@@ -50,8 +50,8 @@ window.AK_LANGS.de = {
         out: [
           "{",
           "  \"name\": \"akshay\",",
-          "  \"description\": \"Macht aus wöchentlichen Routinen Automatisierungen und Agenten\",",
-          "  \"tools\": [\"airtable\", \"n8n\", \"salesforce\", \"claude\", \"python\"],",
+          "  \"description\": \"Baut KI-Agenten und Automatisierungen für Business-Teams\",",
+          "  \"tools\": [\"salesforce\", \"airtable\", \"n8n\", \"clay\", \"claude\", \"python\"],",
           "  \"input_modes\": [\"ein echtes Problem\", \"eine ruhige Ecke\"],",
           "  \"output_modes\": [\"eine funktionierende Automatisierung\", \"eine ehrliche Meinung\"],",
           "  \"rate_limits\": { \"small_talk\": \"niedrig\", \"deep_dives\": \"unbegrenzt\" },",
@@ -110,27 +110,28 @@ window.AK_LANGS.de = {
         tags: []
       },
       {
-        body: "Als Mainframe-Entwickler gestartet (DB2, CICS), dann in die Salesforce-Qualitätssicherung gewechselt: herausfinden, wie Dinge kaputtgehen, bevor es die Nutzer tun.",
+        sub: "iGATE, heute Capgemini",
+        body: "Als Software Engineer eingestiegen. Als Mainframe-Entwickler gestartet, an Flottenprogrammen (DB2, CICS), dann in die Salesforce-QA gewechselt: herausfinden, wie Dinge kaputtgehen, bevor es die Nutzer tun.",
         tags: ["Mainframe", "Salesforce-QA"]
       },
       {
-        body: "Als Business Technology Analyst eingestiegen und als Senior Consultant gegangen. Sechs Jahre Qualität in Kundenprogrammen: Salesforce-Tests, Szenariotests, dann Leitung von Testteams. Drei Städte unterwegs.",
-        tags: ["Salesforce", "Test Lead", "Qualitätsmanagement"]
+        body: "Als Business Technology Analyst eingestiegen und als Senior Consultant gegangen. Mainframe-Entwicklung, Salesforce-QA und Salesforce-Business-Analyse in Programmen für Gesundheitswesen und Partnermanagement, dann Leitung eines QA-Teams. Drei Städte unterwegs.",
+        tags: ["Salesforce-QA", "Business-Analyse", "QA-Lead"]
       },
       {
         when: "Januar 2024",
         place: "Genf",
         title: "Beim Weltwirtschaftsforum eingestiegen",
-        sub: "Tech Operations und digitales Produkt, UpLink",
-        body: "Vom Testen fremder Systeme dazu, sie selbst zu verantworten: die Daten, die Integrationen und das tägliche Tooling des Teams. Standort Genf.",
-        tags: ["Airtable", "Salesforce", "Integrationen"]
+        sub: "Produktmanagement, dann Technology Operations, UpLink",
+        body: "Angefangen im Produktmanagement für UpLink, die offene Innovationsplattform des Forums für Ventures in der Frühphase. Zusammen mit Anbietern das Produkt geliefert. Dann in die Technology Operations gewechselt. Standort Genf.",
+        tags: ["Produktmanagement", "Technology Operations"]
       },
       {
         year: "Jetzt",
         place: "Genf",
-        sub: "UpLink, im Technologieteam des Forums",
-        body: "Den grössten Teil meiner Woche machen inzwischen Automatisierung und Agenten aus: Claude-Skills, die das Team gemeinsam nutzt, n8n-Workflows und die Prüfungen, die sie ehrlich halten.",
-        tags: ["Agenten", "Automatisierung", "Daten"]
+        sub: "UpLink und das weitere Technologieteam des Forums",
+        body: "Ich baue die KI-Agenten und Automatisierungen, auf denen das Team läuft, und verbinde Salesforce, Marketing Cloud, Airtable, n8n, Clay, Databricks, Jira und Confluence mit Python und Claude. Dazu administriere ich Salesforce, Airtable, n8n und Clay. Die Workflows dokumentieren sich selbst und werden im Team geteilt.",
+        tags: ["KI-Agenten", "Automatisierung", "Daten"]
       }
     ],
     certsLabel: "Fünf Salesforce-Zertifizierungen unterwegs",
@@ -139,12 +140,12 @@ window.AK_LANGS.de = {
 
   howIWork: {
     title: "So arbeite ich",
-    body: "Immer dieselbe Schleife, egal mit welchem Tool.",
+    body: "Immer dieselbe Schleife, egal mit welchem Tool. Ich zeige lieber, als zu erzählen.",
     steps: [
       { label: "Erkennen", line: "Die Routine finden, die jemand jede Woche von Hand erledigt.", example: "Beispiel: zwei Tage lang Datensätze in Folien kopieren, vor jedem Jury-Tag." },
       { label: "Kartieren", line: "Das System lesen, bevor ich es anfasse. Zuerst Read-only.", example: "Beispiel: Ein Agent liest Schemas, Automatisierungen und Laufhistorie und ändert nichts." },
-      { label: "Bauen", line: "Das Kleinste, was die Routine beseitigt: ein Workflow, ein Skript oder ein Skill.", example: "Beispiel: ein Skill, der die Folienvorlage direkt aus der Datenbank füllt." },
-      { label: "Prüfen", line: "Ein zweiter Durchgang, der nichts ändern kann, prüft den ersten.", example: "Beispiel: Ein Audit-Skill vergleicht jede Folie mit ihrem Quelldatensatz und listet die Abweichungen auf." },
+      { label: "Bauen", line: "Das Kleinste, was die Routine beseitigt, früh gezeigt: ein Proof of Concept, eine Live-Demo, ein Dashboard oder eine Walkthrough-Seite.", example: "Beispiel: ein Skill, der die Folienvorlage direkt aus der Datenbank füllt." },
+      { label: "Prüfen", line: "Ein zweiter Durchgang, der nichts ändern kann, prüft den ersten, und die Zahlen, die belegen, dass es funktioniert, werden automatisch gesammelt.", example: "Beispiel: Ein Audit-Skill vergleicht jede Folie mit ihrem Quelldatensatz und listet die Abweichungen auf." },
       { label: "Übergeben", line: "Doku, ein Owner und ein Ausschalter. Dann gehört es dem Team.", example: "Beispiel: eine Anleitung, ein benannter Owner und ein Flag, das es ohne Deployment abschaltet." }
     ]
   },
@@ -164,12 +165,12 @@ window.AK_LANGS.de = {
 
   projects: [
     {
-      title: "Pipeline für Lead-Recherche",
+      title: "Go-to-market-Lead-Pipeline",
       status: "Live",
-      oneLiner: "Findet Unternehmen, die zu einer Innovation Challenge passen, bevor sie sich bewerben.",
-      how: "Ein Challenge-Briefing geht rein. KI-Recherche schlägt Kandidaten mit Quellen vor, Dubletten werden entfernt, Firmendatenbanken und das CRM füllen die Lücken, und ein Fit-Score sortiert, was übrig bleibt. Ein Mensch prüft jeden Lead, bevor irgendeine Ansprache stattfindet.",
+      oneLiner: "Findet Unternehmen, die zu einer Innovation Challenge passen: KI-recherchiert, dedupliziert und bewertet, und ein Mensch gibt jeden Lead frei, bevor eine Ansprache stattfindet.",
+      how: "Ein Challenge-Briefing geht rein. KI-Recherche mit Clay und n8n schlägt Kandidaten mit Quellen vor, Dubletten werden entfernt, Firmendatenbanken und das CRM füllen die Lücken, und ein Fit-Score sortiert, was übrig bleibt. Ein Mensch gibt jeden Lead frei, bevor irgendeine Ansprache stattfindet.",
       lesson: "Die menschliche Prüfung bleibt. Der Agent soll sie schnell machen.",
-      stack: ["Airtable", "n8n", "Claude", "Salesforce"],
+      stack: ["Clay", "n8n", "Airtable", "Claude", "Salesforce"],
       viz: {
         caption: "Ein Lauf, illustrative Zahlen",
         stages: [
@@ -184,9 +185,9 @@ window.AK_LANGS.de = {
       }
     },
     {
-      title: "Pitch-Booklets aus einer Datenbank",
+      title: "Wiederverwendbare Claude-Skills: Pitch-Booklets",
       status: "Live, mit dem Team geteilt",
-      oneLiner: "Eine Präsentation für einen Jury-Tag, aus den Quelldaten erzeugt und danach dagegen geprüft.",
+      oneLiner: "Skills, die das ganze Team nutzt. Einer baut ein Pitch-Booklet aus der Datenbank, ein zweiter, nur lesender Agent prüft es.",
       how: "Ein Claude-Skill liest die Shortlist-Datensätze, füllt die Folienvorlage und setzt jedes Logo anhand des Datensatzes. Ein zweiter, nur lesender Skill prüft anschliessend die fertige Präsentation gegen die Quelle und meldet, was nicht übereinstimmt. Dasselbe Muster baut inzwischen auch ein Gewinner-Booklet und ein Teilnehmer-Booklet für Events.",
       lesson: "Erst erzeugen, dann mit einem separaten Durchgang prüfen, der nichts ändern kann.",
       stack: ["Claude-Skills", "Airtable", "Python", "PowerPoint"],
@@ -205,9 +206,9 @@ window.AK_LANGS.de = {
       }
     },
     {
-      title: "Ein Read-only-Hilfe-Agent für Kolleginnen und Kollegen",
+      title: "Ein Read-only-Hilfe-Agent in Slack",
       status: "Früher Pilot",
-      oneLiner: "Beantwortet die Fragen, die ich jede Woche bekomme, mit meinem Kontext. Er liest und prüft. Er ändert nie Daten.",
+      oneLiner: "Read-only von Grund auf: Er prüft die Systeme und liefert Kolleginnen und Kollegen die Schritte. Er ändert nie Daten.",
       how: "Verpackt als Claude-Plugin mit Playbooks für die wiederkehrenden Fragen und nur lesenden Tools. Er schlägt den aktuellen Stand nach, erklärt, was er gefunden hat, und liefert die Schritte zurück, damit die Person die Änderung unter ihrem eigenen Login macht.",
       lesson: "Agenten schlagen nach. Menschen ändern, so behält jede Änderung einen Owner.",
       stack: ["Claude-Plugin", "Slack", "Airtable"],
@@ -244,26 +245,53 @@ window.AK_LANGS.de = {
       }
     },
     {
-      title: "Feature Flags und Kill Switches",
-      status: "In Erkundung",
-      oneLiner: "Mit Flag ausliefern: aus, an für eine Pilotgruppe, an für alle, und ein Schalter, der alles übersteuert.",
-      how: "Ich helfe dem weiteren Technologieteam, sich anzusehen, wie Features hinter Flags veröffentlicht werden, wie eine Pilotgruppe sie zuerst bekommt und wie ein Kill Switch etwas ohne Deployment abschaltet.",
-      lesson: "Der Kill Switch muss jede andere Regel schlagen.",
-      stack: ["Feature Flags", "Progressive Delivery"],
+      title: "Geplante Agenten, die berichten, was sich geändert hat",
+      status: "Live",
+      oneLiner: "Sie verfolgen, was sich in unseren Systemen geändert hat und wer es geändert hat, aktualisieren die Doku und mailen eine wöchentliche Zusammenfassung.",
+      how: "Jeder ist eine geplante Aufgabe mit einer kleinen Profildatei, die sagt, was wichtig ist. Der Agent sammelt, filtert und schreibt eine kurze E-Mail, signiert vom Zahnrad. Andere berichten, was die E-Mail-Kampagnen bewirkt haben und welche Tech-Events sich lohnen.",
+      lesson: "Schick Zählwerte und Ausnahmen. Niemand liest ein Log per E-Mail.",
+      stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
       viz: {
-        caption: "Probier es aus: Wer sieht das Feature?"
+        caption: "Eine Woche mit Läufen, illustrative Zeiten",
+        days: ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"],
+        runs: [
+          { label: "Workflow-Admin-Digest" },
+          { label: "Tech-Event-Hinweis" },
+          { label: "E-Mail-Aktivitätsübersicht" },
+          { label: "Sourcing-Tracker-Bericht" }
+        ]
       }
     },
     {
-      title: "Monitor für KI-Credit-Verbrauch",
+      title: "Tracking der KI-Kosten",
       status: "Live",
-      oneLiner: "Aus einem Audit-Log werden eine tägliche Verbrauchstabelle, ein Monatsbericht und drei Alarme.",
-      how: "Ein geplanter Workflow holt jeden Tag das Audit-Log, verdichtet die Ereignisse zu Zählwerten pro Funktion und pro Person und schreibt sie in eine Base mit einem Dashboard darüber. Alarme lösen aus, wenn ein Tag weit über dem Normalen liegt.",
+      oneLiner: "Ein Dashboard und Alarme, damit die KI-Ausgaben sichtbar sind, bevor sie jemanden überraschen.",
+      how: "Ein geplanter Workflow holt jeden Tag das Audit-Log, verdichtet die Ereignisse zu Zählwerten pro Funktion und pro Person und schreibt sie in eine Base mit einem Dashboard und einem Monatsbericht darüber. Alarme lösen aus, wenn ein Tag weit über dem Normalen liegt.",
       lesson: "Speichere Zählwerte, nicht rohe Logs. Der Bericht braucht immer nur die Zählwerte.",
       stack: ["n8n", "Airtable"],
       viz: {
         caption: "Täglicher Verbrauch gegen eine Alarmlinie, illustrative Einheiten",
         unit: "Einheiten"
+      }
+    },
+    {
+      title: "Anbieter-Evaluationen als Experimente",
+      status: "Erledigt",
+      oneLiner: "Datenanbieter und Tools, verglichen nach gemessenen Kosten pro Ergebnis, bevor etwas gekauft wird.",
+      how: "Jeder Test hat seine Bestehensgrenze vorab festgelegt: Abdeckung, Genauigkeit gegenüber Datensätzen, denen wir schon vertrauen, Kosten pro brauchbarem Ergebnis und eine Prüfung an einer Stichprobe, die das Tool beim Einrichten nicht gesehen hat. Ein aktuelles Ergebnis war ein geteiltes Urteil: das neue Tool für manche Aufgaben nutzen, für andere beim bestehenden Stack bleiben.",
+      lesson: "Leg die Bestehensgrenze fest, bevor du den Test laufen lässt.",
+      stack: ["Python", "Airtable", "Evals"],
+      viz: {
+        caption: "Fünf Tests gegen ihre Bestehensgrenzen, illustrative Werte",
+        tests: [
+          { label: "Abdeckung" },
+          { label: "Genauigkeit gegenüber vertrauenswürdigen Datensätzen" },
+          { label: "Kosten pro brauchbarem Ergebnis" },
+          { label: "Out-of-sample-Prüfung" },
+          { label: "Passt in den Workflow" }
+        ],
+        passLabel: "Bestehensgrenze",
+        verdict: "Geteiltes Urteil: gut für manche Aufgaben, für andere nicht."
       }
     },
     {
@@ -283,18 +311,6 @@ window.AK_LANGS.de = {
           { label: "Board", note: "Maskottchen und Doodles, im Code gezeichnet" },
           { label: "Untertitel", note: "Eingebrannt, dazu leise Musik" }
         ]
-      }
-    },
-    {
-      title: "Qualitätssignale: Smoke-Tests und ein QA-Dashboard",
-      status: "Prototyp und Rollout",
-      oneLiner: "Ein Pull Request startet eine Smoke-Suite in einem anderen Repository. Das Ergebnis kommt zurück in den Chat.",
-      how: "Ein Workflow im Produkt-Repository löst das Test-Repository aus, wartet, zählt die Ergebnisse aus dem Report und postet eine Zeile in einen Chat-Kanal. Getrennt davon landen Daten aus dem Issue-Tracker in Lakehouse-Tabellen und speisen ein QA-Dashboard.",
-      lesson: "Ein grüner Lauf ist kein Beweis. Zähl den Report.",
-      stack: ["GitHub Actions", "Playwright", "Slack", "Jira", "Databricks"],
-      viz: {
-        caption: "Ein Smoke-Lauf, illustrativ",
-        message: "smoke · web · 21 bestanden · 2 instabil · 1 fehlgeschlagen"
       }
     },
     {
@@ -347,26 +363,6 @@ window.AK_LANGS.de = {
       }
     },
     {
-      title: "Ein Datentool bewerten wie eine Testsuite",
-      status: "Erledigt",
-      oneLiner: "Vor dem Kauf entschieden fünf gemessene Tests, wofür ein neues Tool genutzt werden soll und wofür nicht.",
-      how: "Jeder Test hatte seine Bestehensgrenze vorab festgelegt: Abdeckung, Genauigkeit gegenüber Datensätzen, denen wir schon vertrauen, Kosten pro brauchbarem Ergebnis und eine Prüfung an einer Stichprobe, die das Tool beim Einrichten nicht gesehen hatte. Das Ergebnis war ein geteiltes Urteil: für manche Aufgaben nutzen, für andere beim bestehenden Stack bleiben.",
-      lesson: "Leg die Bestehensgrenze fest, bevor du den Test laufen lässt.",
-      stack: ["Python", "Airtable", "Evals"],
-      viz: {
-        caption: "Fünf Tests gegen ihre Bestehensgrenzen, illustrative Werte",
-        tests: [
-          { label: "Abdeckung" },
-          { label: "Genauigkeit gegenüber vertrauenswürdigen Datensätzen" },
-          { label: "Kosten pro brauchbarem Ergebnis" },
-          { label: "Out-of-sample-Prüfung" },
-          { label: "Passt in den Workflow" }
-        ],
-        passLabel: "Bestehensgrenze",
-        verdict: "Geteiltes Urteil: gut für manche Aufgaben, für andere nicht."
-      }
-    },
-    {
       title: "Ein Workflow-Inventar mit Ownern",
       status: "Erledigt",
       oneLiner: "Jeder Workflow bekommt einen Status, einen Owner und ein Warnschild, wenn er in Produktion schreibt.",
@@ -386,21 +382,26 @@ window.AK_LANGS.de = {
       }
     },
     {
-      title: "Geplante Agenten, die mir mailen",
-      status: "Live",
-      oneLiner: "Jede Woche: Events, die sich lohnen, was die E-Mail-Kampagnen bewirkt haben und was meine Workflows getrieben haben.",
-      how: "Jeder ist eine geplante Aufgabe mit einer kleinen Profildatei, die sagt, was wichtig ist. Der Agent sammelt, filtert und schreibt eine kurze E-Mail, signiert vom Zahnrad. Einer davon hält Ausschau nach Events wie diesem.",
-      lesson: "Schick Zählwerte und Ausnahmen. Niemand liest ein Log per E-Mail.",
-      stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
+      title: "Qualitätssignale: Smoke-Tests und ein QA-Dashboard",
+      status: "Prototyp und Rollout",
+      oneLiner: "Ein Pull Request startet eine Smoke-Suite in einem anderen Repository. Das Ergebnis kommt zurück in den Chat.",
+      how: "Ein Workflow im Produkt-Repository löst das Test-Repository aus, wartet, zählt die Ergebnisse aus dem Report und postet eine Zeile in einen Chat-Kanal. Getrennt davon landen Daten aus dem Issue-Tracker in Lakehouse-Tabellen und speisen ein QA-Dashboard.",
+      lesson: "Ein grüner Lauf ist kein Beweis. Zähl den Report.",
+      stack: ["GitHub Actions", "Playwright", "Slack", "Jira", "Databricks"],
       viz: {
-        caption: "Eine Woche mit Läufen, illustrative Zeiten",
-        days: ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"],
-        runs: [
-          { label: "Workflow-Admin-Digest" },
-          { label: "Tech-Event-Hinweis" },
-          { label: "E-Mail-Aktivitätsübersicht" },
-          { label: "Sourcing-Tracker-Bericht" }
-        ]
+        caption: "Ein Smoke-Lauf, illustrativ",
+        message: "smoke · web · 21 bestanden · 2 instabil · 1 fehlgeschlagen"
+      }
+    },
+    {
+      title: "Feature Flags und Kill Switches",
+      status: "In Erkundung",
+      oneLiner: "Mit Flag ausliefern: aus, an für eine Pilotgruppe, an für alle, und ein Schalter, der alles übersteuert.",
+      how: "Ich helfe dem weiteren Technologieteam, sich anzusehen, wie Features hinter Flags veröffentlicht werden, wie eine Pilotgruppe sie zuerst bekommt und wie ein Kill Switch etwas ohne Deployment abschaltet.",
+      lesson: "Der Kill Switch muss jede andere Regel schlagen.",
+      stack: ["Feature Flags", "Progressive Delivery"],
+      viz: {
+        caption: "Probier es aus: Wer sieht das Feature?"
       }
     },
     {
@@ -488,12 +489,12 @@ window.AK_LANGS.de = {
   toolbox: {
     title: "Toolbox",
     groups: [
-      { label: "Agenten und KI", items: ["Claude", "Claude Code", "Skills und Plugins", "MCP", "KI-Agenten", "Prompt Engineering"] },
-      { label: "Automatisierung", items: ["n8n", "Airtable-Automationen", "Workflow-Automatisierung", "Low-Code", "GitHub Actions", "REST-APIs"] },
-      { label: "Daten und CRM", items: ["Airtable", "Salesforce", "Salesforce Lightning", "Marketing Cloud", "Data Cloud", "Databricks", "Datenqualität", "Data Governance"] },
+      { label: "Agenten und KI", items: ["KI-Agenten", "Claude", "Claude Code", "Skills und Plugins", "MCP", "Prompt Engineering"] },
+      { label: "Automatisierung", items: ["Workflow-Automatisierung", "n8n", "Clay", "Airtable-Automationen", "REST-APIs", "GitHub Actions"] },
+      { label: "Daten und CRM", items: ["Salesforce", "Marketing Cloud", "Data Cloud", "Airtable", "Databricks", "Datenmanagement", "Datenqualität", "Data Governance"] },
       { label: "Sprachen", items: ["Python", "SQL", "JavaScript", "Java"] },
       { label: "Qualität", items: ["Testdesign", "Testautomatisierung", "Selenium", "Szenariotests"] },
-      { label: "Produkt und Betrieb", items: ["Produktmanagement", "Business-Analyse", "Technical Operations", "Prozessverbesserung"] },
+      { label: "Produkt und Betrieb", items: ["Produktmanagement", "Business-Analyse", "Technical Operations", "Jira", "Confluence"] },
       { label: "Wo ich angefangen habe", items: ["COBOL", "JCL", "DB2"] }
     ]
   },
