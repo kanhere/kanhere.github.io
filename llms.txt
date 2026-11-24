@@ -4,12 +4,21 @@
 
 Hardcore computer engineer from Mumbai. I build AI agents and automations for business teams. Day to day I sit with the team at UpLink, the World Economic Forum's open innovation platform, and solve their operational problems with technology.
 
-I was wiring systems together by hand long before MCP, by reading API docs. With AI agents and MCP I now do the same work at scale. Data is the other half of my work, from migrations on Salesforce and mainframes to datasets built from data providers and the open web. My QA background keeps it all reliable.
+I was wiring systems together by hand long before MCP, and with AI agents I now do it at scale. Data is the other half of my work, and my QA background keeps both reliable.
 
 - Page: https://kanhere.github.io
 - LinkedIn: https://www.linkedin.com/in/akshaykanhere
-- Ask me about: AI agents for business teams; Claude skills and plugins; MCP connectors; Read-only agents; n8n and Clay workflows; Salesforce and Airtable data
+- Ask me about: AI agents for business teams; Claude skills and plugins; MCP connectors; Read-only agents; n8n and Clay workflows; Salesforce and Airtable data; Debugging and root causes
 - Here to learn: Evals; Agents in production; How you review agent-written code
+- Open to roles: Forward Deployed Engineer; GTM Engineer; AI Automation Engineer; Salesforce Solutions Engineer. Switzerland or nearby France. On-site, hybrid or remote. Also open to any challenge that technology can solve.
+
+## At a glance
+
+- Now: Technology operations at UpLink, World Economic Forum
+- Based in: Geneva, Switzerland
+- Experience: 12 years in tech, since 2014
+- Core stack: AI agents, Salesforce, n8n, Airtable, Clay, Python
+- Certified: Five Salesforce certifications
 
 ## How to approach me
 
@@ -22,6 +31,45 @@ Easy openers:
 - Tell me about a workflow that broke in a funny way.
 - Where would you go hiking around here?
 
+## What I do
+
+### Connecting systems, before MCP and after
+
+I was building integrations long before MCP existed. It meant reading the API docs, writing each call by hand, and dealing with logins, paging and errors one system at a time.
+
+AI agents and MCP connectors changed the pace, not the job. I describe what should move where, the agent does the wiring, and I review it. The workflows document themselves and are shared across the team.
+
+Tools connected: Salesforce, Marketing Cloud, Airtable, n8n, Clay, Databricks, Jira, Confluence, Python, Claude.
+Also administered: Salesforce, Airtable, n8n, Clay.
+
+### Data, the other half
+
+An automation is only as good as the data under it, and data was my job well before AI. I have owned data migrations on Salesforce and on mainframes.
+
+Today I bring data in from data providers and the open web, map it to what we already hold, remove the duplicates, and turn it into structured datasets that the business and its workflows can rely on.
+
+From raw sources to a dataset people trust: Sources → Bring in → Map → Clean → Dataset → Use.
+
+### Reliable, because of QA
+
+I spent years testing other people's systems, and it left me with one habit: asking how something will break before it ships.
+
+So the checks are built in from the start. A second agent that cannot edit audits the first, and the numbers that prove a workflow works are collected on every run, not put together by hand afterwards. The rules behind this are in the field notes further down.
+
+### Show, don't tell
+
+I would rather show an idea working than describe it. A quick proof of concept, a live demo or something people can open and share usually settles a discussion faster than a document.
+
+What I usually bring to the meeting: Proof of concept, Live demo, Dashboard, Walkthrough page, Explainer video.
+
+### Debugging, my favourite part
+
+I love debugging: following a flow step by step until the root cause shows itself. I have done it since long before AI, back on mainframes, and it is still the part of the job I enjoy most.
+
+The symptom is rarely where the problem is. So I trace the flow backwards, one step at a time, until something does not add up.
+
+A made-up case, traced back to its cause: Symptom A welcome email never arrived. → Did the workflow run? Yes, on schedule. → Did it pick up the record? No. The record never matched the trigger. → Why not? The field the trigger reads was empty. → Root cause A formula upstream was changed the week before. Fix the formula, then add a check so the next empty field raises a flag.
+
 ## Journey
 
 - 2010 – 2014 · Mumbai: Computer Engineering (Bachelor's degree, University of Mumbai). Four years of computer engineering in Mumbai. Graduated in 2014.
@@ -29,16 +77,23 @@ Easy openers:
 - 2017 – 2023 · Bengaluru, Mumbai, Pune: Senior Consultant (Deloitte). Joined as a business technology analyst and left as a senior consultant. Mainframe development, Salesforce QA and Salesforce business analysis on healthcare and partner management programmes, then leading a QA team. Three cities along the way.
 - January 2024 · Geneva: Joined the World Economic Forum (Product management, then technology operations, UpLink). Began in product management for UpLink, the Forum's open innovation platform for early-stage ventures, working with vendors to deliver the product. Then moved into technology operations. Based in Geneva.
 - 2026 · Geneva: Associate, Technology Operations (UpLink and the Forum's wider technology team). I build the AI agents and automations the team runs on, connecting Salesforce, Marketing Cloud, Airtable, n8n, Clay, Databricks, Jira and Confluence with Python and Claude. I also administer Salesforce, Airtable, n8n and Clay. The workflows document themselves and are shared across the team.
+- Mainframe development: iGATE, now Capgemini (2014–17), Deloitte (2017–23)
+- Salesforce QA: iGATE, now Capgemini (2014–17), Deloitte (2017–23)
+- Business analysis: Deloitte (2017–23)
+- Leading a QA team: Deloitte (2017–23)
+- Product management: World Economic Forum (2024–now)
+- Technology operations: World Economic Forum (2024–now)
+- AI agents and automation: World Economic Forum (2024–now)
 - Five Salesforce certifications along the way: Administrator, Business Analyst, Marketing Cloud Administrator, AI Associate, Data Cloud Consultant
 
 ## How I work
 
-The same loop, whatever the tool. I would rather show than tell.
+The same loop, whatever the tool.
 
 1. Spot: Find the chore someone does by hand every week.
 2. Map: Read the system before touching it. Read-only first.
-3. Build: The smallest thing that removes the chore, shown early: a proof of concept, a live demo, a dashboard or a walkthrough page.
-4. Check: A second pass that cannot edit audits the first, and the numbers that prove it works are collected automatically.
+3. Build: The smallest thing that removes the chore: a workflow, a script or a skill.
+4. Check: A second pass that cannot edit audits the first.
 5. Hand over: Docs, an owner and an off switch. Then it belongs to the team.
 
 ## Recent work
@@ -49,7 +104,15 @@ Descriptions are generalised. Numbers and names in the visuals are illustrative,
 
 Status: Live · Themes: agents, automation, data · Stack: Clay, n8n, Airtable, Claude, Salesforce
 
-Finds companies that fit an innovation challenge: AI-researched, de-duplicated and scored, with a person approving each lead before outreach. A challenge brief goes in. AI research on Clay and n8n proposes candidates with sources, duplicates are removed, company databases and the CRM fill the gaps, and a fit score ranks what is left. A person approves every lead before any outreach.
+Finds companies that fit an innovation challenge: AI-researched, de-duplicated and scored, with a person approving each lead before outreach.
+
+The problem: Finding companies that fit a challenge used to be desk research by hand: slow, uneven, and full of companies we already knew.
+
+How it works: A challenge brief goes in. AI research on Clay and n8n proposes candidates with sources, duplicates are removed, company databases and the CRM fill the gaps, and a fit score ranks what is left. A person approves every lead before any outreach.
+
+What keeps it reliable: Every candidate keeps its sources. Duplicates are caught against existing leads and the CRM before enrichment, so nothing is looked up twice. Nothing goes out without a person's approval.
+
+What it gives the team: A ranked, sourced long list for each challenge. The team spends its time judging fit instead of searching.
 
 Lesson: The human check stays. The agent's job is to make it fast.
 
@@ -57,7 +120,15 @@ Lesson: The human check stays. The agent's job is to make it fast.
 
 Status: Live, shared with the team · Themes: agents, automation · Stack: Claude skills, Airtable, Python, PowerPoint
 
-Skills the whole team runs. One builds a pitch booklet from the database, and a second, read-only agent audits it. A Claude skill reads the shortlisted records, fills the slide template and places every logo by record. A second, read-only skill then audits the finished deck against the source and reports what does not match. The same pattern now builds a winners booklet and an event participant booklet.
+Skills the whole team runs. One builds a pitch booklet from the database, and a second, read-only agent audits it.
+
+The problem: Before a judging day, someone spent days copying records into slides, aligning logos and chasing late edits. The deck was out of date as soon as the data changed.
+
+How it works: A Claude skill reads the shortlisted records, fills the slide template and places every logo by record. A second, read-only skill then audits the finished deck against the source and reports what does not match. The same pattern now builds a winners booklet and an event participant booklet.
+
+What keeps it reliable: The audit skill is separate from the builder and cannot edit. It compares every slide with its source record, tests the links and ranks what it finds by severity, so a person reviews a short list instead of the whole deck.
+
+What it gives the team: A booklet on request, rebuilt whenever the data changes, and a how-to guide so colleagues run it without me.
 
 Lesson: Generate, then audit with a separate pass that cannot edit.
 
@@ -65,7 +136,15 @@ Lesson: Generate, then audit with a separate pass that cannot edit.
 
 Status: Early pilot · Themes: agents, quality · Stack: Claude plugin, Slack, Airtable
 
-Read-only by design: it checks the systems and hands colleagues the steps. It never changes data. Packaged as a Claude plugin with playbooks for the recurring questions and read-only tools. It looks up the current state, explains what it found, and hands back the steps so the person makes the change under their own login.
+Read-only by design: it checks the systems and hands colleagues the steps. It never changes data.
+
+The problem: The same questions reach me every week: why is this record stuck, where is that document, how do I fix this field. The answers sat in my head.
+
+How it works: Packaged as a Claude plugin with playbooks for the recurring questions and read-only tools. It looks up the current state, explains what it found, and hands back the steps so the person makes the change under their own login.
+
+What keeps it reliable: It has read-only tools and nothing else, so it cannot change data even when asked. It carries work knowledge only, and every change is still made by a person under their own login.
+
+What it gives the team: Colleagues get the answer and the steps straight away, and I get fewer interruptions. It is an early pilot, so the playbooks are still growing.
 
 Lesson: Agents look things up. People make the change, so every edit keeps an owner.
 
@@ -73,7 +152,9 @@ Lesson: Agents look things up. People make the change, so every edit keeps an ow
 
 Status: Done · Themes: agents, quality · Stack: Claude Code, Airtable, n8n, Confluence
 
-A production base with years of history and no reliable docs, mapped end to end without changing a thing. The agent read schemas, automations, workflow definitions and run history, saved raw dumps to disk and kept a running log. Out came a flow map, a reusable pattern and documentation the team now works from. Every finding carries a date, because the system keeps moving.
+A production base with years of history and no reliable docs, mapped end to end without changing a thing.
+
+How it works: The agent read schemas, automations, workflow definitions and run history, saved raw dumps to disk and kept a running log. Out came a flow map, a reusable pattern and documentation the team now works from. Every finding carries a date, because the system keeps moving.
 
 Lesson: A map has a date. Re-check what is deployed before you trust it.
 
@@ -81,7 +162,15 @@ Lesson: A map has a date. Re-check what is deployed before you trust it.
 
 Status: Live · Themes: agents, automation · Stack: Claude, n8n, Salesforce Marketing Cloud
 
-They track what changed in our systems and who changed it, update the docs and email a weekly summary. Each one is a scheduled task with a small profile file that says what matters. The agent gathers, filters and writes a short email, signed by the cog. Others report what the email campaigns did and which tech events are worth attending.
+They track what changed in our systems and who changed it, update the docs and email a weekly summary.
+
+The problem: Systems change quietly. A field is renamed or a workflow is edited, and weeks later nobody remembers who did it or why. The documentation drifts.
+
+How it works: Each one is a scheduled task with a small profile file that says what matters. The agent reads the audit logs and run history, works out what changed and who changed it, updates the documentation and writes a short email, signed by the cog. Others report what the email campaigns did and which tech events are worth attending.
+
+What keeps it reliable: The agents only read the systems they watch. They send counts and exceptions, not raw logs, and every email ends with a card showing what ran, who started it and when it runs next.
+
+What it gives the team: A weekly summary in the inbox, documentation that stays current, and an answer when someone asks who changed what.
 
 Lesson: Send counts and exceptions. Nobody reads a log by email.
 
@@ -89,7 +178,15 @@ Lesson: Send counts and exceptions. Nobody reads a log by email.
 
 Status: Live · Themes: data, automation · Stack: n8n, Airtable
 
-A dashboard and alerts, so AI spend is visible before it surprises anyone. A scheduled workflow pulls the audit log every day, rolls events up into counts per feature and per person, and writes them to a base with a dashboard and a monthly report on top. Alerts fire when a day runs far above normal.
+A dashboard and alerts, so AI spend is visible before it surprises anyone.
+
+The problem: AI features use credits, and the only view of the spend was the bill at the end of the month.
+
+How it works: A scheduled workflow pulls the audit log every day, rolls events up into counts per feature and per person, and writes them to a base with a dashboard and a monthly report on top. Alerts fire when a day runs far above normal.
+
+What keeps it reliable: Alerts fire when a day runs far above normal, so a runaway automation shows up the same day. The table keeps counts, not raw logs, so the report stays small and readable.
+
+What it gives the team: Spend is visible every day, by feature and by person, with a monthly report nobody has to put together.
 
 Lesson: Store counts, not raw logs. The report only ever needs the counts.
 
@@ -97,7 +194,15 @@ Lesson: Store counts, not raw logs. The report only ever needs the counts.
 
 Status: Done · Themes: data, quality · Stack: Python, Airtable, Evals
 
-Data providers and tools compared on measured cost per result, before anything is bought. Each test has its pass line written down first: coverage, accuracy against records we already trust, cost per useful result, and a check on a sample the tool has not seen during set-up. One recent outcome was a split verdict: use the new tool for some jobs, keep the existing stack for others.
+Data providers and tools compared on measured cost per result, before anything is bought.
+
+The problem: Tools and data providers are easy to judge on a demo and hard to judge on results. We wanted evidence before deciding.
+
+How it works: Each test has its pass line written down first: coverage, accuracy against records we already trust, cost per useful result, and a check on a sample the tool has not seen during set-up. One recent outcome was a split verdict: use the new tool for some jobs, keep the existing stack for others.
+
+What keeps it reliable: The pass lines are written before the test runs. Every tool gets the same sample, a final check uses records it has not seen, and failed runs count towards the cost.
+
+What it gives the team: A verdict with numbers behind it, shared as a page the decision-makers can read in a few minutes: what each tool is good for, and what it is not.
 
 Lesson: Write the pass line before you run the test.
 
@@ -105,7 +210,9 @@ Lesson: Write the pass line before you run the test.
 
 Status: Live, shared with the team · Themes: agents · Stack: Claude skills, Remotion, Open-source TTS, Python
 
-A deck or a study goes in. A short narrated video with a hand-drawn mascot comes out. A skill writes the script from the source, a pronunciation step fixes names and acronyms, open-source text-to-speech records the voice, and the scenes are rendered in code with captions and music.
+A deck or a study goes in. A short narrated video with a hand-drawn mascot comes out.
+
+How it works: A skill writes the script from the source, a pronunciation step fixes names and acronyms, open-source text-to-speech records the voice, and the scenes are rendered in code with captions and music.
 
 Lesson: Spell names for the voice before you record. It saves every retake.
 
@@ -113,7 +220,9 @@ Lesson: Spell names for the voice before you record. It saves every retake.
 
 Status: Live · Themes: data, automation, quality · Stack: Airtable, n8n, Salesforce
 
-Selected participants become four linked CRM records: organisation, person, position, membership. Records are staged in a base, then created one link at a time by workflows. Each step waits for a gate that checks a fact, the ID written by the step before, never a status someone typed. Every creator can run twice without creating twice.
+Selected participants become four linked CRM records: organisation, person, position, membership.
+
+How it works: Records are staged in a base, then created one link at a time by workflows. Each step waits for a gate that checks a fact, the ID written by the step before, never a status someone typed. Every creator can run twice without creating twice.
 
 Lesson: Gates read facts, not statuses.
 
@@ -121,7 +230,9 @@ Lesson: Gates read facts, not statuses.
 
 Status: Live · Themes: data, automation · Stack: n8n, Airtable, Salesforce
 
-Fills in who runs each venture, from several sources, in a fixed order of trust. A weekly workflow picks the records that were never checked or not checked for six months. It asks each source in turn, keeps the most trusted answer for every field, and writes down when it looked so nothing is fetched twice.
+Fills in who runs each venture, from several sources, in a fixed order of trust.
+
+How it works: A weekly workflow picks the records that were never checked or not checked for six months. It asks each source in turn, keeps the most trusted answer for every field, and writes down when it looked so nothing is fetched twice.
 
 Lesson: Write down when you last checked. It is the cheapest cache there is.
 
@@ -129,7 +240,9 @@ Lesson: Write down when you last checked. It is the cheapest cache there is.
 
 Status: Live · Themes: data · Stack: Airtable, JavaScript
 
-A daily script folds duplicate organisation records into one clean list. The same organisation often exists several times under slightly different names. A script strips legal suffixes and punctuation into a match key, merges the rows that share it, and rewrites the clean table every morning. Corrections belong in the source, not in the copy.
+A daily script folds duplicate organisation records into one clean list.
+
+How it works: The same organisation often exists several times under slightly different names. A script strips legal suffixes and punctuation into a match key, merges the rows that share it, and rewrites the clean table every morning. Corrections belong in the source, not in the copy.
 
 Lesson: Build a match key. Leave the original names alone.
 
@@ -137,7 +250,9 @@ Lesson: Build a match key. Leave the original names alone.
 
 Status: Done · Themes: quality, automation · Stack: n8n, Claude
 
-Every workflow gets a status, an owner and a warning label if it writes to production. An agent read every workflow and credential in the project, sorted them into folders and tagged each one: live, manual tool, in development, paused or stale; who owns it; whether it writes to production or calls an external AI. Tagging creates no new version, so nothing live was touched.
+Every workflow gets a status, an owner and a warning label if it writes to production.
+
+How it works: An agent read every workflow and credential in the project, sorted them into folders and tagged each one: live, manual tool, in development, paused or stale; who owns it; whether it writes to production or calls an external AI. Tagging creates no new version, so nothing live was touched.
 
 Lesson: If nobody owns it, it is already stale.
 
@@ -145,7 +260,9 @@ Lesson: If nobody owns it, it is already stale.
 
 Status: Prototype and rollout · Themes: quality, data, automation · Stack: GitHub Actions, Playwright, Slack, Jira, Databricks
 
-A pull request starts a smoke suite in another repository. The result comes back to chat. A workflow in the product repository triggers the test repository, waits, counts results from the report and posts one line to a chat channel. Separately, issue-tracker data lands in lakehouse tables and feeds a QA dashboard.
+A pull request starts a smoke suite in another repository. The result comes back to chat.
+
+How it works: A workflow in the product repository triggers the test repository, waits, counts results from the report and posts one line to a chat channel. Separately, issue-tracker data lands in lakehouse tables and feeds a QA dashboard.
 
 Lesson: A green run is not proof. Count the report.
 
@@ -153,7 +270,9 @@ Lesson: A green run is not proof. Count the report.
 
 Status: Exploring · Themes: quality · Stack: Feature flags, Progressive delivery
 
-Shipping behind a flag: off, on for a pilot group, on for everyone, and one switch that overrides all of it. Helping the wider technology team look at how features are released behind flags, how a pilot group gets them first, and how a kill switch turns something off without a deployment.
+Shipping behind a flag: off, on for a pilot group, on for everyone, and one switch that overrides all of it.
+
+How it works: Helping the wider technology team look at how features are released behind flags, how a pilot group gets them first, and how a kill switch turns something off without a deployment.
 
 Lesson: The kill switch has to win over every other rule.
 
@@ -161,7 +280,9 @@ Lesson: The kill switch has to win over every other rule.
 
 Status: Live · Themes: automation, agents · Stack: Python, Claude
 
-Every email an automation sends me ends with a small card: what ran, who started it, how long it took and when it runs next. One shared script sends the mail and appends the footer, so no task can forget it. The cog changes its badge by report type. If a machine wrote it, the reader can tell at a glance.
+Every email an automation sends me ends with a small card: what ran, who started it, how long it took and when it runs next.
+
+How it works: One shared script sends the mail and appends the footer, so no task can forget it. The cog changes its badge by report type. If a machine wrote it, the reader can tell at a glance.
 
 Lesson: Label machine-written mail. Trust starts with knowing who is talking.
 
