@@ -511,9 +511,34 @@
     };
   }
 
+  function block(kind, label, text) {
+    var b = h('div', 'pj-blk pj-blk-' + kind);
+    b.appendChild(h('p', 'pj-blk-l', label));
+    b.appendChild(h('p', 'pj-blk-t', text));
+    return b;
+  }
   function buildHow(p, compact) {
     var inner = h('div', 'pj-how-in');
-    inner.appendChild(h('p', 'pj-how-p', p.how));
+    var extra = !!(p.problem || p.checks || p.result || (p.flow && p.flow.length));
+    if (extra) inner.classList.add('pj-how-rich');
+    if (p.problem) inner.appendChild(block('problem', tr('problem', 'The problem'), p.problem));
+    if (extra) {
+      var hb = block('how', tr('howItWorks', 'How it works'), p.how);
+      if (p.flow && p.flow.length) {
+        var ol = h('ol', 'pj-flow', null, { 'aria-label': tr('flowSteps', 'Steps') });
+        p.flow.forEach(function (st, i) {
+          var li = h('li', 'pj-flow-s' + (i === p.flow.length - 1 ? ' pj-flow-last' : ''));
+          li.appendChild(h('span', 'pj-flow-p', st));
+          ol.appendChild(li);
+        });
+        hb.appendChild(ol);
+      }
+      inner.appendChild(hb);
+    } else {
+      inner.appendChild(h('p', 'pj-how-p', p.how));
+    }
+    if (p.checks) inner.appendChild(block('checks', tr('checks', 'What keeps it reliable'), p.checks));
+    if (p.result) inner.appendChild(block('result', tr('result', 'What it gives the team'), p.result));
     var les = h('p', 'pj-lesson');
     les.appendChild(h('span', 'pj-lesson-l', tr('lesson', 'Lesson')));
     les.appendChild(h('span', 'pj-lesson-t', p.lesson));
@@ -527,9 +552,14 @@
     }
     if (compact) {
       var wrap = h('div', 'pj-how pj-how-static');
-      wrap.appendChild(h('p', 'pj-how-h', tr('howItWorks', 'How it works')));
+      if (!extra) wrap.appendChild(h('p', 'pj-how-h', tr('howItWorks', 'How it works')));
       wrap.appendChild(inner);
       return wrap;
+    }
+    if (extra) { /* rich detail is always visible on featured cards */
+      var open = h('div', 'pj-how pj-how-static');
+      open.appendChild(inner);
+      return open;
     }
     var det = h('details', 'pj-how');
     det.appendChild(h('summary', null, tr('howItWorks', 'How it works')));
@@ -540,7 +570,7 @@
   /* ---------- page ---------- */
   var intro = AK.projectsIntro || {};
   var head = h('header', 'pj-head');
-  head.appendChild(h('p', 'label', '04 / ' + tr('labelProjects', 'recent work')));
+  head.appendChild(h('p', 'label', '05 / ' + tr('labelProjects', 'recent work')));
   head.appendChild(h('h2', 'pj-h2', intro.title, { id: 'projects-title' }));
   if (intro.body) head.appendChild(h('p', 'pj-intro', intro.body));
   root.appendChild(head);

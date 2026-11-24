@@ -24,7 +24,7 @@ window.AK_LANGS.en = {
     place: "Geneva",
     intro: [
       "Hardcore computer engineer from Mumbai. I build AI agents and automations for business teams. Day to day I sit with the team at UpLink, the World Economic Forum's open innovation platform, and solve their operational problems with technology.",
-      "I was wiring systems together by hand long before MCP, by reading API docs. With AI agents and MCP I now do the same work at scale. Data is the other half of my work, from migrations on Salesforce and mainframes to datasets built from data providers and the open web. My QA background keeps it all reliable."
+      "I was wiring systems together by hand long before MCP, and with AI agents I now do it at scale. Data is the other half of my work, and my QA background keeps both reliable."
     ],
     askMeAbout: [
       "AI agents for business teams",
@@ -32,8 +32,26 @@ window.AK_LANGS.en = {
       "MCP connectors",
       "Read-only agents",
       "n8n and Clay workflows",
-      "Salesforce and Airtable data"
+      "Salesforce and Airtable data",
+      "Debugging and root causes"
     ],
+    /* A short facts card next to the photo: what a recruiter looks for first. */
+    glance: {
+      title: "At a glance",
+      rows: [
+        { k: "Now", v: "Technology operations at UpLink, World Economic Forum" },
+        { k: "Based in", v: "Geneva, Switzerland" },
+        { k: "Experience", v: "12 years in tech, since 2014" },
+        { k: "Core stack", v: "AI agents, Salesforce, n8n, Airtable, Clay, Python" },
+        { k: "Certified", v: "Five Salesforce certifications" }
+      ]
+    },
+    openTo: {
+      label: "Open to roles",
+      roles: ["Forward Deployed Engineer", "GTM Engineer", "AI Automation Engineer", "Salesforce Solutions Engineer"],
+      where: "Switzerland or nearby France. On-site, hybrid or remote.",
+      note: "Also open to any challenge that technology can solve."
+    },
     hereToLearn: ["Evals", "Agents in production", "How you review agent-written code"],
     linkedin: "https://www.linkedin.com/in/akshaykanhere"
   },
@@ -126,6 +144,135 @@ window.AK_LANGS.en = {
     }
   },
 
+  /* "What I do": four pillars, each with a short text and a small visual (js/craft.js).
+     viz.type: toolmap | flow | runReport | artifacts | trace. Numbers in runReport are illustrative. */
+  craft: {
+    title: "What I do",
+    body: "Five parts of the job, with more room than a headline gives them.",
+    pillars: [
+      {
+        id: "connect",
+        title: "Connecting systems, before MCP and after",
+        body: [
+          "I was building integrations long before MCP existed. It meant reading the API docs, writing each call by hand, and dealing with logins, paging and errors one system at a time.",
+          "AI agents and MCP connectors changed the pace, not the job. I describe what should move where, the agent does the wiring, and I review it. The workflows document themselves and are shared across the team."
+        ],
+        viz: {
+          type: "toolmap",
+          caption: "The tools I connect. Tap one to see what it does here.",
+          hub: "Agents and workflows",
+          adminLabel: "I administer this",
+          adminNote: "A ring marks the four platforms I also administer.",
+          tools: [
+            { id: "salesforce", name: "Salesforce", admin: true, role: "The CRM: the record of organisations, people and memberships." },
+            { id: "marketing-cloud", name: "Marketing Cloud", admin: false, role: "Newsletters and email journeys." },
+            { id: "airtable", name: "Airtable", admin: true, role: "The working bases where the team reviews, scores and decides." },
+            { id: "n8n", name: "n8n", admin: true, role: "Scheduled workflows that move data between the other systems." },
+            { id: "clay", name: "Clay", admin: true, role: "Finds companies and contacts for go-to-market research." },
+            { id: "databricks", name: "Databricks", admin: false, role: "Governed data tables and the dashboards on top of them." },
+            { id: "jira", name: "Jira", admin: false, role: "Tickets, and the source data for quality dashboards." },
+            { id: "confluence", name: "Confluence", admin: false, role: "Documentation, kept current by scheduled agents." },
+            { id: "python", name: "Python", admin: false, role: "Scripts for whatever the platforms cannot do on their own." },
+            { id: "claude", name: "Claude", admin: false, role: "Agents and skills, reaching the systems through MCP connectors." }
+          ]
+        },
+        compare: {
+          caption: "One integration, two ways",
+          before: {
+            label: "By hand",
+            steps: ["Read the API docs", "Write each call", "Handle logins, paging and errors", "Test against real data", "Write the documentation"]
+          },
+          after: {
+            label: "With agents and MCP",
+            steps: ["Describe what should move where", "The agent wires it through connectors", "I review and test it", "It documents itself"]
+          }
+        }
+      },
+      {
+        id: "data",
+        title: "Data, the other half",
+        body: [
+          "An automation is only as good as the data under it, and data was my job well before AI. I have owned data migrations on Salesforce and on mainframes.",
+          "Today I bring data in from data providers and the open web, map it to what we already hold, remove the duplicates, and turn it into structured datasets that the business and its workflows can rely on."
+        ],
+        viz: {
+          type: "flow",
+          caption: "From raw sources to a dataset people trust",
+          stages: [
+            { label: "Sources", note: "Data providers, the open web, forms and the CRM" },
+            { label: "Bring in", note: "Scheduled pulls that note when they last ran" },
+            { label: "Map", note: "Match fields and names to what we already hold" },
+            { label: "Clean", note: "Remove duplicates, keep the most trusted value" },
+            { label: "Dataset", note: "One structured table per subject" },
+            { label: "Use", note: "Workflows, dashboards and people" }
+          ]
+        }
+      },
+      {
+        id: "quality",
+        title: "Reliable, because of QA",
+        body: [
+          "I spent years testing other people's systems, and it left me with one habit: asking how something will break before it ships.",
+          "So the checks are built in from the start. A second agent that cannot edit audits the first, and the numbers that prove a workflow works are collected on every run, not put together by hand afterwards. The rules behind this are in the field notes further down."
+        ],
+        viz: {
+          type: "runReport",
+          caption: "Every run reports itself. Illustrative numbers.",
+          title: "Weekly run",
+          status: "Passed",
+          rows: [
+            { k: "Records read", v: "310" },
+            { k: "Created", v: "12" },
+            { k: "Skipped, already there", v: "298" },
+            { k: "Sent to a person", v: "3" },
+            { k: "Audit by a second agent", v: "No mismatches" }
+          ],
+          note: "If a number looks wrong, the run says so before a person has to notice."
+        }
+      },
+      {
+        id: "show",
+        title: "Show, don't tell",
+        body: [
+          "I would rather show an idea working than describe it. A quick proof of concept, a live demo or something people can open and share usually settles a discussion faster than a document."
+        ],
+        viz: {
+          type: "artifacts",
+          caption: "What I usually bring to the meeting",
+          items: [
+            { id: "poc", label: "Proof of concept", note: "The idea, working on a small sample" },
+            { id: "demo", label: "Live demo", note: "The real thing, run in front of the team" },
+            { id: "dashboard", label: "Dashboard", note: "The numbers, updated without me" },
+            { id: "page", label: "Walkthrough page", note: "One link that explains the whole flow" },
+            { id: "video", label: "Explainer video", note: "Short and narrated, for people who were not in the room" }
+          ]
+        }
+      },
+      {
+        id: "debug",
+        title: "Debugging, my favourite part",
+        body: [
+          "I love debugging: following a flow step by step until the root cause shows itself. I have done it since long before AI, back on mainframes, and it is still the part of the job I enjoy most.",
+          "The symptom is rarely where the problem is. So I trace the flow backwards, one step at a time, until something does not add up."
+        ],
+        viz: {
+          type: "trace",
+          caption: "A made-up case, traced back to its cause",
+          next: "Trace the next step",
+          again: "Trace it again",
+          steps: [
+            { kind: "symptom", label: "Symptom", text: "A welcome email never arrived." },
+            { kind: "ok", label: "Did the workflow run?", text: "Yes, on schedule." },
+            { kind: "bad", label: "Did it pick up the record?", text: "No. The record never matched the trigger." },
+            { kind: "bad", label: "Why not?", text: "The field the trigger reads was empty." },
+            { kind: "root", label: "Root cause", text: "A formula upstream was changed the week before." }
+          ],
+          fix: "Fix the formula, then add a check so the next empty field raises a flag."
+        }
+      }
+    ]
+  },
+
   journey: {
     title: "The trail so far",
     route: ["Mumbai", "Bengaluru", "Mumbai", "Pune", "Geneva"],
@@ -183,6 +330,27 @@ window.AK_LANGS.en = {
         tags: ["AI agents", "Automation", "Data"]
       }
     ],
+    /* A small matrix under the trail: which kind of work happened in which chapter. */
+    tracks: {
+      title: "What I did where",
+      caption: "A mark means I did that kind of work in that chapter.",
+      yes: "yes",
+      no: "no",
+      chapters: [
+        { when: "2014–17", org: "iGATE, now Capgemini" },
+        { when: "2017–23", org: "Deloitte" },
+        { when: "2024–now", org: "World Economic Forum" }
+      ],
+      rows: [
+        { label: "Mainframe development", in: [true, true, false] },
+        { label: "Salesforce QA", in: [true, true, false] },
+        { label: "Business analysis", in: [false, true, false] },
+        { label: "Leading a QA team", in: [false, true, false] },
+        { label: "Product management", in: [false, false, true] },
+        { label: "Technology operations", in: [false, false, true] },
+        { label: "AI agents and automation", in: [false, false, true] }
+      ]
+    },
     certsLabel: "Five Salesforce certifications along the way",
     certs: ["Administrator", "Business Analyst", "Marketing Cloud Administrator", "AI Associate", "Data Cloud Consultant"]
   },
@@ -190,12 +358,12 @@ window.AK_LANGS.en = {
   /* An interactive loop: tap a step to see what it means in practice. */
   howIWork: {
     title: "How I work",
-    body: "The same loop, whatever the tool. I would rather show than tell.",
+    body: "The same loop, whatever the tool.",
     steps: [
       { id: "spot", label: "Spot", line: "Find the chore someone does by hand every week.", example: "Example: two days of copying records into slides before every judging day." },
       { id: "map", label: "Map", line: "Read the system before touching it. Read-only first.", example: "Example: an agent reads the schemas, automations and run history, and changes nothing." },
-      { id: "build", label: "Build", line: "The smallest thing that removes the chore, shown early: a proof of concept, a live demo, a dashboard or a walkthrough page.", example: "Example: a skill that fills the slide template straight from the database." },
-      { id: "check", label: "Check", line: "A second pass that cannot edit audits the first, and the numbers that prove it works are collected automatically.", example: "Example: an audit skill compares every slide with its source record and lists the mismatches." },
+      { id: "build", label: "Build", line: "The smallest thing that removes the chore: a workflow, a script or a skill.", example: "Example: a skill that fills the slide template straight from the database." },
+      { id: "check", label: "Check", line: "A second pass that cannot edit audits the first.", example: "Example: an audit skill compares every slide with its source record and lists the mismatches." },
       { id: "hand", label: "Hand over", line: "Docs, an owner and an off switch. Then it belongs to the team.", example: "Example: a how-to page, a named owner, and a flag that turns it off without a deployment." }
     ]
   },
@@ -226,6 +394,9 @@ window.AK_LANGS.en = {
       tags: ["agents", "automation", "data"],
       status: "Live",
       oneLiner: "Finds companies that fit an innovation challenge: AI-researched, de-duplicated and scored, with a person approving each lead before outreach.",
+      problem: "Finding companies that fit a challenge used to be desk research by hand: slow, uneven, and full of companies we already knew.",
+      checks: "Every candidate keeps its sources. Duplicates are caught against existing leads and the CRM before enrichment, so nothing is looked up twice. Nothing goes out without a person's approval.",
+      result: "A ranked, sourced long list for each challenge. The team spends its time judging fit instead of searching.",
       how: "A challenge brief goes in. AI research on Clay and n8n proposes candidates with sources, duplicates are removed, company databases and the CRM fill the gaps, and a fit score ranks what is left. A person approves every lead before any outreach.",
       lesson: "The human check stays. The agent's job is to make it fast.",
       stack: ["Clay", "n8n", "Airtable", "Claude", "Salesforce"],
@@ -250,6 +421,9 @@ window.AK_LANGS.en = {
       tags: ["agents", "automation"],
       status: "Live, shared with the team",
       oneLiner: "Skills the whole team runs. One builds a pitch booklet from the database, and a second, read-only agent audits it.",
+      problem: "Before a judging day, someone spent days copying records into slides, aligning logos and chasing late edits. The deck was out of date as soon as the data changed.",
+      checks: "The audit skill is separate from the builder and cannot edit. It compares every slide with its source record, tests the links and ranks what it finds by severity, so a person reviews a short list instead of the whole deck.",
+      result: "A booklet on request, rebuilt whenever the data changes, and a how-to guide so colleagues run it without me.",
       how: "A Claude skill reads the shortlisted records, fills the slide template and places every logo by record. A second, read-only skill then audits the finished deck against the source and reports what does not match. The same pattern now builds a winners booklet and an event participant booklet.",
       lesson: "Generate, then audit with a separate pass that cannot edit.",
       stack: ["Claude skills", "Airtable", "Python", "PowerPoint"],
@@ -275,6 +449,10 @@ window.AK_LANGS.en = {
       tags: ["agents", "quality"],
       status: "Early pilot",
       oneLiner: "Read-only by design: it checks the systems and hands colleagues the steps. It never changes data.",
+      problem: "The same questions reach me every week: why is this record stuck, where is that document, how do I fix this field. The answers sat in my head.",
+      checks: "It has read-only tools and nothing else, so it cannot change data even when asked. It carries work knowledge only, and every change is still made by a person under their own login.",
+      result: "Colleagues get the answer and the steps straight away, and I get fewer interruptions. It is an early pilot, so the playbooks are still growing.",
+      flow: ["Question in Slack", "Agent reads the systems", "Explains what it found", "Hands back the steps", "A person makes the change"],
       how: "Packaged as a Claude plugin with playbooks for the recurring questions and read-only tools. It looks up the current state, explains what it found, and hands back the steps so the person makes the change under their own login.",
       lesson: "Agents look things up. People make the change, so every edit keeps an owner.",
       stack: ["Claude plugin", "Slack", "Airtable"],
@@ -324,7 +502,11 @@ window.AK_LANGS.en = {
       tags: ["agents", "automation"],
       status: "Live",
       oneLiner: "They track what changed in our systems and who changed it, update the docs and email a weekly summary.",
-      how: "Each one is a scheduled task with a small profile file that says what matters. The agent gathers, filters and writes a short email, signed by the cog. Others report what the email campaigns did and which tech events are worth attending.",
+      problem: "Systems change quietly. A field is renamed or a workflow is edited, and weeks later nobody remembers who did it or why. The documentation drifts.",
+      checks: "The agents only read the systems they watch. They send counts and exceptions, not raw logs, and every email ends with a card showing what ran, who started it and when it runs next.",
+      result: "A weekly summary in the inbox, documentation that stays current, and an answer when someone asks who changed what.",
+      flow: ["Audit logs and run history", "What changed, and who", "Docs updated", "Weekly email"],
+      how: "Each one is a scheduled task with a small profile file that says what matters. The agent reads the audit logs and run history, works out what changed and who changed it, updates the documentation and writes a short email, signed by the cog. Others report what the email campaigns did and which tech events are worth attending.",
       lesson: "Send counts and exceptions. Nobody reads a log by email.",
       stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
       viz: {
@@ -346,6 +528,10 @@ window.AK_LANGS.en = {
       tags: ["data", "automation"],
       status: "Live",
       oneLiner: "A dashboard and alerts, so AI spend is visible before it surprises anyone.",
+      problem: "AI features use credits, and the only view of the spend was the bill at the end of the month.",
+      checks: "Alerts fire when a day runs far above normal, so a runaway automation shows up the same day. The table keeps counts, not raw logs, so the report stays small and readable.",
+      result: "Spend is visible every day, by feature and by person, with a monthly report nobody has to put together.",
+      flow: ["Audit log", "Daily roll-up", "Usage table", "Dashboard and monthly report", "Alerts"],
       how: "A scheduled workflow pulls the audit log every day, rolls events up into counts per feature and per person, and writes them to a base with a dashboard and a monthly report on top. Alerts fire when a day runs far above normal.",
       lesson: "Store counts, not raw logs. The report only ever needs the counts.",
       stack: ["n8n", "Airtable"],
@@ -364,6 +550,10 @@ window.AK_LANGS.en = {
       tags: ["data", "quality"],
       status: "Done",
       oneLiner: "Data providers and tools compared on measured cost per result, before anything is bought.",
+      problem: "Tools and data providers are easy to judge on a demo and hard to judge on results. We wanted evidence before deciding.",
+      checks: "The pass lines are written before the test runs. Every tool gets the same sample, a final check uses records it has not seen, and failed runs count towards the cost.",
+      result: "A verdict with numbers behind it, shared as a page the decision-makers can read in a few minutes: what each tool is good for, and what it is not.",
+      flow: ["Write the pass lines", "Same sample for every tool", "Measure cost per result", "Check on unseen records", "Verdict"],
       how: "Each test has its pass line written down first: coverage, accuracy against records we already trust, cost per useful result, and a check on a sample the tool has not seen during set-up. One recent outcome was a split verdict: use the new tool for some jobs, keep the existing stack for others.",
       lesson: "Write the pass line before you run the test.",
       stack: ["Python", "Airtable", "Evals"],
@@ -668,13 +858,15 @@ window.AK_LANGS.en = {
   footer: {
     lines: [
       "A personal page. Views are my own.",
-      "Project descriptions are generalised and the numbers in the visuals are illustrative."
+      "Project descriptions are generalised and the numbers in the visuals are illustrative.",
+      "This page counts visits with GoatCounter. No cookies, and nothing follows you to other sites."
     ]
   },
 
   /* Small interface strings. Code reads these through AKt(key, fallback, vars). {n}, {total}, {v}, {unit} are placeholders. */
   ui: {
     navApproach: "Say hi",
+    navCraft: "What I do",
     navJourney: "Journey",
     navWork: "How I work",
     navProjects: "Projects",
@@ -683,6 +875,7 @@ window.AK_LANGS.en = {
     navPersonal: "Personal",
     navConnect: "Connect",
     labelApproach: "say hi",
+    labelCraft: "what I do",
     labelJourney: "journey",
     labelWork: "how I work",
     labelProjects: "recent work",
@@ -693,6 +886,7 @@ window.AK_LANGS.en = {
     askMeAbout: "Ask me about",
     hereToLearn: "Here to learn:",
     howToSayHi: "How to say hi",
+    seeWork: "See recent work",
     youAreHere: "you are here",
     themeToggle: "Switch between light and dark",
     language: "Language",
@@ -704,7 +898,11 @@ window.AK_LANGS.en = {
     open: "Open",
     runAgain: "Run again",
     play: "Play",
+    problem: "The problem",
     howItWorks: "How it works",
+    checks: "What keeps it reliable",
+    result: "What it gives the team",
+    flowSteps: "Steps",
     lesson: "Lesson",
     stack: "Stack",
     kindInput: "input",

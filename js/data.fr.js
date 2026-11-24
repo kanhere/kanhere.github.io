@@ -11,7 +11,7 @@ window.AK_LANGS.fr = {
     place: "Genève",
     intro: [
       "Ingénieur informatique pur et dur, originaire de Mumbai. Je construis des agents IA et des automatisations pour des équipes métier. Au quotidien, je travaille aux côtés de l'équipe d'UpLink, la plateforme d'innovation ouverte du Forum économique mondial, et je résous leurs problèmes opérationnels grâce à la technologie.",
-      "Je connectais des systèmes à la main bien avant MCP, en lisant la documentation des API. Avec les agents IA et MCP, je fais aujourd'hui le même travail à grande échelle. Les données sont l'autre moitié de mon travail, des migrations sur Salesforce et mainframe aux jeux de données construits à partir de fournisseurs de données et du web ouvert. Mon passé en QA garde le tout fiable."
+      "Je connectais des systèmes à la main bien avant MCP, et avec les agents IA je le fais maintenant à grande échelle. Les données sont l'autre moitié de mon travail, et mon passé en QA garde les deux fiables."
     ],
     askMeAbout: [
       "Des agents IA pour les équipes métier",
@@ -19,8 +19,24 @@ window.AK_LANGS.fr = {
       "Connecteurs MCP",
       "Agents en lecture seule",
       "Workflows n8n et Clay",
-      "Données Salesforce et Airtable"
+      "Données Salesforce et Airtable",
+      "Débogage et causes racines"
     ],
+    glance: {
+      title: "En bref",
+      rows: [
+        { k: "Aujourd'hui", v: "Opérations technologiques chez UpLink, Forum économique mondial" },
+        { k: "Basé à", v: "Genève, Suisse" },
+        { k: "Expérience", v: "12 ans dans la tech, depuis 2014" },
+        { k: "Outils clés", v: "Agents IA, Salesforce, n8n, Airtable, Clay, Python" },
+        { k: "Certifié", v: "Cinq certifications Salesforce" }
+      ]
+    },
+    openTo: {
+      label: "Ouvert à des postes",
+      where: "Suisse ou France voisine. Sur site, hybride ou à distance.",
+      note: "Ouvert aussi à tout défi que la technologie peut résoudre."
+    },
     hereToLearn: ["Evals", "Agents en production", "Comment vous relisez le code écrit par un agent"]
   },
 
@@ -99,6 +115,123 @@ window.AK_LANGS.fr = {
     }
   },
 
+  craft: {
+    title: "Ce que je fais",
+    body: "Cinq volets du métier, avec plus de place qu'un titre n'en donne.",
+    pillars: [
+      {
+        title: "Connecter des systèmes, avant MCP et après",
+        body: [
+          "Je construisais des intégrations bien avant MCP. Il fallait lire la doc des API, écrire chaque appel à la main, et gérer connexions, pagination et erreurs système par système.",
+          "Les agents IA et les connecteurs MCP ont changé le rythme, pas le métier. Je décris ce qui doit aller où, l'agent fait le câblage, et je relis. Les workflows se documentent eux-mêmes et sont partagés dans l'équipe."
+        ],
+        viz: {
+          caption: "Les outils que je connecte. Touchez-en un pour voir son rôle ici.",
+          hub: "Agents et workflows",
+          adminLabel: "Je l'administre",
+          adminNote: "Un anneau marque les quatre plateformes que j'administre aussi.",
+          tools: [
+            { role: "Le CRM : la référence pour les organisations, les personnes et les adhésions." },
+            { role: "Newsletters et parcours e-mail." },
+            { role: "Les bases de travail où l'équipe relit, note et décide." },
+            { role: "Des workflows planifiés qui déplacent les données d'un système à l'autre." },
+            { role: "Trouve des entreprises et des contacts pour la recherche go-to-market." },
+            { role: "Des tables de données gouvernées et les tableaux de bord qui les exploitent." },
+            { role: "Les tickets, et les données source des tableaux de bord qualité." },
+            { role: "La documentation, tenue à jour par des agents planifiés." },
+            { role: "Des scripts pour tout ce que les plateformes ne font pas seules." },
+            { role: "Agents et skills, qui accèdent aux systèmes via des connecteurs MCP." }
+          ]
+        },
+        compare: {
+          caption: "Une intégration, deux façons",
+          before: {
+            label: "À la main",
+            steps: ["Lire la doc des API", "Écrire chaque appel", "Gérer connexions, pagination et erreurs", "Tester sur de vraies données", "Rédiger la documentation"]
+          },
+          after: {
+            label: "Avec les agents et MCP",
+            steps: ["Décrire ce qui doit aller où", "L'agent câble via les connecteurs", "Je relis et je teste", "Il se documente tout seul"]
+          }
+        }
+      },
+      {
+        title: "Les données, l'autre moitié",
+        body: [
+          "Une automatisation vaut ce que valent les données dessous, et les données étaient mon métier bien avant l'IA. J'ai piloté des migrations de données sur Salesforce et sur mainframe.",
+          "Aujourd'hui, je fais entrer des données issues de fournisseurs de données et du web ouvert, je les rapproche de ce que nous avons déjà, je supprime les doublons, et j'en fais des jeux de données structurés sur lesquels l'entreprise et ses workflows peuvent compter."
+        ],
+        viz: {
+          caption: "Des sources brutes à un jeu de données fiable",
+          stages: [
+            { label: "Sources", note: "Fournisseurs de données, web ouvert, formulaires et CRM" },
+            { label: "Importer", note: "Des récupérations planifiées qui notent leur dernier passage" },
+            { label: "Rapprocher", note: "Faire correspondre champs et noms avec l'existant" },
+            { label: "Nettoyer", note: "Supprimer les doublons, garder la valeur la plus fiable" },
+            { label: "Jeu de données", note: "Une table structurée par sujet" },
+            { label: "Utiliser", note: "Workflows, tableaux de bord et personnes" }
+          ]
+        }
+      },
+      {
+        title: "Fiable, grâce à la QA",
+        body: [
+          "J'ai passé des années à tester les systèmes des autres, et il m'en reste une habitude : me demander comment une chose va casser avant sa livraison.",
+          "Les contrôles sont donc intégrés dès le départ. Un second agent qui ne peut rien modifier audite le premier, et les chiffres qui prouvent qu'un workflow fonctionne sont collectés à chaque exécution, pas assemblés à la main après coup. Les règles qui sous-tendent cela sont dans les notes de terrain plus bas."
+        ],
+        viz: {
+          caption: "Chaque exécution rend compte d'elle-même. Chiffres illustratifs.",
+          title: "Exécution hebdomadaire",
+          status: "Réussie",
+          rows: [
+            { k: "Enregistrements lus", v: "310" },
+            { k: "Créés", v: "12" },
+            { k: "Ignorés, déjà présents", v: "298" },
+            { k: "Envoyés à une personne", v: "3" },
+            { k: "Audit par un second agent", v: "Aucun écart" }
+          ],
+          note: "Si un chiffre semble faux, l'exécution le dit avant qu'une personne ne le remarque."
+        }
+      },
+      {
+        title: "Montrer plutôt que dire",
+        body: [
+          "Je préfère montrer une idée qui fonctionne plutôt que la décrire. Une preuve de concept rapide, une démo en direct ou quelque chose que l'on peut ouvrir et partager règle souvent une discussion plus vite qu'un document."
+        ],
+        viz: {
+          caption: "Ce que j'apporte d'habitude en réunion",
+          items: [
+            { label: "Preuve de concept", note: "L'idée, qui fonctionne sur un petit échantillon" },
+            { label: "Démo en direct", note: "Le vrai outil, lancé devant l'équipe" },
+            { label: "Tableau de bord", note: "Les chiffres, mis à jour sans moi" },
+            { label: "Page de présentation", note: "Un seul lien qui explique tout le flux" },
+            { label: "Vidéo explicative", note: "Courte et narrée, pour ceux qui n'étaient pas là" }
+          ]
+        }
+      },
+      {
+        title: "Le débogage, ma partie préférée",
+        body: [
+          "J'adore déboguer : suivre un flux pas à pas jusqu'à ce que la cause racine se montre. Je le fais depuis bien avant l'IA, à l'époque des mainframes, et c'est toujours la partie du métier que je préfère.",
+          "Le symptôme est rarement là où se trouve le problème. Je remonte donc le flux, une étape à la fois, jusqu'à ce que quelque chose ne colle pas."
+        ],
+        viz: {
+          caption: "Un cas inventé, remonté jusqu'à sa cause",
+          next: "Remonter d'une étape",
+          again: "Remonter à nouveau",
+          steps: [
+            { label: "Symptôme", text: "Un e-mail de bienvenue n'est jamais arrivé." },
+            { label: "Le workflow a-t-il tourné ?", text: "Oui, comme prévu." },
+            { label: "A-t-il pris l'enregistrement ?", text: "Non. L'enregistrement ne correspondait jamais au déclencheur." },
+            { label: "Pourquoi ?", text: "Le champ lu par le déclencheur était vide." },
+            { label: "Cause racine", text: "Une formule en amont avait été modifiée la semaine d'avant." }
+          ],
+          fix: "Corriger la formule, puis ajouter un contrôle pour que le prochain champ vide lève une alerte."
+        }
+      }
+    ]
+  },
+
   journey: {
     title: "Le parcours jusqu'ici",
     route: ["Mumbai", "Bengaluru", "Mumbai", "Pune", "Genève"],
@@ -135,18 +268,38 @@ window.AK_LANGS.fr = {
         tags: ["Agents IA", "Automatisation", "Données"]
       }
     ],
+    tracks: {
+      title: "Ce que j'ai fait, et où",
+      caption: "Une marque signifie que j'ai fait ce type de travail dans ce chapitre.",
+      yes: "oui",
+      no: "non",
+      chapters: [
+        { when: "2014–17", org: "iGATE, aujourd'hui Capgemini" },
+        { when: "2017–23", org: "Deloitte" },
+        { when: "2024–auj.", org: "Forum économique mondial" }
+      ],
+      rows: [
+        { label: "Développement mainframe" },
+        { label: "QA Salesforce" },
+        { label: "Analyse métier" },
+        { label: "Direction d'une équipe QA" },
+        { label: "Gestion de produit" },
+        { label: "Opérations technologiques" },
+        { label: "Agents IA et automatisation" }
+      ]
+    },
     certsLabel: "Cinq certifications Salesforce en chemin",
     certs: ["Administrator", "Business Analyst", "Marketing Cloud Administrator", "AI Associate", "Data Cloud Consultant"]
   },
 
   howIWork: {
     title: "Ma façon de travailler",
-    body: "La même boucle, quel que soit l'outil. Je préfère montrer plutôt qu'expliquer.",
+    body: "La même boucle, quel que soit l'outil.",
     steps: [
       { label: "Repérer", line: "Trouver la corvée que quelqu'un fait à la main chaque semaine.", example: "Exemple : deux jours à copier des enregistrements dans des diapositives avant chaque journée de jury." },
       { label: "Cartographier", line: "Lire le système avant d'y toucher. En lecture seule d'abord.", example: "Exemple : un agent lit les schémas, les automatisations et l'historique d'exécution, et ne change rien." },
-      { label: "Construire", line: "Le plus petit outil qui supprime la corvée, montré tôt : une preuve de concept, une démo en direct, un tableau de bord ou une page explicative.", example: "Exemple : un skill qui remplit le modèle de diapositives directement depuis la base de données." },
-      { label: "Contrôler", line: "Une seconde passe qui ne peut rien modifier audite la première, et les chiffres qui prouvent que ça marche sont collectés automatiquement.", example: "Exemple : un skill d'audit compare chaque diapositive à son enregistrement source et liste les écarts." },
+      { label: "Construire", line: "Le plus petit outil qui supprime la corvée : un workflow, un script ou un skill.", example: "Exemple : un skill qui remplit le modèle de diapositives directement depuis la base de données." },
+      { label: "Contrôler", line: "Une seconde passe qui ne peut rien modifier audite la première.", example: "Exemple : un skill d'audit compare chaque diapositive à son enregistrement source et liste les écarts." },
       { label: "Transmettre", line: "Une doc, un responsable et un interrupteur. Ensuite, ça appartient à l'équipe.", example: "Exemple : une page de mode d'emploi, un responsable nommé, et un flag qui l'éteint sans déploiement." }
     ]
   },
@@ -171,6 +324,9 @@ window.AK_LANGS.fr = {
       oneLiner: "Trouve les entreprises qui correspondent à un défi d'innovation : recherchées par IA, dédoublonnées et notées, avec une personne qui approuve chaque lead avant la prise de contact.",
       how: "Un cahier des charges du défi entre. Une recherche par IA sur Clay et n8n propose des candidats avec leurs sources, les doublons sont supprimés, des bases d'entreprises et le CRM comblent les manques, et un score d'adéquation classe ce qui reste. Une personne approuve chaque lead avant toute prise de contact.",
       lesson: "Le contrôle humain reste. Le travail de l'agent est de le rendre rapide.",
+      problem: "Trouver des entreprises adaptées à un défi se faisait à la main, en recherche documentaire : lent, inégal, et plein d'entreprises déjà connues.",
+      checks: "Chaque candidat garde ses sources. Les doublons sont repérés par rapport aux leads existants et au CRM avant l'enrichissement, donc rien n'est cherché deux fois. Rien ne part sans l'approbation d'une personne.",
+      result: "Une longue liste classée et sourcée pour chaque défi. L'équipe passe son temps à juger l'adéquation plutôt qu'à chercher.",
       stack: ["Clay", "n8n", "Airtable", "Claude", "Salesforce"],
       viz: {
         caption: "Une exécution, chiffres illustratifs",
@@ -191,6 +347,9 @@ window.AK_LANGS.fr = {
       oneLiner: "Des skills que toute l'équipe utilise. L'un construit un booklet de pitch à partir de la base de données, et un second agent, en lecture seule, l'audite.",
       how: "Un skill Claude lit les enregistrements présélectionnés, remplit le modèle de diapositives et place chaque logo par enregistrement. Un second skill, en lecture seule, audite ensuite la présentation terminée par rapport à la source et signale ce qui ne correspond pas. Le même modèle produit maintenant un booklet des lauréats et un booklet des participants à un événement.",
       lesson: "Générer, puis auditer avec une passe distincte qui ne peut rien modifier.",
+      problem: "Avant une journée de jury, quelqu'un passait des jours à copier des enregistrements dans des diapositives, à aligner des logos et à courir après les modifications tardives. La présentation était périmée dès que les données changeaient.",
+      checks: "Le skill d'audit est distinct du constructeur et ne peut rien modifier. Il compare chaque diapositive à son enregistrement source, teste les liens et classe ses constats par gravité : une personne relit une courte liste, pas toute la présentation.",
+      result: "Un booklet à la demande, reconstruit dès que les données changent, et un guide pratique pour que les collègues le lancent sans moi.",
       stack: ["Skills Claude", "Airtable", "Python", "PowerPoint"],
       viz: {
         caption: "Étapes pour un booklet, illustratif",
@@ -212,6 +371,10 @@ window.AK_LANGS.fr = {
       oneLiner: "Lecture seule par conception : il vérifie les systèmes et donne aux collègues les étapes à suivre. Il ne modifie jamais les données.",
       how: "Packagé comme plugin Claude, avec des playbooks pour les questions récurrentes et des outils en lecture seule. Il consulte l'état actuel, explique ce qu'il a trouvé et rend les étapes à suivre, pour que la personne fasse la modification avec son propre compte.",
       lesson: "Les agents consultent. Les personnes modifient, donc chaque modification garde un responsable.",
+      problem: "Les mêmes questions m'arrivent chaque semaine : pourquoi cet enregistrement est bloqué, où est ce document, comment corriger ce champ. Les réponses étaient dans ma tête.",
+      checks: "Il n'a que des outils en lecture seule, donc il ne peut pas modifier les données, même si on le lui demande. Il ne porte que des connaissances de travail, et chaque modification reste faite par une personne avec son propre compte.",
+      result: "Les collègues ont tout de suite la réponse et les étapes, et j'ai moins d'interruptions. C'est un pilote en démarrage, donc les playbooks s'enrichissent encore.",
+      flow: ["Question dans Slack", "L'agent lit les systèmes", "Explique ce qu'il a trouvé", "Rend les étapes à suivre", "Une personne fait la modification"],
       stack: ["Plugin Claude", "Slack", "Airtable"],
       viz: {
         caption: "Un échange illustratif",
@@ -249,7 +412,11 @@ window.AK_LANGS.fr = {
       title: "Des agents planifiés qui signalent ce qui a changé",
       status: "En production",
       oneLiner: "Ils suivent ce qui a changé dans nos systèmes et qui l'a changé, mettent à jour la doc et envoient une synthèse hebdomadaire par e-mail.",
-      how: "Chacun est une tâche planifiée avec un petit fichier de profil qui dit ce qui compte. L'agent collecte, filtre et rédige un court e-mail, signé par le rouage. D'autres rapportent ce qu'ont fait les campagnes d'e-mails et quels événements tech valent le déplacement.",
+      problem: "Les systèmes changent sans bruit. Un champ est renommé ou un workflow modifié, et des semaines plus tard personne ne se souvient de qui ni pourquoi. La documentation dérive.",
+      checks: "Les agents ne font que lire les systèmes qu'ils surveillent. Ils envoient des comptages et des exceptions, pas des journaux bruts, et chaque e-mail se termine par une carte indiquant ce qui a tourné, qui l'a lancé et quand aura lieu la prochaine exécution.",
+      result: "Une synthèse hebdomadaire dans la boîte mail, une documentation à jour, et une réponse quand quelqu'un demande qui a changé quoi.",
+      flow: ["Journaux d'audit et historique d'exécution", "Ce qui a changé, et qui", "Doc mise à jour", "E-mail hebdomadaire"],
+      how: "Chacun est une tâche planifiée avec un petit fichier de profil qui dit ce qui compte. L'agent lit les journaux d'audit et l'historique d'exécution, repère ce qui a changé et qui l'a changé, met à jour la documentation et rédige un court e-mail, signé par le rouage. D'autres rapportent ce qu'ont fait les campagnes d'e-mails et quels événements tech valent le déplacement.",
       lesson: "Envoyez des comptages et des exceptions. Personne ne lit un journal par e-mail.",
       stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
       viz: {
@@ -269,6 +436,10 @@ window.AK_LANGS.fr = {
       oneLiner: "Un tableau de bord et des alertes, pour que les dépenses d'IA soient visibles avant de surprendre qui que ce soit.",
       how: "Un workflow planifié récupère le journal d'audit chaque jour, regroupe les événements en comptages par fonctionnalité et par personne, et les écrit dans une base surmontée d'un tableau de bord et d'un rapport mensuel. Des alertes se déclenchent quand une journée dépasse largement la normale.",
       lesson: "Stockez des comptages, pas des journaux bruts. Le rapport n'a besoin que des comptages.",
+      problem: "Les fonctionnalités d'IA consomment des crédits, et la seule vue des dépenses était la facture de fin de mois.",
+      checks: "Des alertes se déclenchent quand une journée dépasse largement la normale, donc une automatisation qui s'emballe se voit le jour même. La table garde des comptages, pas des journaux bruts, pour que le rapport reste léger et lisible.",
+      result: "Les dépenses sont visibles chaque jour, par fonctionnalité et par personne, avec un rapport mensuel que personne n'a à assembler.",
+      flow: ["Journal d'audit", "Agrégation quotidienne", "Table d'usage", "Tableau de bord et rapport mensuel", "Alertes"],
       stack: ["n8n", "Airtable"],
       viz: {
         caption: "Usage quotidien et ligne d'alerte, unités illustratives",
@@ -281,6 +452,10 @@ window.AK_LANGS.fr = {
       oneLiner: "Des fournisseurs de données et des outils comparés sur le coût mesuré par résultat, avant tout achat.",
       how: "Chaque test a sa ligne de réussite écrite d'avance : couverture, exactitude par rapport à des enregistrements fiables, coût par résultat utile, et contrôle sur un échantillon que l'outil n'a pas vu pendant la configuration. Un résultat récent : un verdict partagé, utiliser le nouvel outil pour certaines tâches, garder l'existant pour d'autres.",
       lesson: "Écrivez la ligne de réussite avant de lancer le test.",
+      problem: "Les outils et les fournisseurs de données se jugent facilement sur une démo, et difficilement sur des résultats. Nous voulions des preuves avant de décider.",
+      checks: "Les lignes de réussite sont écrites avant le test. Chaque outil reçoit le même échantillon, un dernier contrôle utilise des enregistrements qu'il n'a pas vus, et les exécutions échouées comptent dans le coût.",
+      result: "Un verdict chiffré, partagé sous forme de page que les décideurs lisent en quelques minutes : à quoi sert chaque outil, et à quoi il ne sert pas.",
+      flow: ["Écrire les lignes de réussite", "Même échantillon pour chaque outil", "Mesurer le coût par résultat", "Contrôler sur des enregistrements inconnus", "Verdict"],
       stack: ["Python", "Airtable", "Evals"],
       viz: {
         caption: "Cinq tests face à leur ligne de réussite, scores illustratifs",
@@ -532,13 +707,15 @@ window.AK_LANGS.fr = {
   footer: {
     lines: [
       "Une page personnelle. Les opinions sont les miennes.",
-      "Les descriptions de projets sont généralisées et les chiffres des visuels sont illustratifs."
+      "Les descriptions de projets sont généralisées et les chiffres des visuels sont illustratifs.",
+      "Cette page compte les visites avec GoatCounter. Pas de cookies, et rien ne vous suit sur d'autres sites."
     ]
   },
 
   ui: {
     navApproach: "Dire bonjour",
     navJourney: "Parcours",
+    navCraft: "Ce que je fais",
     navWork: "Ma méthode",
     navProjects: "Projets",
     navNotes: "Notes de terrain",
@@ -547,6 +724,7 @@ window.AK_LANGS.fr = {
     navConnect: "Contact",
     labelApproach: "dire bonjour",
     labelJourney: "parcours",
+    labelCraft: "ce que je fais",
     labelWork: "ma méthode",
     labelProjects: "travaux récents",
     labelNotes: "notes de terrain",
@@ -556,6 +734,7 @@ window.AK_LANGS.fr = {
     askMeAbout: "Parlez-moi de",
     hereToLearn: "Ici pour apprendre :",
     howToSayHi: "Comment dire bonjour",
+    seeWork: "Voir les travaux récents",
     youAreHere: "vous êtes ici",
     themeToggle: "Basculer entre clair et sombre",
     language: "Langue",
@@ -568,6 +747,10 @@ window.AK_LANGS.fr = {
     runAgain: "Relancer",
     play: "Lancer",
     howItWorks: "Comment ça marche",
+    problem: "Le problème",
+    checks: "Ce qui le rend fiable",
+    result: "Ce que ça apporte à l'équipe",
+    flowSteps: "Étapes",
     lesson: "Leçon",
     stack: "Stack",
     kindInput: "entrée",

@@ -12,7 +12,7 @@ window.AK_LANGS.de = {
     place: "Genf",
     intro: [
       "Computeringenieur durch und durch, aus Mumbai. Ich baue KI-Agenten und Automatisierungen für Business-Teams. Im Alltag sitze ich beim Team von UpLink, der offenen Innovationsplattform des Weltwirtschaftsforums, und löse ihre operativen Probleme mit Technologie.",
-      "Lange vor MCP habe ich Systeme von Hand verbunden, indem ich API-Doku gelesen habe. Mit KI-Agenten und MCP mache ich dieselbe Arbeit heute in grossem Massstab. Daten sind die andere Hälfte meiner Arbeit, von Migrationen auf Salesforce und Mainframes bis zu Datensätzen aus Datenanbietern und dem offenen Web. Mein QA-Hintergrund hält das Ganze verlässlich."
+      "Lange vor MCP habe ich Systeme von Hand verbunden, und mit KI-Agenten mache ich das heute in grossem Massstab. Daten sind die andere Hälfte meiner Arbeit, und mein QA-Hintergrund hält beides verlässlich."
     ],
     askMeAbout: [
       "KI-Agenten für Business-Teams",
@@ -20,8 +20,24 @@ window.AK_LANGS.de = {
       "MCP-Connectors",
       "Read-only-Agenten",
       "n8n- und Clay-Workflows",
-      "Salesforce- und Airtable-Daten"
+      "Salesforce- und Airtable-Daten",
+      "Debugging und Ursachenanalyse"
     ],
+    glance: {
+      title: "Auf einen Blick",
+      rows: [
+        { k: "Heute", v: "Technology Operations bei UpLink, Weltwirtschaftsforum" },
+        { k: "Standort", v: "Genf, Schweiz" },
+        { k: "Erfahrung", v: "12 Jahre in der Tech-Branche, seit 2014" },
+        { k: "Kern-Stack", v: "KI-Agenten, Salesforce, n8n, Airtable, Clay, Python" },
+        { k: "Zertifiziert", v: "Fünf Salesforce-Zertifizierungen" }
+      ]
+    },
+    openTo: {
+      label: "Offen für Rollen",
+      where: "Schweiz oder grenznahes Frankreich. Vor Ort, hybrid oder remote.",
+      note: "Auch offen für jede Herausforderung, die sich mit Technologie lösen lässt."
+    },
     hereToLearn: ["Evals", "Agenten in Produktion", "Wie du von Agenten geschriebenen Code reviewst"]
   },
 
@@ -100,6 +116,123 @@ window.AK_LANGS.de = {
     }
   },
 
+  craft: {
+    title: "Was ich mache",
+    body: "Fünf Teile der Arbeit, mit mehr Platz, als eine Überschrift ihnen gibt.",
+    pillars: [
+      {
+        title: "Systeme verbinden, vor MCP und danach",
+        body: [
+          "Ich habe Integrationen gebaut, lange bevor es MCP gab. Das hiess API-Doku lesen, jeden Call von Hand schreiben und sich Logins, Paging und Fehler Schritt für Schritt vornehmen, System für System.",
+          "KI-Agenten und MCP-Connectors haben das Tempo verändert, nicht die Aufgabe. Ich beschreibe, was wohin soll, der Agent verdrahtet es, und ich prüfe es. Die Workflows dokumentieren sich selbst und werden im Team geteilt."
+        ],
+        viz: {
+          caption: "Die Tools, die ich verbinde. Tippe eines an, um zu sehen, was es hier tut.",
+          hub: "Agenten und Workflows",
+          adminLabel: "Ich administriere das",
+          adminNote: "Ein Ring markiert die vier Plattformen, die ich auch administriere.",
+          tools: [
+            { role: "Das CRM: der Bestand an Organisationen, Personen und Mitgliedschaften." },
+            { role: "Newsletter und E-Mail-Journeys." },
+            { role: "Die Arbeits-Bases, in denen das Team prüft, bewertet und entscheidet." },
+            { role: "Geplante Workflows, die Daten zwischen den anderen Systemen bewegen." },
+            { role: "Findet Unternehmen und Kontakte für die Go-to-market-Recherche." },
+            { role: "Geregelte Datentabellen und die Dashboards darüber." },
+            { role: "Tickets und die Quelldaten für Qualitäts-Dashboards." },
+            { role: "Dokumentation, von geplanten Agenten aktuell gehalten." },
+            { role: "Skripte für alles, was die Plattformen nicht allein können." },
+            { role: "Agenten und Skills, die über MCP-Connectors an die Systeme kommen." }
+          ]
+        },
+        compare: {
+          caption: "Eine Integration, zwei Wege",
+          before: {
+            label: "Von Hand",
+            steps: ["API-Doku lesen", "Jeden Call schreiben", "Logins, Paging und Fehler behandeln", "Mit echten Daten testen", "Die Doku schreiben"]
+          },
+          after: {
+            label: "Mit Agenten und MCP",
+            steps: ["Beschreiben, was wohin soll", "Der Agent verdrahtet es über Connectors", "Ich prüfe und teste es", "Es dokumentiert sich selbst"]
+          }
+        }
+      },
+      {
+        title: "Daten, die andere Hälfte",
+        body: [
+          "Eine Automatisierung ist nur so gut wie die Daten darunter, und Daten waren mein Job, lange bevor es KI gab. Ich habe Datenmigrationen auf Salesforce und auf Mainframes verantwortet.",
+          "Heute hole ich Daten von Datenanbietern und aus dem offenen Web, ordne sie dem zu, was wir schon haben, entferne Dubletten und mache daraus strukturierte Datensätze, auf die sich das Business und seine Workflows verlassen können."
+        ],
+        viz: {
+          caption: "Von rohen Quellen zu einem Datensatz, dem Menschen trauen",
+          stages: [
+            { label: "Quellen", note: "Datenanbieter, das offene Web, Formulare und das CRM" },
+            { label: "Holen", note: "Geplante Abrufe, die notieren, wann sie zuletzt liefen" },
+            { label: "Zuordnen", note: "Felder und Namen mit dem abgleichen, was wir schon haben" },
+            { label: "Bereinigen", note: "Dubletten entfernen, den vertrauenswürdigsten Wert behalten" },
+            { label: "Datensatz", note: "Eine strukturierte Tabelle pro Thema" },
+            { label: "Nutzen", note: "Workflows, Dashboards und Menschen" }
+          ]
+        }
+      },
+      {
+        title: "Verlässlich dank QA",
+        body: [
+          "Ich habe jahrelang die Systeme anderer getestet, und daraus ist eine Gewohnheit geblieben: fragen, wie etwas kaputtgeht, bevor es ausgeliefert wird.",
+          "Deshalb sind die Prüfungen von Anfang an eingebaut. Ein zweiter Agent, der nichts ändern kann, prüft den ersten, und die Zahlen, die beweisen, dass ein Workflow funktioniert, werden bei jedem Lauf erfasst und nicht nachträglich von Hand zusammengesucht. Die Regeln dahinter stehen weiter unten in den Feldnotizen."
+        ],
+        viz: {
+          caption: "Jeder Lauf berichtet über sich selbst. Illustrative Zahlen.",
+          title: "Wöchentlicher Lauf",
+          status: "Bestanden",
+          rows: [
+            { k: "Gelesene Datensätze", v: "310" },
+            { k: "Erstellt", v: "12" },
+            { k: "Übersprungen, schon vorhanden", v: "298" },
+            { k: "An eine Person geschickt", v: "3" },
+            { k: "Audit durch einen zweiten Agenten", v: "Keine Abweichungen" }
+          ],
+          note: "Wenn eine Zahl falsch aussieht, sagt der Lauf es, bevor ein Mensch es bemerken muss."
+        }
+      },
+      {
+        title: "Zeigen statt erzählen",
+        body: [
+          "Ich zeige lieber, wie eine Idee funktioniert, als sie zu beschreiben. Ein schneller Proof of Concept, eine Live-Demo oder etwas, das man öffnen und teilen kann, klärt eine Diskussion meist schneller als ein Dokument."
+        ],
+        viz: {
+          caption: "Was ich meist ins Meeting mitbringe",
+          items: [
+            { label: "Proof of Concept", note: "Die Idee, an einer kleinen Stichprobe am Laufen" },
+            { label: "Live-Demo", note: "Das Echte, vor dem Team ausgeführt" },
+            { label: "Dashboard", note: "Die Zahlen, ohne mich aktualisiert" },
+            { label: "Walkthrough-Seite", note: "Ein Link, der den ganzen Ablauf erklärt" },
+            { label: "Erklärvideo", note: "Kurz und vertont, für alle, die nicht im Raum waren" }
+          ]
+        }
+      },
+      {
+        title: "Debugging, mein liebster Teil",
+        body: [
+          "Ich liebe Debugging: einem Ablauf Schritt für Schritt folgen, bis sich die Ursache zeigt. Das mache ich seit lange vor der KI, damals auf Mainframes, und es ist immer noch der Teil der Arbeit, der mir am meisten Freude macht.",
+          "Das Symptom sitzt selten dort, wo das Problem liegt. Also verfolge ich den Ablauf rückwärts, Schritt für Schritt, bis etwas nicht aufgeht."
+        ],
+        viz: {
+          caption: "Ein erfundener Fall, zurückverfolgt bis zur Ursache",
+          next: "Nächsten Schritt verfolgen",
+          again: "Nochmals verfolgen",
+          steps: [
+            { label: "Symptom", text: "Eine Willkommens-Mail kam nie an." },
+            { label: "Lief der Workflow?", text: "Ja, planmässig." },
+            { label: "Hat er den Datensatz erfasst?", text: "Nein. Der Datensatz passte nie zum Trigger." },
+            { label: "Warum nicht?", text: "Das Feld, das der Trigger liest, war leer." },
+            { label: "Ursache", text: "Eine vorgelagerte Formel wurde in der Woche davor geändert." }
+          ],
+          fix: "Die Formel korrigieren und eine Prüfung ergänzen, damit das nächste leere Feld eine Warnung auslöst."
+        }
+      }
+    ]
+  },
+
   journey: {
     title: "Der bisherige Weg",
     route: ["Mumbai", "Bengaluru", "Mumbai", "Pune", "Genf"],
@@ -134,18 +267,38 @@ window.AK_LANGS.de = {
         tags: ["KI-Agenten", "Automatisierung", "Daten"]
       }
     ],
+    tracks: {
+      title: "Was ich wo gemacht habe",
+      caption: "Ein Zeichen heisst: Diese Art Arbeit habe ich in diesem Kapitel gemacht.",
+      yes: "ja",
+      no: "nein",
+      chapters: [
+        { when: "2014–17", org: "iGATE, heute Capgemini" },
+        { when: "2017–23", org: "Deloitte" },
+        { when: "2024–heute", org: "Weltwirtschaftsforum" }
+      ],
+      rows: [
+        { label: "Mainframe-Entwicklung" },
+        { label: "Salesforce-QA" },
+        { label: "Business-Analyse" },
+        { label: "Leitung eines QA-Teams" },
+        { label: "Produktmanagement" },
+        { label: "Technology Operations" },
+        { label: "KI-Agenten und Automatisierung" }
+      ]
+    },
     certsLabel: "Fünf Salesforce-Zertifizierungen unterwegs",
     certs: ["Administrator", "Business Analyst", "Marketing Cloud Administrator", "AI Associate", "Data Cloud Consultant"]
   },
 
   howIWork: {
     title: "So arbeite ich",
-    body: "Immer dieselbe Schleife, egal mit welchem Tool. Ich zeige lieber, als zu erzählen.",
+    body: "Immer dieselbe Schleife, egal mit welchem Tool.",
     steps: [
       { label: "Erkennen", line: "Die Routine finden, die jemand jede Woche von Hand erledigt.", example: "Beispiel: zwei Tage lang Datensätze in Folien kopieren, vor jedem Jury-Tag." },
       { label: "Kartieren", line: "Das System lesen, bevor ich es anfasse. Zuerst Read-only.", example: "Beispiel: Ein Agent liest Schemas, Automatisierungen und Laufhistorie und ändert nichts." },
-      { label: "Bauen", line: "Das Kleinste, was die Routine beseitigt, früh gezeigt: ein Proof of Concept, eine Live-Demo, ein Dashboard oder eine Walkthrough-Seite.", example: "Beispiel: ein Skill, der die Folienvorlage direkt aus der Datenbank füllt." },
-      { label: "Prüfen", line: "Ein zweiter Durchgang, der nichts ändern kann, prüft den ersten, und die Zahlen, die belegen, dass es funktioniert, werden automatisch gesammelt.", example: "Beispiel: Ein Audit-Skill vergleicht jede Folie mit ihrem Quelldatensatz und listet die Abweichungen auf." },
+      { label: "Bauen", line: "Das Kleinste, was die Routine beseitigt: ein Workflow, ein Skript oder ein Skill.", example: "Beispiel: ein Skill, der die Folienvorlage direkt aus der Datenbank füllt." },
+      { label: "Prüfen", line: "Ein zweiter Durchgang, der nichts ändern kann, prüft den ersten.", example: "Beispiel: Ein Audit-Skill vergleicht jede Folie mit ihrem Quelldatensatz und listet die Abweichungen auf." },
       { label: "Übergeben", line: "Doku, ein Owner und ein Ausschalter. Dann gehört es dem Team.", example: "Beispiel: eine Anleitung, ein benannter Owner und ein Flag, das es ohne Deployment abschaltet." }
     ]
   },
@@ -169,6 +322,9 @@ window.AK_LANGS.de = {
       status: "Live",
       oneLiner: "Findet Unternehmen, die zu einer Innovation Challenge passen: KI-recherchiert, dedupliziert und bewertet, und ein Mensch gibt jeden Lead frei, bevor eine Ansprache stattfindet.",
       how: "Ein Challenge-Briefing geht rein. KI-Recherche mit Clay und n8n schlägt Kandidaten mit Quellen vor, Dubletten werden entfernt, Firmendatenbanken und das CRM füllen die Lücken, und ein Fit-Score sortiert, was übrig bleibt. Ein Mensch gibt jeden Lead frei, bevor irgendeine Ansprache stattfindet.",
+      problem: "Unternehmen für eine Challenge zu finden war Handarbeit am Schreibtisch: langsam, ungleichmässig und voller Unternehmen, die wir schon kannten.",
+      checks: "Jeder Kandidat behält seine Quellen. Dubletten werden vor der Anreicherung gegen bestehende Leads und das CRM abgefangen, nichts wird zweimal nachgeschlagen. Ohne Freigabe durch einen Menschen geht nichts raus.",
+      result: "Eine bewertete Longlist mit Quellen für jede Challenge. Das Team beurteilt den Fit, statt zu suchen.",
       lesson: "Die menschliche Prüfung bleibt. Der Agent soll sie schnell machen.",
       stack: ["Clay", "n8n", "Airtable", "Claude", "Salesforce"],
       viz: {
@@ -189,6 +345,9 @@ window.AK_LANGS.de = {
       status: "Live, mit dem Team geteilt",
       oneLiner: "Skills, die das ganze Team nutzt. Einer baut ein Pitch-Booklet aus der Datenbank, ein zweiter, nur lesender Agent prüft es.",
       how: "Ein Claude-Skill liest die Shortlist-Datensätze, füllt die Folienvorlage und setzt jedes Logo anhand des Datensatzes. Ein zweiter, nur lesender Skill prüft anschliessend die fertige Präsentation gegen die Quelle und meldet, was nicht übereinstimmt. Dasselbe Muster baut inzwischen auch ein Gewinner-Booklet und ein Teilnehmer-Booklet für Events.",
+      problem: "Vor einem Jury-Tag hat jemand tagelang Datensätze in Folien kopiert, Logos ausgerichtet und späten Änderungen nachgejagt. Die Präsentation war veraltet, sobald sich die Daten änderten.",
+      checks: "Der Audit-Skill ist vom Builder getrennt und kann nichts ändern. Er vergleicht jede Folie mit ihrem Quelldatensatz, testet die Links und ordnet seine Befunde nach Schweregrad, sodass ein Mensch eine kurze Liste prüft statt der ganzen Präsentation.",
+      result: "Ein Booklet auf Anfrage, neu gebaut, sobald sich die Daten ändern, und eine Anleitung, damit Kolleginnen und Kollegen es ohne mich ausführen.",
       lesson: "Erst erzeugen, dann mit einem separaten Durchgang prüfen, der nichts ändern kann.",
       stack: ["Claude-Skills", "Airtable", "Python", "PowerPoint"],
       viz: {
@@ -210,6 +369,10 @@ window.AK_LANGS.de = {
       status: "Früher Pilot",
       oneLiner: "Read-only von Grund auf: Er prüft die Systeme und liefert Kolleginnen und Kollegen die Schritte. Er ändert nie Daten.",
       how: "Verpackt als Claude-Plugin mit Playbooks für die wiederkehrenden Fragen und nur lesenden Tools. Er schlägt den aktuellen Stand nach, erklärt, was er gefunden hat, und liefert die Schritte zurück, damit die Person die Änderung unter ihrem eigenen Login macht.",
+      problem: "Jede Woche kommen bei mir dieselben Fragen an: Warum hängt dieser Datensatz, wo liegt jenes Dokument, wie behebe ich dieses Feld. Die Antworten steckten in meinem Kopf.",
+      checks: "Er hat nur lesende Tools und sonst nichts, also kann er keine Daten ändern, auch wenn man ihn darum bittet. Er kennt nur Arbeitswissen, und jede Änderung macht weiterhin ein Mensch unter dem eigenen Login.",
+      result: "Kolleginnen und Kollegen bekommen die Antwort und die Schritte sofort, und ich werde seltener unterbrochen. Es ist ein früher Pilot, die Playbooks wachsen noch.",
+      flow: ["Frage in Slack", "Agent liest die Systeme", "Erklärt, was er gefunden hat", "Liefert die Schritte zurück", "Ein Mensch macht die Änderung"],
       lesson: "Agenten schlagen nach. Menschen ändern, so behält jede Änderung einen Owner.",
       stack: ["Claude-Plugin", "Slack", "Airtable"],
       viz: {
@@ -248,7 +411,11 @@ window.AK_LANGS.de = {
       title: "Geplante Agenten, die berichten, was sich geändert hat",
       status: "Live",
       oneLiner: "Sie verfolgen, was sich in unseren Systemen geändert hat und wer es geändert hat, aktualisieren die Doku und mailen eine wöchentliche Zusammenfassung.",
-      how: "Jeder ist eine geplante Aufgabe mit einer kleinen Profildatei, die sagt, was wichtig ist. Der Agent sammelt, filtert und schreibt eine kurze E-Mail, signiert vom Zahnrad. Andere berichten, was die E-Mail-Kampagnen bewirkt haben und welche Tech-Events sich lohnen.",
+      problem: "Systeme ändern sich unbemerkt. Ein Feld wird umbenannt oder ein Workflow bearbeitet, und Wochen später weiss niemand mehr, wer es war oder warum. Die Doku läuft davon.",
+      checks: "Die Agenten lesen nur die Systeme, die sie beobachten. Sie schicken Zählwerte und Ausnahmen, keine rohen Logs, und jede Mail endet mit einer Karte, die zeigt, was lief, wer es gestartet hat und wann es das nächste Mal läuft.",
+      result: "Eine wöchentliche Zusammenfassung im Postfach, Doku, die aktuell bleibt, und eine Antwort, wenn jemand fragt, wer was geändert hat.",
+      flow: ["Audit-Logs und Laufhistorie", "Was sich geändert hat, und wer", "Doku aktualisiert", "Wöchentliche Mail"],
+      how: "Jeder ist eine geplante Aufgabe mit einer kleinen Profildatei, die sagt, was wichtig ist. Der Agent liest die Audit-Logs und die Laufhistorie, findet heraus, was sich geändert hat und wer es geändert hat, aktualisiert die Doku und schreibt eine kurze E-Mail, signiert vom Zahnrad. Andere berichten, was die E-Mail-Kampagnen bewirkt haben und welche Tech-Events sich lohnen.",
       lesson: "Schick Zählwerte und Ausnahmen. Niemand liest ein Log per E-Mail.",
       stack: ["Claude", "n8n", "Salesforce Marketing Cloud"],
       viz: {
@@ -267,6 +434,10 @@ window.AK_LANGS.de = {
       status: "Live",
       oneLiner: "Ein Dashboard und Alarme, damit die KI-Ausgaben sichtbar sind, bevor sie jemanden überraschen.",
       how: "Ein geplanter Workflow holt jeden Tag das Audit-Log, verdichtet die Ereignisse zu Zählwerten pro Funktion und pro Person und schreibt sie in eine Base mit einem Dashboard und einem Monatsbericht darüber. Alarme lösen aus, wenn ein Tag weit über dem Normalen liegt.",
+      problem: "KI-Funktionen verbrauchen Credits, und einen Überblick über die Ausgaben gab es nur mit der Rechnung am Monatsende.",
+      checks: "Alarme lösen aus, wenn ein Tag weit über dem Normalen liegt, sodass eine durchgehende Automatisierung noch am selben Tag auffällt. Die Tabelle speichert Zählwerte, keine rohen Logs, damit der Bericht klein und lesbar bleibt.",
+      result: "Die Ausgaben sind jeden Tag sichtbar, nach Funktion und nach Person, mit einem Monatsbericht, den niemand zusammenstellen muss.",
+      flow: ["Audit-Log", "Tägliche Verdichtung", "Verbrauchstabelle", "Dashboard und Monatsbericht", "Alarme"],
       lesson: "Speichere Zählwerte, nicht rohe Logs. Der Bericht braucht immer nur die Zählwerte.",
       stack: ["n8n", "Airtable"],
       viz: {
@@ -279,6 +450,10 @@ window.AK_LANGS.de = {
       status: "Erledigt",
       oneLiner: "Datenanbieter und Tools, verglichen nach gemessenen Kosten pro Ergebnis, bevor etwas gekauft wird.",
       how: "Jeder Test hat seine Bestehensgrenze vorab festgelegt: Abdeckung, Genauigkeit gegenüber Datensätzen, denen wir schon vertrauen, Kosten pro brauchbarem Ergebnis und eine Prüfung an einer Stichprobe, die das Tool beim Einrichten nicht gesehen hat. Ein aktuelles Ergebnis war ein geteiltes Urteil: das neue Tool für manche Aufgaben nutzen, für andere beim bestehenden Stack bleiben.",
+      problem: "Tools und Datenanbieter lassen sich leicht an einer Demo beurteilen und schwer an Ergebnissen. Wir wollten Belege, bevor wir entscheiden.",
+      checks: "Die Bestehensgrenzen stehen fest, bevor der Test läuft. Jedes Tool bekommt dieselbe Stichprobe, eine letzte Prüfung nutzt Datensätze, die es nicht gesehen hat, und fehlgeschlagene Läufe zählen bei den Kosten mit.",
+      result: "Ein Urteil mit Zahlen dahinter, geteilt als Seite, die die Entscheider in wenigen Minuten lesen können: wofür jedes Tool taugt und wofür nicht.",
+      flow: ["Bestehensgrenzen festlegen", "Dieselbe Stichprobe für jedes Tool", "Kosten pro Ergebnis messen", "An unbekannten Datensätzen prüfen", "Urteil"],
       lesson: "Leg die Bestehensgrenze fest, bevor du den Test laufen lässt.",
       stack: ["Python", "Airtable", "Evals"],
       viz: {
@@ -531,7 +706,8 @@ window.AK_LANGS.de = {
   footer: {
     lines: [
       "Eine persönliche Seite. Die Ansichten sind meine eigenen.",
-      "Die Projektbeschreibungen sind verallgemeinert, und die Zahlen in den Visualisierungen sind illustrativ."
+      "Die Projektbeschreibungen sind verallgemeinert, und die Zahlen in den Visualisierungen sind illustrativ.",
+      "Diese Seite zählt Besuche mit GoatCounter. Keine Cookies, und nichts folgt dir auf andere Seiten."
     ]
   },
 
@@ -542,6 +718,7 @@ window.AK_LANGS.de = {
     navProjects: "Projekte",
     navNotes: "Feldnotizen",
     navToolbox: "Toolbox",
+    navCraft: "Was ich mache",
     navPersonal: "Privat",
     navConnect: "Kontakt",
     labelApproach: "hallo sagen",
@@ -550,11 +727,13 @@ window.AK_LANGS.de = {
     labelProjects: "aktuelle arbeiten",
     labelNotes: "feldnotizen",
     labelToolbox: "toolbox",
+    labelCraft: "was ich mache",
     labelPersonal: "weg von der tastatur",
     labelConnect: "kontakt",
     askMeAbout: "Frag mich nach",
     hereToLearn: "Hier, um zu lernen:",
     howToSayHi: "So sagst du Hallo",
+    seeWork: "Aktuelle Arbeiten ansehen",
     youAreHere: "du bist hier",
     themeToggle: "Zwischen hell und dunkel wechseln",
     language: "Sprache",
@@ -567,6 +746,10 @@ window.AK_LANGS.de = {
     runAgain: "Nochmals",
     play: "Los",
     howItWorks: "So funktioniert's",
+    problem: "Das Problem",
+    checks: "Was es verlässlich hält",
+    result: "Was das Team davon hat",
+    flowSteps: "Schritte",
     lesson: "Lektion",
     stack: "Stack",
     kindInput: "Eingabe",

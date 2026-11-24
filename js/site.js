@@ -131,6 +131,7 @@
 
   var NAV = [
     ['approach', 'navApproach', 'Say hi'],
+    ['craft', 'navCraft', 'What I do'],
     ['journey', 'navJourney', 'Journey'],
     ['work', 'navWork', 'How I work'],
     ['projects', 'navProjects', 'Projects'],
@@ -194,6 +195,7 @@
     var art = byId('hero-art');
     if (!art) return;
     var ph = AK.photos && AK.photos.portrait;
+    var who = el('div', { class: 'hero__who' });
     var box = el('div', { class: 'portrait' });
     if (ph) {
       box.appendChild(el('img', {
@@ -201,7 +203,8 @@
         loading: 'eager', decoding: 'async'
       }));
     }
-    art.appendChild(box);
+    who.appendChild(box);
+    art.appendChild(who);
 
     if (!AK.mark) return;
     var badge = el('button', {
@@ -215,7 +218,7 @@
       doc.createTextNode(' '),
       el('span', { text: AK.mark.note })
     ]);
-    art.appendChild(note);
+    who.appendChild(note);
 
     function setOpen(open) {
       badge.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -223,8 +226,8 @@
     }
     badge.addEventListener('click', function () { setOpen(note.hidden); });
     if (window.matchMedia && matchMedia('(hover: hover)').matches) {
-      art.addEventListener('mouseenter', function () { setOpen(true); });
-      art.addEventListener('mouseleave', function () { setOpen(false); });
+      who.addEventListener('mouseenter', function () { setOpen(true); });
+      who.addEventListener('mouseleave', function () { setOpen(false); });
     }
   }
 
@@ -319,38 +322,73 @@
     chipRow.firstChild.classList.add('is-used');
   }
 
+  function renderGlance(host) {
+    var p = AK.profile;
+    var g = p.glance;
+    if (!host || !g) return;
+    var card = el('section', { class: 'card glance', 'aria-labelledby': 'glance-title' });
+    card.appendChild(el('h2', { class: 'glance__title', id: 'glance-title', text: g.title }));
+    var dl = el('dl', { class: 'glance__rows' });
+    (g.rows || []).forEach(function (r) {
+      dl.appendChild(el('div', { class: 'glance__row' }, [
+        el('dt', { text: r.k }), el('dd', { text: r.v })
+      ]));
+    });
+    card.appendChild(dl);
+    var o = p.openTo;
+    if (o && o.roles && o.roles.length) {
+      var open = el('div', { class: 'glance__open' });
+      open.appendChild(el('p', { class: 'glance__label', id: 'open-label', text: o.label }));
+      var roles = chipList(o.roles, 'chips--open');
+      roles.setAttribute('aria-labelledby', 'open-label');
+      open.appendChild(roles);
+      if (o.where) open.appendChild(el('p', { class: 'glance__line', text: o.where }));
+      if (o.note) open.appendChild(el('p', { class: 'glance__line', text: o.note }));
+      card.appendChild(open);
+    }
+    host.appendChild(card);
+  }
+
   function renderHero() {
     var p = AK.profile;
     var text = byId('hero-text');
     if (!text) return;
 
-    text.appendChild(el('h1', { class: 'hero__name', id: 'hero-title', text: p.name }));
-    text.appendChild(el('p', { class: 'hero__role', text: p.role }));
-    text.appendChild(el('p', { class: 'hero__meta' }, [
+    var head = el('div', { class: 'hero__head' });
+    head.appendChild(el('h1', { class: 'hero__name', id: 'hero-title', text: p.name }));
+    head.appendChild(el('p', { class: 'hero__role', text: p.role }));
+    head.appendChild(el('p', { class: 'hero__meta' }, [
       el('span', { text: p.team }),
       el('span', { class: 'sep', 'aria-hidden': 'true', text: ' · ' }),
       el('span', { text: p.place })
     ]));
-    append(text, paragraphs(p.intro, 'hero__intro'));
+    text.appendChild(head);
 
-    renderTerminal(text);
+    var body = el('div', { class: 'hero__body' });
+    append(body, paragraphs(p.intro, 'hero__intro'));
+    body.appendChild(el('div', { class: 'actions hero__actions' }, [
+      el('a', { class: 'btn btn--primary', href: p.linkedin, target: '_blank', rel: 'noopener', text: AK.connect.linkedinLabel }),
+      el('a', { class: 'btn', href: '#projects', text: t('seeWork', 'See recent work') }),
+      el('a', { class: 'btn', href: '#approach', text: t('howToSayHi', 'How to say hi') })
+    ]));
 
-    text.appendChild(el('p', { class: 'mini-label', id: 'ask-label', text: t('askMeAbout', 'Ask me about') }));
+    text.appendChild(body);
+
+    var more = el('div', { class: 'hero__more' });
+    more.appendChild(el('p', { class: 'mini-label', id: 'ask-label', text: t('askMeAbout', 'Ask me about') }));
     var ask = chipList(p.askMeAbout, 'chips--ask');
     ask.setAttribute('aria-labelledby', 'ask-label');
-    text.appendChild(ask);
+    more.appendChild(ask);
 
     var learn = el('p', { class: 'hero__learn' });
     learn.appendChild(el('span', { class: 'hero__learn-label', text: t('hereToLearn', 'Here to learn:') + ' ' }));
     learn.appendChild(doc.createTextNode((p.hereToLearn || []).join(' · ')));
-    text.appendChild(learn);
+    more.appendChild(learn);
+    text.appendChild(more);
 
-    text.appendChild(el('div', { class: 'actions' }, [
-      el('a', { class: 'btn btn--primary', href: p.linkedin, target: '_blank', rel: 'noopener', text: AK.connect.linkedinLabel }),
-      el('a', { class: 'btn', href: '#approach', text: t('howToSayHi', 'How to say hi') })
-    ]));
-
+    renderTerminal(byId('hero-term') || text);
     renderAvatar();
+    renderGlance(byId('hero-art'));
   }
 
   /* ---------- approach + social battery ---------- */
@@ -461,7 +499,7 @@
     var lastIdx = stops.length - 1;
     var hereText = t('youAreHere', 'you are here');
 
-    append(host, sectionHead('02', 'labelJourney', 'journey', 'journey-title', j.title));
+    append(host, sectionHead('03', 'labelJourney', 'journey', 'journey-title', j.title));
 
     /* route strip */
     var route = el('ol', { class: 'route', 'aria-label': j.route.join(', ') });
@@ -598,10 +636,50 @@
     host.appendChild(desk);
     selectTab(lastIdx, false);
 
+    /* what I did where */
+    if (j.tracks) renderTracks(host, j.tracks);
+
     /* certifications */
     host.appendChild(el('div', { class: 'certs' }, [
       el('p', { class: 'mini-label', id: 'certs-label', text: j.certsLabel }),
       (function () { var c = chipList(j.certs, 'chips--certs'); c.setAttribute('aria-labelledby', 'certs-label'); return c; })()
+    ]));
+  }
+
+  /* ---------- journey: what I did where (matrix) ---------- */
+
+  function renderTracks(host, tr) {
+    if (!tr || !tr.rows || !tr.chapters) return;
+    var n = tr.chapters.length;
+    var table = el('table', { class: 'tk-table', 'aria-labelledby': 'tk-title', 'aria-describedby': tr.caption ? 'tk-cap' : null });
+    var headRow = el('tr', null, [el('td', { class: 'tk-corner' })]);
+    tr.chapters.forEach(function (c) {
+      headRow.appendChild(el('th', { scope: 'col', class: 'tk-col' }, [
+        el('span', { class: 'tk-when', text: c.when }),
+        el('span', { class: 'tk-org', text: c.org })
+      ]));
+    });
+    table.appendChild(el('thead', null, [headRow]));
+    var body = el('tbody');
+    tr.rows.forEach(function (r) {
+      var row = el('tr', null, [el('th', { scope: 'row', class: 'tk-row', text: r.label })]);
+      for (var i = 0; i < n; i++) {
+        var on = !!(r.in && r.in[i]);
+        var cls = 'tk-cell' + (on ? ' is-on' : '');
+        if (on && i > 0 && r.in[i - 1]) cls += ' tk-join-l';
+        if (on && i < n - 1 && r.in[i + 1]) cls += ' tk-join-r';
+        row.appendChild(el('td', { class: cls }, [
+          el('span', { class: 'tk-mark', 'aria-hidden': 'true' }),
+          el('span', { class: 'sr-only', text: on ? tr.yes : tr.no })
+        ]));
+      }
+      body.appendChild(row);
+    });
+    table.appendChild(body);
+    host.appendChild(el('div', { class: 'tk' }, [
+      el('h3', { class: 'mini-label tk-title', id: 'tk-title', text: tr.title }),
+      el('div', { class: 'tk-card card' }, [table]),
+      tr.caption ? el('p', { class: 'tk-caption', id: 'tk-cap', text: tr.caption }) : null
     ]));
   }
 
@@ -611,7 +689,7 @@
     var host = byId('work-root');
     var w = AK.howIWork;
     if (!host || !w || !w.steps) return;
-    append(host, sectionHead('03', 'labelWork', 'how I work', 'work-title', w.title));
+    append(host, sectionHead('04', 'labelWork', 'how I work', 'work-title', w.title));
     if (w.body) host.appendChild(el('p', { class: 'lead', text: w.body }));
 
     var steps = w.steps;
@@ -687,7 +765,7 @@
     var host = byId('notes-root');
     if (!host) return;
     var f = AK.fieldNotes;
-    append(host, sectionHead('05', 'labelNotes', 'field notes', 'notes-title', f.title));
+    append(host, sectionHead('06', 'labelNotes', 'field notes', 'notes-title', f.title));
     host.appendChild(el('p', { class: 'lead', text: f.body }));
     var list = el('ol', { class: 'notes' });
     f.notes.forEach(function (n, i) {
@@ -707,7 +785,7 @@
     var host = byId('toolbox-root');
     if (!host) return;
     var tb = AK.toolbox;
-    append(host, sectionHead('06', 'labelToolbox', 'toolbox', 'toolbox-title', tb.title));
+    append(host, sectionHead('07', 'labelToolbox', 'toolbox', 'toolbox-title', tb.title));
     var groups = el('div', { class: 'tool-groups' });
     tb.groups.forEach(function (g) {
       groups.appendChild(el('div', { class: 'tool-group' }, [
@@ -730,7 +808,7 @@
     var host = byId('personal-root');
     if (!host) return;
     var p = AK.personal;
-    append(host, sectionHead('07', 'labelPersonal', 'away from the keyboard', 'personal-title', p.title));
+    append(host, sectionHead('08', 'labelPersonal', 'away from the keyboard', 'personal-title', p.title));
     var grid = el('div', { class: 'personal__grid' });
 
     var ph = AK.photos && AK.photos.outdoors;
@@ -790,7 +868,7 @@
     var host = byId('connect-root');
     if (!host) return;
     var c = AK.connect;
-    append(host, sectionHead('08', 'labelConnect', 'connect', 'connect-title', c.title));
+    append(host, sectionHead('09', 'labelConnect', 'connect', 'connect-title', c.title));
 
     var grid = el('div', { class: 'connect' });
     var left = el('div', { class: 'connect__text' }, [
