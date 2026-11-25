@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Security policy. Only this site's own files may run or load. The single exception is the
+     GoatCounter visit counter: one pinned script (see the integrity hash at the end of the page)
+     and its count request. No inline scripts, no inline styles, no plugins, no forms, no <base>. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://gc.zgo.at/count.v5.js; style-src 'self'; img-src 'self' https://kanhere.goatcounter.com; connect-src https://kanhere.goatcounter.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFF4E8" media="(prefers-color-scheme: light)">
@@ -10,14 +15,7 @@
 <meta name="description" content="I build AI agents and automations for business teams. Technology operations at UpLink, World Economic Forum.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-<script>
-(function () {
-  try {
-    var t = localStorage.getItem('ak-theme');
-    if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
-  } catch (e) {}
-})();
-</script>
+<script src="js/theme.js?v=6"></script>
 <link rel="stylesheet" href="css/base.css?v=5">
 <link rel="stylesheet" href="css/site.css?v=5">
 <link rel="stylesheet" href="css/craft.css?v=5">
@@ -106,9 +104,11 @@
 <script src="js/qr.js?v=5"></script>
 <script src="js/site.js?v=5"></script>
 <script src="js/craft.js?v=5"></script>
-<script src="js/game.js?v=5"></script>
+<script src="js/game.js?v=6"></script>
 <script src="js/viz-more.js?v=5"></script>
 <script src="js/projects.js?v=5"></script>
-<script data-goatcounter="https://kanhere.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<!-- Visit counter. Pinned to one version; the browser refuses the file if its content ever changes. -->
+<script data-goatcounter="https://kanhere.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js"
+        integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ" crossorigin="anonymous"></script>
 </body>
 </html>
