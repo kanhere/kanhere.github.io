@@ -226,6 +226,8 @@ section[id] { scroll-margin-top: 60px; }
 
 .certs { margin-top: 40px; }
 .certs .mini-label { margin-top: 0; }
+.certs .mini-label.certs__past-label { margin-top: 22px; }
+.chips--past .chip { color: var(--text-2); border-style: dashed; }
 
 /* ---------- field notes ---------- */
 
