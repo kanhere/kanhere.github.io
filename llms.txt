@@ -18,7 +18,7 @@ I was wiring systems together by hand long before MCP, and with AI agents I now 
 - Based in: Geneva, Switzerland
 - Experience: 12 years in tech, since 2014
 - Core stack: AI agents, Salesforce, n8n, Airtable, Clay, Python
-- Certified: Five Salesforce certifications
+- Certified: Three current Salesforce certifications
 
 ## How to approach me
 
@@ -73,7 +73,7 @@ A made-up case, traced back to its cause: Symptom A welcome email never arrived.
 ## Journey
 
 - 2010 – 2014 · Mumbai: Computer Engineering (Bachelor's degree, University of Mumbai). Four years of computer engineering in Mumbai. Graduated in 2014.
-- 2014 – 2017 · Mumbai: Senior Software Engineer (iGATE, now Capgemini). Joined as a software engineer. Started as a mainframe developer on fleet programmes (DB2, CICS), then moved into Salesforce QA: working out how things break before users do.
+- 2014 – 2017 · Mumbai: Senior Analyst (iGATE, now Capgemini). Joined as a software engineer. Started as a mainframe developer on fleet programmes (DB2, CICS), then moved into Salesforce QA: working out how things break before users do.
 - 2017 – 2023 · Bengaluru, Mumbai, Pune: Senior Consultant (Deloitte). Joined as a business technology analyst and left as a senior consultant. Mainframe development, Salesforce QA and Salesforce business analysis on healthcare and partner management programmes, then leading a QA team. Three cities along the way.
 - January 2024 · Geneva: Joined the World Economic Forum (Product management, then technology operations, UpLink). Began in product management for UpLink, the Forum's open innovation platform for early-stage ventures, working with vendors to deliver the product. Then moved into technology operations. Based in Geneva.
 - 2026 · Geneva: Associate, Technology Operations (UpLink and the Forum's wider technology team). I build the AI agents and automations the team runs on, connecting Salesforce, Marketing Cloud, Airtable, n8n, Clay, Databricks, Jira and Confluence with Python and Claude. I also administer Salesforce, Airtable, n8n and Clay. The workflows document themselves and are shared across the team.
@@ -84,7 +84,8 @@ A made-up case, traced back to its cause: Symptom A welcome email never arrived.
 - Product management: World Economic Forum (2024–now)
 - Technology operations: World Economic Forum (2024–now)
 - AI agents and automation: World Economic Forum (2024–now)
-- Five Salesforce certifications along the way: Administrator, Business Analyst, Marketing Cloud Administrator, AI Associate, Data Cloud Consultant
+- Current Salesforce certifications: Business Analyst, Marketing Cloud Engagement Administrator, Data 360 Consultant
+- Salesforce certifications previously held: Platform Administrator, AI Associate
 
 ## How I work
 
@@ -220,7 +221,7 @@ Lesson: Spell names for the voice before you record. It saves every retake.
 
 Status: Live · Themes: data, automation, quality · Stack: Airtable, n8n, Salesforce
 
-Selected participants become four linked CRM records: organisation, person, position, membership.
+Selected participants become four linked CRM records: organization, person, position, membership.
 
 How it works: Records are staged in a base, then created one link at a time by workflows. Each step waits for a gate that checks a fact, the ID written by the step before, never a status someone typed. Every creator can run twice without creating twice.
 
@@ -236,13 +237,13 @@ How it works: A weekly workflow picks the records that were never checked or not
 
 Lesson: Write down when you last checked. It is the cheapest cache there is.
 
-### One row per organisation
+### One row per organization
 
 Status: Live · Themes: data · Stack: Airtable, JavaScript
 
-A daily script folds duplicate organisation records into one clean list.
+A daily script folds duplicate organization records into one clean list.
 
-How it works: The same organisation often exists several times under slightly different names. A script strips legal suffixes and punctuation into a match key, merges the rows that share it, and rewrites the clean table every morning. Corrections belong in the source, not in the copy.
+How it works: The same organization often exists several times under slightly different names. A script strips legal suffixes and punctuation into a match key, merges the rows that share it, and rewrites the clean table every morning. Corrections belong in the source, not in the copy.
 
 Lesson: Build a match key. Leave the original names alone.
 
