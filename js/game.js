@@ -112,7 +112,7 @@
     /* ---------- state ---------- */
     var S = { phase: 'idle', set: [], i: 0, score: 0, streak: 0, results: [], remaining: 0, fbRemaining: 0 };
     var total = G.secondsPerCall * 1000;
-    var tickId = null, fbId = null, lastT = 0, confettiId = null;
+    var tickId = null, fbId = null, fbStarted = 0, lastT = 0, confettiId = null;
     var inView = true, pageVisible = !document.hidden;
     var ui = {};   // play-screen element refs
     var drag = null;
@@ -143,9 +143,8 @@
     }
     function startFb() {
       if (fbId) clearTimeout(fbId);
-      var started = performance.now();
+      fbStarted = performance.now();
       fbId = setTimeout(function () { fbId = null; next(); }, S.fbRemaining);
-      fbId._s = started;
     }
     function syncRun() {
       /* stop whatever is running, then restart if allowed */
@@ -158,7 +157,7 @@
         if (shouldRun()) startTick();
       } else if (S.phase === 'fb') {
         if (fbId) {
-          S.fbRemaining = Math.max(400, S.fbRemaining - (performance.now() - fbId._s));
+          S.fbRemaining = Math.max(400, S.fbRemaining - (performance.now() - fbStarted));
           clearTimeout(fbId); fbId = null;
         }
         if (shouldRun()) startFb();
