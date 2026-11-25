@@ -1,7 +1,7 @@
 /* data.js — the English copy and all configuration. Every word on the page lives here (or in
    data.fr.js / data.de.js, which hold only the translated strings and are merged over this file by lang.js).
    Public page: no colleague, partner or venture names, no internal links or IDs, no real internal figures.
-   Numbers inside project visualisations are illustrative and are labelled as such on the page. */
+   Numbers inside project visualizations are illustrative and are labelled as such on the page. */
 
 window.AK_LANGS = window.AK_LANGS || {};
 
@@ -43,7 +43,7 @@ window.AK_LANGS.en = {
         { k: "Based in", v: "Geneva, Switzerland" },
         { k: "Experience", v: "12 years in tech, since 2014" },
         { k: "Core stack", v: "AI agents, Salesforce, n8n, Airtable, Clay, Python" },
-        { k: "Certified", v: "Five Salesforce certifications" }
+        { k: "Certified", v: "Three current Salesforce certifications" }
       ]
     },
     openTo: {
@@ -164,7 +164,7 @@ window.AK_LANGS.en = {
           adminLabel: "I administer this",
           adminNote: "A ring marks the four platforms I also administer.",
           tools: [
-            { id: "salesforce", name: "Salesforce", admin: true, role: "The CRM: the record of organisations, people and memberships." },
+            { id: "salesforce", name: "Salesforce", admin: true, role: "The CRM: the record of organizations, people and memberships." },
             { id: "marketing-cloud", name: "Marketing Cloud", admin: false, role: "Newsletters and email journeys." },
             { id: "airtable", name: "Airtable", admin: true, role: "The working bases where the team reviews, scores and decides." },
             { id: "n8n", name: "n8n", admin: true, role: "Scheduled workflows that move data between the other systems." },
@@ -292,7 +292,7 @@ window.AK_LANGS.en = {
         when: "2014 – 2017",
         year: "2014–17",
         place: "Mumbai",
-        title: "Senior Software Engineer",
+        title: "Senior Analyst",
         sub: "iGATE, now Capgemini",
         org: "Capgemini",
         body: "Joined as a software engineer. Started as a mainframe developer on fleet programmes (DB2, CICS), then moved into Salesforce QA: working out how things break before users do.",
@@ -351,8 +351,10 @@ window.AK_LANGS.en = {
         { label: "AI agents and automation", in: [false, false, true] }
       ]
     },
-    certsLabel: "Five Salesforce certifications along the way",
-    certs: ["Administrator", "Business Analyst", "Marketing Cloud Administrator", "AI Associate", "Data Cloud Consultant"]
+    certsLabel: "Current Salesforce certifications",
+    certs: ["Business Analyst", "Marketing Cloud Engagement Administrator", "Data 360 Consultant"],
+    certsPastLabel: "Previously held",
+    certsPast: ["Platform Administrator", "AI Associate"]
   },
 
   /* An interactive loop: tap a step to see what it means in practice. */
@@ -383,7 +385,7 @@ window.AK_LANGS.en = {
 
   /* featured: true  -> the card shows its visual straight away.
      featured: false -> a compact card that opens on tap.
-     viz.type decides which small visualisation is drawn:
+     viz.type decides which small visualization is drawn:
      pipeline | beforeAfter | storyboard | testGrid | flags | usage | schedule | chat   (js/projects.js)
      waterfall | chain | merge | scorecard | map | inventory | footer                    (js/viz-more.js) */
   projects: [
@@ -600,14 +602,14 @@ window.AK_LANGS.en = {
       title: "Onboarding into the CRM, in the right order",
       tags: ["data", "automation", "quality"],
       status: "Live",
-      oneLiner: "Selected participants become four linked CRM records: organisation, person, position, membership.",
+      oneLiner: "Selected participants become four linked CRM records: organization, person, position, membership.",
       how: "Records are staged in a base, then created one link at a time by workflows. Each step waits for a gate that checks a fact, the ID written by the step before, never a status someone typed. Every creator can run twice without creating twice.",
       lesson: "Gates read facts, not statuses.",
       stack: ["Airtable", "n8n", "Salesforce"],
       viz: {
         type: "chain",
         caption: "Four linked records, each gated on the one before",
-        steps: ["Organisation", "Person", "Position", "Membership"],
+        steps: ["Organization", "Person", "Position", "Membership"],
         gate: "ID present",
         firstRun: "First run: 4 created",
         secondRun: "Second run: 0 created, 4 skipped"
@@ -640,11 +642,11 @@ window.AK_LANGS.en = {
     {
       id: "dedupe",
       featured: false,
-      title: "One row per organisation",
+      title: "One row per organization",
       tags: ["data"],
       status: "Live",
-      oneLiner: "A daily script folds duplicate organisation records into one clean list.",
-      how: "The same organisation often exists several times under slightly different names. A script strips legal suffixes and punctuation into a match key, merges the rows that share it, and rewrites the clean table every morning. Corrections belong in the source, not in the copy.",
+      oneLiner: "A daily script folds duplicate organization records into one clean list.",
+      how: "The same organization often exists several times under slightly different names. A script strips legal suffixes and punctuation into a match key, merges the rows that share it, and rewrites the clean table every morning. Corrections belong in the source, not in the copy.",
       lesson: "Build a match key. Leave the original names alone.",
       stack: ["Airtable", "JavaScript"],
       viz: {
@@ -659,7 +661,7 @@ window.AK_LANGS.en = {
           { name: "Sample Works SA", key: "sample works" }
         ],
         beforeLabel: "6 records",
-        afterLabel: "3 organisations"
+        afterLabel: "3 organizations"
       }
     },
     {

@@ -643,7 +643,10 @@
     host.appendChild(el('div', { class: 'certs' }, [
       el('p', { class: 'mini-label', id: 'certs-label', text: j.certsLabel }),
       (function () { var c = chipList(j.certs, 'chips--certs'); c.setAttribute('aria-labelledby', 'certs-label'); return c; })()
-    ]));
+    ].concat(j.certsPast && j.certsPast.length ? [
+      el('p', { class: 'mini-label certs__past-label', id: 'certs-past-label', text: j.certsPastLabel }),
+      (function () { var c = chipList(j.certsPast, 'chips--certs chips--past'); c.setAttribute('aria-labelledby', 'certs-past-label'); return c; })()
+    ] : [])));
   }
 
   /* ---------- journey: what I did where (matrix) ---------- */

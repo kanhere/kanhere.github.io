@@ -29,7 +29,7 @@ window.AK_LANGS.fr = {
         { k: "Basé à", v: "Genève, Suisse" },
         { k: "Expérience", v: "12 ans dans la tech, depuis 2014" },
         { k: "Outils clés", v: "Agents IA, Salesforce, n8n, Airtable, Clay, Python" },
-        { k: "Certifié", v: "Cinq certifications Salesforce" }
+        { k: "Certifié", v: "Trois certifications Salesforce en cours" }
       ]
     },
     openTo: {
@@ -288,8 +288,10 @@ window.AK_LANGS.fr = {
         { label: "Agents IA et automatisation" }
       ]
     },
-    certsLabel: "Cinq certifications Salesforce en chemin",
-    certs: ["Administrator", "Business Analyst", "Marketing Cloud Administrator", "AI Associate", "Data Cloud Consultant"]
+    certsLabel: "Certifications Salesforce en cours",
+    certs: ["Business Analyst", "Marketing Cloud Engagement Administrator", "Data 360 Consultant"],
+    certsPastLabel: "Détenues auparavant",
+    certsPast: ["Platform Administrator", "AI Associate"]
   },
 
   howIWork: {

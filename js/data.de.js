@@ -30,7 +30,7 @@ window.AK_LANGS.de = {
         { k: "Standort", v: "Genf, Schweiz" },
         { k: "Erfahrung", v: "12 Jahre in der Tech-Branche, seit 2014" },
         { k: "Kern-Stack", v: "KI-Agenten, Salesforce, n8n, Airtable, Clay, Python" },
-        { k: "Zertifiziert", v: "Fünf Salesforce-Zertifizierungen" }
+        { k: "Zertifiziert", v: "Drei aktuelle Salesforce-Zertifizierungen" }
       ]
     },
     openTo: {
@@ -287,8 +287,10 @@ window.AK_LANGS.de = {
         { label: "KI-Agenten und Automatisierung" }
       ]
     },
-    certsLabel: "Fünf Salesforce-Zertifizierungen unterwegs",
-    certs: ["Administrator", "Business Analyst", "Marketing Cloud Administrator", "AI Associate", "Data Cloud Consultant"]
+    certsLabel: "Aktuelle Salesforce-Zertifizierungen",
+    certs: ["Business Analyst", "Marketing Cloud Engagement Administrator", "Data 360 Consultant"],
+    certsPastLabel: "Früher gehalten",
+    certsPast: ["Platform Administrator", "AI Associate"]
   },
 
   howIWork: {
